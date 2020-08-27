@@ -33,9 +33,7 @@ export default {
             else chosenDifficulty = element.target.parentElement.getAttribute("data-difficulty")
 
             this.$store.dispatch("setselectedDifficulty", chosenDifficulty)
-
-            console.log(this.$store.state.settings.selectedDifficulty)
-           
+            this.$store.dispatch("changecurrentComp")           
         }
     }
 }

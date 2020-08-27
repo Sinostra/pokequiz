@@ -12,17 +12,25 @@ $imagePath: "assets/img/";
 
 body {
     margin: 0;
+}
+
+#app > div {
+    margin: 0;
     background: url($imagePath + 'wallpaper.png') no-repeat;
     background-size: cover;
     font-family: "pokemonS";
+    background-color: #79C9FA;
     line-height: 1;
-}
-
-body, #app, #app > div {
+    transition: linear 1s;
     min-height: 100vh;
+
+    &.in-game {
+        background-position-y: 500px;
+    }
 }
 
 @import "home";
 @import "generation";
 @import "type";
 @import "difficulty";
+@import "game";
