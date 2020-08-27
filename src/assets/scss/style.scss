@@ -1,0 +1,27 @@
+$imagePath: "assets/img/";
+
+@font-face {
+	font-family: "pokemonH";
+	src: url("assets/fonts/Pokemon_Hollow.ttf");
+}
+
+@font-face {
+	font-family: "pokemonS";
+	src: url("assets/fonts/Pokemon_Solid.ttf");
+}
+
+body {
+    margin: 0;
+    background: url($imagePath + 'wallpaper.png') no-repeat;
+    background-size: cover;
+    font-family: "pokemonS";
+    line-height: 1;
+}
+
+body, #app, #app > div {
+    min-height: 100vh;
+}
+
+@import "home";
+@import "generation";
+@import "type";

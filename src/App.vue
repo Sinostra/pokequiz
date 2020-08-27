@@ -1,28 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Home v-if="$store.state.currentComp == 'Language'"/>
+    <Generation v-if="$store.state.currentComp == 'Generation'"/>
+    <Type v-if="$store.state.currentComp == 'Type'"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home.vue'
+import Generation from './components/Generation.vue'
+import Type from './components/Type.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Home,
+    Generation,
+    Type
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import "assets/scss/style.scss";
 </style>

@@ -1,0 +1,93 @@
+.type {
+    padding-top: 20px;
+
+    @media screen and (min-width: 1024px) {
+        padding-top: 100px;
+    }
+
+    .instruction {
+        text-align: center;
+        font-family: "pokemonS";
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
+
+    .error-msg {
+        text-align: center;
+        font-size: 15px;
+        padding-bottom: 20px;
+        color: #ff0000;
+        opacity: 0;
+
+        &.displayed {
+            opacity: 1;
+        }
+
+        &.transition {
+            transition: ease-in 1s;
+        }
+    }
+
+    .checkbox {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-color: #f1f1f1;
+        }
+
+        &.checked {
+            background-image: url($imagePath + 'check.png');
+        }
+    }
+
+    .label {
+        padding-left: 10px;
+    }
+
+    .all-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+
+    .types-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        @media screen and (min-width: 1024px) {
+            flex-direction: row;
+        }
+
+        .types-box {
+            .specific-type {
+                display: flex;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .btn-wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 50px 0 20px;
+
+        .btn {
+            background: #fff;
+            border-radius: 20px;
+            padding:  10px 20px 15px;
+            cursor: pointer;
+
+            &:hover {
+                background: #f1f1f1;
+            }
+        }
+    }
+}
