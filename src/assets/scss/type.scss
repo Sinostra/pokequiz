@@ -45,6 +45,15 @@
         &.checked {
             background-image: url($imagePath + 'check.png');
         }
+
+        &.disabled {
+            background-image: url($imagePath + 'red-cross.png');
+            cursor: not-allowed;
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
     }
 
     .label {
@@ -55,6 +64,10 @@
         display: flex;
         justify-content: center;
         padding-bottom: 50px;
+
+        .checkbox.active {
+            background-image: url($imagePath + 'check.png');
+        }
     }
 
     .types-wrapper {

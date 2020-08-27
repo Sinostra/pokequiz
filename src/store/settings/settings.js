@@ -1,7 +1,8 @@
 export default {
     state: {
         selectedGeneration: [],
-        selectedTypes: []
+        selectedTypes: [],
+        selectedDifficulty: ""
     },
 
     mutations: {
@@ -11,6 +12,10 @@ export default {
 
         setselectedTypes(state, selectedTypes) {
             state.selectedTypes = selectedTypes;
+        },
+
+        setselectedDifficulty(state, selectedDifficulty) {
+            state.selectedDifficulty = selectedDifficulty;
         }
     },
 
@@ -21,6 +26,10 @@ export default {
 
         setselectedTypes(context, selectedTypes) {
             context.commit('setselectedTypes', selectedTypes)
+        },
+
+        setselectedDifficulty(context, selectedDifficulty) {
+            context.commit('setselectedDifficulty', selectedDifficulty)
         }
     }
 }

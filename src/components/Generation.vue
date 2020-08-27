@@ -54,12 +54,6 @@
 export default {
   name: 'Generation',
 
-  data: function() {
-    return {
-      //chosenPokemon
-    }
-  },
-
   methods: {
     clickGeneration: function(element) {
         element.target.classList.toggle("active")

@@ -33,5 +33,29 @@ export default {
         "english" : "Next",
         "french" : "Suivant",
         "german" : "Weiter"
+    },
+
+    difficultyInstruct: {
+        "english" : "Finally, select a difficulty.",
+        "french" : "Enfin, choisissez une difficulté.",
+        "german" : "Schließlich, wählen Sie eine Schwierigkeit."
+    },
+
+    easyText: {
+        "english" : "Easy",
+        "french" : "Facile",
+        "german" : "Leicht"
+    },
+
+    mediumText: {
+        "english" : "Medium",
+        "french" : "Moyen",
+        "german" : "Medium"
+    },
+
+    hardText: {
+        "english" : "Hard",
+        "french" : "Difficile",
+        "german" : "Schwierig"
     }
 }
