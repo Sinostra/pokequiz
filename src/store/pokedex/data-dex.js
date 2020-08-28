@@ -1189,6 +1189,326 @@ export default {
         "type": ["water"]
     },
 
+    "120": {
+        "name": {
+            "english": "Staryu",
+            "french": "Stari",
+            "german": "Sterndu"
+        },
+        "gen": "1",
+        "type": ["water"]
+    },
+
+    "121": {
+        "name": {
+            "english": "Starmie",
+            "french": "Staross",
+            "german": "Starmie"
+        },
+        "gen": "1",
+        "type": ["water", "psychic"]
+    },
+
+    "122": {
+        "name": {
+            "english": "Mr. Mime",
+            "french": "M. Mime",
+            "german": "Pantimos"
+        },
+        "gen": "1",
+        "type": ["psychic", "fairy"]
+    },
+
+    "123": {
+        "name": {
+            "english": "Scyther",
+            "french": "Insécateur",
+            "german": "Sichlor"
+        },
+        "gen": "1",
+        "type": ["bug", "flying"]
+    },
+
+    "124": {
+        "name": {
+            "english": "Jynx",
+            "french": "Lippoutou",
+            "german": "Rossana"
+        },
+        "gen": "1",
+        "type": ["ice", "psychic"]
+    },
+
+    "125": {
+        "name": {
+            "english": "Electabuzz",
+            "french": "Élektek",
+            "german": "Elektek"
+        },
+        "gen": "1",
+        "type": ["electric"]
+    },
+
+    "126": {
+        "name": {
+            "english": "Magmar",
+            "french": "Magmar",
+            "german": "Magmar"
+        },
+        "gen": "1",
+        "type": ["fire"]
+    },
+
+    "127": {
+        "name": {
+            "english": "Pinsir",
+            "french": "Scarabrute",
+            "german": "Pinsir"
+        },
+        "gen": "1",
+        "type": ["bug"]
+    },
+
+    "128": {
+        "name": {
+            "english": "Tauros",
+            "french": "Tauros",
+            "german": "Tauros"
+        },
+        "gen": "1",
+        "type": ["normal"]
+    },
+
+    "129": {
+        "name": {
+            "english": "Magikarp",
+            "french": "Magicarpe",
+            "german": "Karpador"
+        },
+        "gen": "1",
+        "type": ["water"]
+    },
+
+    "130": {
+        "name": {
+            "english": "Gyarados",
+            "french": "Léviator",
+            "german": "Garados"
+        },
+        "gen": "1",
+        "type": ["water", "flying"]
+    },
+
+    "131": {
+        "name": {
+            "english": "Lapras",
+            "french": "Lokhlass",
+            "german": "Lapras"
+        },
+        "gen": "1",
+        "type": ["water", "ice"]
+    },
+
+    "132": {
+        "name": {
+            "english": "Ditto",
+            "french": "Métamorph",
+            "german": "Ditto"
+        },
+        "gen": "1",
+        "type": ["normal"]
+    },
+
+    "133": {
+        "name": {
+            "english": "Eevee",
+            "french": "Évoli",
+            "german": "Evoli"
+        },
+        "gen": "1",
+        "type": ["normal"]
+    },
+
+    "134": {
+        "name": {
+            "english": "Vaporeon",
+            "french": "Aquali",
+            "german": "Aquana"
+        },
+        "gen": "1",
+        "type": ["water"]
+    },
+
+    "135": {
+        "name": {
+            "english": "Jolteon",
+            "french": "Voltali",
+            "german": "Blitza"
+        },
+        "gen": "1",
+        "type": ["electric"]
+    },
+
+    "136": {
+        "name": {
+            "english": "Flareon",
+            "french": "Pyroli",
+            "german": "Flamara"
+        },
+        "gen": "1",
+        "type": ["fire"]
+    },
+
+    "137": {
+        "name": {
+            "english": "Porygon",
+            "french": "Porygon",
+            "german": "Porygon"
+        },
+        "gen": "1",
+        "type": ["normal"]
+    },
+
+    "138": {
+        "name": {
+            "english": "Omanyte",
+            "french": "Amonita",
+            "german": "Amonitas"
+        },
+        "gen": "1",
+        "type": ["rock", "water"]
+    },
+
+    "139": {
+        "name": {
+            "english": "Omastar",
+            "french": "Amonistar",
+            "german": "Amoroso"
+        },
+        "gen": "1",
+        "type": ["rock", "water"]
+    },
+
+    "140": {
+        "name": {
+            "english": "Kabuto",
+            "french": "Kabuto",
+            "german": "Kabuto"
+        },
+        "gen": "1",
+        "type": ["rock", "water"]
+    },
+
+    "141": {
+        "name": {
+            "english": "Kabutops",
+            "french": "Kabutops",
+            "german": "Kabutops"
+        },
+        "gen": "1",
+        "type": ["rock", "water"]
+    },
+
+    "142": {
+        "name": {
+            "english": "Aerodactyl",
+            "french": "Ptéra",
+            "german": "Aerodactyl"
+        },
+        "gen": "1",
+        "type": ["rock", "flying"]
+    },
+
+    "143": {
+        "name": {
+            "english": "Snorlax",
+            "french": "Ronflex",
+            "german": "Relaxo"
+        },
+        "gen": "1",
+        "type": ["normal"]
+    },
+
+    "144": {
+        "name": {
+            "english": "Articuno",
+            "french": "Artikodin",
+            "german": "Arktos"
+        },
+        "gen": "1",
+        "type": ["ice", "flying"]
+    },
+
+    "145": {
+        "name": {
+            "english": "Zapdos",
+            "french": "Électhor",
+            "german": "Zapdos"
+        },
+        "gen": "1",
+        "type": ["electric", "flying"]
+    },
+
+    "146": {
+        "name": {
+            "english": "Moltres",
+            "french": "Sulfura",
+            "german": "Lavados"
+        },
+        "gen": "1",
+        "type": ["fire", "flying"]
+    },
+
+    "147": {
+        "name": {
+            "english": "Dratini",
+            "french": "Minidraco",
+            "german": "Dratini"
+        },
+        "gen": "1",
+        "type": ["dragon"]
+    },
+
+    "148": {
+        "name": {
+            "english": "Dragonair",
+            "french": "Draco",
+            "german": "Dragonair"
+        },
+        "gen": "1",
+        "type": ["dragon"]
+    },
+
+    "149": {
+        "name": {
+            "english": "Dragonite",
+            "french": "Dracolosse",
+            "german": "Dragoran"
+        },
+        "gen": "1",
+        "type": ["dragon", "flying"]
+    },
+
+    "150": {
+        "name": {
+            "english": "Mewtwo",
+            "french": "Mewtwo",
+            "german": "Mewtu"
+        },
+        "gen": "1",
+        "type": ["psychic"]
+    },
+
+    "151": {
+        "name": {
+            "english": "Mew",
+            "french": "Mew",
+            "german": "Mew"
+        },
+        "gen": "1",
+        "type": ["psychic"]
+    },
+
     "155": {
         "name": {
             "english": "Cyndaquil",
