@@ -1,32 +1,4 @@
 .generation {
-    padding-top: 20px;
-
-    @media screen and (min-width: 1024px) {
-        padding-top: 100px;
-    }
-
-    .instruction {
-        text-align: center;
-        font-size: 25px;
-        padding-bottom: 20px;
-        line-height: 1;
-    }
-
-    .error-msg {
-        text-align: center;
-        font-size: 15px;
-        padding-bottom: 20px;
-        color: #ff0000;
-        opacity: 0;
-
-        &.displayed {
-            opacity: 1;
-        }
-
-        &.transition {
-            transition: ease-in 1s;
-        }
-    }
 
     .gen-wrapper {
         display: flex;

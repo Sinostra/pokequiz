@@ -147,6 +147,7 @@ export default {
                 })
 
                 this.$store.dispatch("setselectedTypes", typesList)
+                this.$store.dispatch("filterByType", typesList)
                 this.$store.dispatch("changecurrentComp")
             }
         }

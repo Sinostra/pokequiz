@@ -78,6 +78,7 @@ export default {
             })
 
             this.$store.dispatch("setselectedGeneration", gensNumber)
+            this.$store.dispatch("filterByGen", gensNumber)
             this.$store.dispatch("changecurrentComp")
         }
     }

@@ -39,6 +39,7 @@ export default {
 
     selectLanguage: function(element){
       this.$store.dispatch("chooseLanguage", element.target.classList[0])
+      this.$store.dispatch("pokedexLanguage", element.target.classList[0])
       this.$store.dispatch("changecurrentComp")
     }
   }

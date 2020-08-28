@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import localisation from './localisation/localisation'
 import settings from './settings/settings'
+import pokedex from './pokedex/pokedex'
 
 export default createStore({
   state: {
@@ -20,6 +21,7 @@ export default createStore({
   },
   modules: {
     localisation,
-    settings
+    settings,
+    pokedex
   }
 })
