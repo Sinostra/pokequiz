@@ -1,10 +1,27 @@
 <template>
     <div class="game">
-        <div class="pokemonTable">
-            <div class="block" v-for="object in displayDex" :key="object">
-                <div v-for="pokemon in object" :key="pokemon">
-                    <div v-for="(data, index) in pokemon" :key="data">
-                        {{index}} : {{data.name}}
+        <div class="table-wrapper">
+            <div class="pokemonTable">
+                <div class="block" v-for="object in displayDex" :key="object">
+                    <div class="tableHead">
+                        <div class="number">#</div>
+                        <div class="name">Name</div>
+                        <div class="type1">Type 1</div>
+                        <div class="type2">Type 2</div>
+                    </div>
+                    <div v-for="pokemon in object" :key="pokemon">
+                        <div :id="index" class="pokemon-data" v-for="(data, index) in pokemon" :key="data">
+                            <div class="data-number">{{index}}</div>
+                            <div class="data-name">{{data.name}}</div>
+
+                            <div class="data-type1">
+                                <img :src="getUrl(data.type[0])">
+                            </div>
+
+                            <div class="data-type2">
+                                <img v-if="data.type[1]" :src="getUrl(data.type[1])">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -25,6 +42,10 @@ export default {
     },
 
     methods: {
+        getUrl(type) {
+            return require('../assets/img/languages/' + this.$store.state.localisation.chosenLang + '/types/'+ type + '.png')
+        },
+
         splitPokedex() {
             //Nombre de pokémons à afficher par colonne
             var splitDex = Math.floor(this.numberOfPokemons / this.splitNumber)

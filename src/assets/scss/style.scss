@@ -1,5 +1,7 @@
 $imagePath: "assets/img/";
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 @font-face {
 	font-family: "pokemonH";
 	src: url("assets/fonts/Pokemon_Hollow.ttf");
@@ -10,13 +12,17 @@ $imagePath: "assets/img/";
 	src: url("assets/fonts/Pokemon_Solid.ttf");
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
 
 #app > div {
     margin: 0;
-    background: url($imagePath + 'wallpaper.png') no-repeat;
+    // background: url($imagePath + 'wallpaper.png') no-repeat;
     background-size: cover;
     font-family: "pokemonS";
     background-color: #79C9FA;
