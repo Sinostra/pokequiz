@@ -46,7 +46,6 @@ export default {
                 }
             }
 
-            console.log(state.currentDex)
         }
     },
 
