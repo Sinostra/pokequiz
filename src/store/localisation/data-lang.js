@@ -57,5 +57,11 @@ export default {
         "english" : "Hard",
         "french" : "Difficile",
         "german" : "Schwierig"
+    },
+
+    tableTypeText: {
+        "english" : "Type",
+        "french" : "Type",
+        "german" : "Typ"
     }
 }

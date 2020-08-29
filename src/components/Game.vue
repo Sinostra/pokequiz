@@ -5,9 +5,9 @@
                 <div class="block" v-for="object in displayDex" :key="object">
                     <div class="tableHead">
                         <div class="number">#</div>
-                        <div class="name">Name</div>
-                        <div class="type1">Type 1</div>
-                        <div class="type2">Type 2</div>
+                        <div class="name">Pokémon</div>
+                        <div class="type1">{{$store.state.localisation.dataLang['tableTypeText']}} 1</div>
+                        <div class="type2">{{$store.state.localisation.dataLang['tableTypeText']}} 2</div>
                     </div>
                     <div v-for="pokemon in object" :key="pokemon">
                         <div :id="index" class="pokemon-data" v-for="(data, index) in pokemon" :key="data">
@@ -36,7 +36,7 @@ export default {
     data: function(){
         return {
             numberOfPokemons: 0,
-            splitNumber: 4,
+            splitNumber: 1,
             displayDex: [],
         }
     },
@@ -70,10 +70,18 @@ export default {
 
     mounted: function() {
         this.numberOfPokemons = Object.keys(this.$store.state.pokedex.currentDex).length
-        if(this.numberOfPokemons >= 20) {
-            this.splitPokedex()
-        }
-        console.log(this.displayDex)
+
+        if(this.numberOfPokemons < 20) this.splitNumber = 1
+
+        if(this.numberOfPokemons >= 20 && this.numberOfPokemons < 100) this.splitNumber = 2
+
+        if(this.numberOfPokemons >= 100 && this.numberOfPokemons < 200) this.splitNumber = 3
+
+        if(this.numberOfPokemons >= 200) this.splitNumber = 4
+
+        this.splitPokedex()
+        // console.log(this.$store.state.pokedex.currentDex)
+        // console.log(this.displayDex)
     }
 }
 </script>

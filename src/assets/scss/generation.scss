@@ -12,6 +12,7 @@
         .gen-box {
             display: flex;
             align-items: baseline;
+            margin-bottom: 20px;
             
             .gen {
                 width: 60px;
@@ -44,7 +45,7 @@
     .btn-wrapper {
         display: flex;
         justify-content: center;
-        padding: 50px 0 20px;
+        padding: 30px 0 20px;
 
         .btn {
             background: #fff;
