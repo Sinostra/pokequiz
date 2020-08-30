@@ -12,11 +12,17 @@ export default createStore({
     changecurrentComp(state) {
       var currentIndex = state.compOrder.indexOf(state.currentComp)
       state.currentComp = state.compOrder[currentIndex + 1]
+    },
+    rePlay(state) {
+      state.currentComp = "Generation"
     }
   },
   actions: {
     changecurrentComp(context) {
       context.commit('changecurrentComp')
+    },
+    rePlay(context) {
+      context.commit('rePlay')
     }
   },
   modules: {

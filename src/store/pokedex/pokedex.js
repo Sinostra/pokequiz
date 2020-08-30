@@ -8,7 +8,11 @@ export default {
 
     mutations: {
         refillDex(state) {
-            state.currentDex = state.fullDex
+            for (const property in state.currentDex) {
+                delete state.currentDex[property]
+            }
+
+            Object.assign(state.currentDex, state.fullDex)
         },
 
         pokedexLanguage(state, chosenLanguage) {

@@ -3,17 +3,42 @@
 
         <div v-if="gameReady" class="interface-wrapper">
 
-            <div class="score-wrapper">
-                <div>{{$store.state.localisation.dataLang['scoreText']}} {{score}}/{{numberOfPokemons}}</div>
+            <div class="gameInfos">
+                <div class="score-wrapper">
+                    <div class="points">
+                        <div>{{$store.state.localisation.dataLang['scoreText']}} </div>
+                        <div>{{score}}/{{numberOfPokemons}}</div>
+                    </div>
+                    <div v-if="gameState == 'finished'" class="percentage">
+                        ({{parseInt((score / numberOfPokemons) * 100)}}%)
+                    </div>
+                    
+                </div>
+
+                <div class="timer-wrapper">
+                    <div>{{$store.state.localisation.dataLang['remainingTimeText']}}</div>
+                    <div>{{displayMinsAndSecs(totalTime)}}</div>
+                </div>
             </div>
 
-            <div class="input-wrapper">
-                <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
-                <input v-model="enteredName" v-on:keyup="checkEnteredPokemon" type="text">
-            </div>
+            <div class="interactive-wrapper">
 
-            <div class="btn-wrapper">
-                <div v-on:click="fillMisssing()" class="giveUp-btn btn">{{$store.state.localisation.dataLang['giveUpText']}}</div>
+                <div v-if="gameState == 'toStart'" class="btn-wrapper">
+                    <div v-on:click="startGame()" class="play btn">{{$store.state.localisation.dataLang['playText']}}</div>
+                </div>
+
+                <div v-if="gameState == 'playing'" class="input-wrapper">
+                    <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
+                    <input v-model="enteredName" v-on:keyup="checkEnteredPokemon" type="text">
+                </div>
+
+                <div v-if="gameState == 'playing' || gameState == 'pause'" class="btn-wrapper middleBtn">
+                    <div v-on:click="finishGame()" class="giveUp btn">{{$store.state.localisation.dataLang['giveUpText']}}</div>
+                </div>
+
+                <div v-if="gameState == 'finished'" class="btn-wrapper">
+                    <div v-on:click="playAgain()" class="playAgain btn">{{$store.state.localisation.dataLang['playAgainText']}}</div>
+                </div>
             </div>
 
         </div>
@@ -54,11 +79,14 @@ export default {
     data: function(){
         return {
             gameReady: false,
+            gameState: 'toStart',
             numberOfPokemons: 0,
             splitNumber: 1,
             displayDex: [],
             enteredName: '',
-            score: 0
+            score: 0,
+            totalTime: 0,
+            interval: undefined
         }
     },
 
@@ -104,6 +132,11 @@ export default {
 
                     delete this.$store.state.pokedex.currentDex[index]
                     this.score++
+
+                    //Check victoire
+                    if(this.score == this.numberOfPokemons) {
+                        this.finishGame()
+                    }
                     //Rappel de la fonction au cas où un autre Pokémon porte le même nom
                     this.checkEnteredPokemon()
                     this.enteredName = ''
@@ -132,6 +165,52 @@ export default {
                 currentCell.classList.add('not-found')
                 currentCell.textContent = currentName
             }
+        },
+
+        displayMinsAndSecs(secs){
+            var remainSecs
+            var remainMinutes
+
+            if(secs > 59) {
+                remainSecs = secs % 60
+                remainMinutes = (secs - remainSecs)/60
+            }
+
+            else {
+                remainSecs = secs
+                remainMinutes = 0
+            }
+
+            if(remainSecs < 10) remainSecs = "0"+ remainSecs
+            if(remainMinutes < 10) remainMinutes = "0"+ remainMinutes
+
+            return remainMinutes + ':' + remainSecs
+        },
+
+        startGame(){
+            this.interval = setInterval(() => {
+                this.totalTime--
+                if(this.totalTime == 0) {
+                    this.finishGame()
+                }
+            }, 1000);
+            this.gameState = "playing"
+        },
+
+        finishGame(){
+            clearInterval(this.interval)
+            this.gameState = "finished"
+            this.fillMisssing()
+        },
+
+        pauseGame(){
+            clearInterval(this.interval)
+            this.gameState = "paused"
+        },
+
+        playAgain(){
+            this.$store.dispatch("refillDex")
+            this.$store.dispatch("rePlay")
         }
     },
 
@@ -146,6 +225,8 @@ export default {
         else if(this.numberOfPokemons >= 100 && this.numberOfPokemons < 200) this.splitNumber = 3
 
         else if(this.numberOfPokemons >= 200) this.splitNumber = 4
+
+        this.totalTime = this.$store.state.settings.secondsPerPokemon[this.$store.state.settings.selectedDifficulty] * this.numberOfPokemons
 
         setTimeout(() => {
             document.getElementById('quiz-wrapper').classList.remove('background')
