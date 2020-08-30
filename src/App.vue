@@ -1,5 +1,5 @@
 <template>
-  <div :class="$store.state.currentComp == 'Game' ? 'in-game' : ''">
+  <div id="quiz-wrapper" class="background" :class="$store.state.currentComp == 'Game' ? 'in-game' : ''">
     <Home v-if="$store.state.currentComp == 'Language'"/>
     <Generation v-if="$store.state.currentComp == 'Generation'"/>
     <Type v-if="$store.state.currentComp == 'Type'"/>
@@ -23,7 +23,7 @@ export default {
     Type,
     Difficulty,
     Game
-  }
+  },
 }
 </script>
 

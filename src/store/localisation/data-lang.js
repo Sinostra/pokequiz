@@ -63,5 +63,41 @@ export default {
         "english" : "Type",
         "french" : "Type",
         "german" : "Typ"
+    },
+
+    playText: {
+        "english" : "Play",
+        "french" : "Jouer",
+        "german" : "Spielen"
+    },
+
+    giveUpText: {
+        "english" : "Give up",
+        "french" : "Abandonner",
+        "german" : "Aufgeben"
+    },
+
+    playAgainText: {
+        "english" : "Play again",
+        "french" : "Rejouer",
+        "german" : "Erneut spielen"
+    },
+
+    scoreText: {
+        "english" : "Score :",
+        "french" : "Score :",
+        "german" : "Punktzahl :"
+    },
+
+    remainingTimeText: {
+        "english" : "Remaining time :",
+        "french" : "Temps restant :",
+        "german" : "Verbleibende Zeit :"
+    },
+
+    enterNameInstruct: {
+        "english" : "Enter the names here :",
+        "french" : "Entrez les noms ici :",
+        "german" : "Geben Sie hier die namen ein :"
     }
 }

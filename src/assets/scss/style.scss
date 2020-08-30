@@ -22,13 +22,17 @@ body {
 
 #app > div {
     margin: 0;
-    // background: url($imagePath + 'wallpaper.png') no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
     font-family: "pokemonS";
     background-color: #79C9FA;
     line-height: 1;
     transition: linear 1s;
     min-height: 100vh;
+
+    &.background {
+        background-image: url($imagePath + 'wallpaper.png');
+    }
 
     &.in-game {
         background-position-y: 500px;
