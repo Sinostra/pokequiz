@@ -19,6 +19,11 @@
                     <div>{{$store.state.localisation.dataLang['remainingTimeText']}}</div>
                     <div>{{displayMinsAndSecs(totalTime)}}</div>
                 </div>
+
+                <div class="timer-btn-wrapper">
+                    <div v-if="gameState == 'playing'" v-on:click="pauseGame()" class="pauseBtn"></div>
+                    <div v-if="gameState == 'paused'" v-on:click="startGame()" class="resumeBtn"></div>
+                </div>
             </div>
 
             <div class="interactive-wrapper">
@@ -32,7 +37,7 @@
                     <input v-model="enteredName" v-on:keyup="checkEnteredPokemon" type="text">
                 </div>
 
-                <div v-if="gameState == 'playing' || gameState == 'pause'" class="btn-wrapper middleBtn">
+                <div v-if="gameState == 'playing' || gameState == 'paused'" class="btn-wrapper middleBtn">
                     <div v-on:click="finishGame()" class="giveUp btn">{{$store.state.localisation.dataLang['giveUpText']}}</div>
                 </div>
 

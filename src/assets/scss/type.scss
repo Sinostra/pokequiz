@@ -15,11 +15,11 @@
         }
 
         &.checked {
-            background-image: url($imagePath + 'check.png');
+            background-image: url($imagePath + 'ui/check.png');
         }
 
         &.disabled {
-            background-image: url($imagePath + 'red-cross.png');
+            background-image: url($imagePath + 'ui/red-cross.png');
             cursor: not-allowed;
 
             &:hover {
@@ -38,7 +38,7 @@
         padding-bottom: 50px;
 
         .checkbox.active {
-            background-image: url($imagePath + 'check.png');
+            background-image: url($imagePath + 'ui/check.png');
         }
     }
 

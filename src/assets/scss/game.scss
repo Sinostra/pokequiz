@@ -25,7 +25,6 @@
                 align-items: center;
                 flex-direction: column;
                 @media screen and (min-width: 768px) {
-                    position: absolute;
                     order: 0;
                     flex-direction: row;
                 }
@@ -45,6 +44,29 @@
                 margin: 0 auto 20px;
                 @media screen and (min-width: 768px) {
                     margin-bottom: 0;
+                }
+            }
+
+            .timer-btn-wrapper {
+                order: 1;
+                min-width: 50px;
+
+                .pauseBtn, .resumeBtn {
+                    width: 50px;
+                    height: 50px;
+                    background-color: #43B581;
+                    background-size: 50% 50%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border-radius: 10px;
+                }
+
+                .pauseBtn {
+                    background-image: url($imagePath + 'ui/pause.png');
+                }
+
+                .resumeBtn {
+                    background-image: url($imagePath + 'ui/resume.png');
                 }
             }
         }
