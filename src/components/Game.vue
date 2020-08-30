@@ -1,9 +1,21 @@
 <template>
     <div class="game">
 
-        <div v-if="gameReady" class="input-wrapper">
-            <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
-            <input v-model="enteredName" v-on:keyup="checkEnteredPokemon" type="text">
+        <div v-if="gameReady" class="interface-wrapper">
+
+            <div class="score-wrapper">
+                <div>{{$store.state.localisation.dataLang['scoreText']}} {{score}}/{{numberOfPokemons}}</div>
+            </div>
+
+            <div class="input-wrapper">
+                <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
+                <input v-model="enteredName" v-on:keyup="checkEnteredPokemon" type="text">
+            </div>
+
+            <div class="btn-wrapper">
+                <div v-on:click="fillMisssing()" class="giveUp-btn btn">{{$store.state.localisation.dataLang['giveUpText']}}</div>
+            </div>
+
         </div>
 
         <div class="table-wrapper">
@@ -45,7 +57,8 @@ export default {
             numberOfPokemons: 0,
             splitNumber: 1,
             displayDex: [],
-            enteredName: ''
+            enteredName: '',
+            score: 0
         }
     },
 
@@ -79,8 +92,18 @@ export default {
             for(const index in this.$store.state.pokedex.currentDex) {
                 var currentName = this.$store.state.pokedex.currentDex[index]['name']
                 if(this.replaceAllSpecialChars(currentName) == this.replaceAllSpecialChars(this.enteredName)) {
-                    document.querySelector('#number' + index + ' .data-name').textContent = currentName
+                    var currentCell = document.querySelector('#number' + index + ' .data-name')
+                    currentCell.textContent = currentName
+
+                    currentCell.classList.add('valid-answer')
+
+                    setTimeout(() => {
+                        currentCell.classList.add('transition')
+                        currentCell.classList.remove('valid-answer')
+                    },1)
+
                     delete this.$store.state.pokedex.currentDex[index]
+                    this.score++
                     //Rappel de la fonction au cas où un autre Pokémon porte le même nom
                     this.checkEnteredPokemon()
                     this.enteredName = ''
@@ -97,9 +120,18 @@ export default {
             newString = newString.replace(/[û,ü,ù]/g, 'u')
             newString = newString.replace(/[ô,ö]/g, 'o')
             newString = newString.replace(/[œ]/g, 'oe')
-            newString = newString.replace(/[' ','.','♀','♂']/g, '')
+            newString = newString.replace(/[' ','.',':','♀','♂']/g, '')
             newString = newString.replace(/-/g, '')
             return newString
+        },
+
+        fillMisssing() {
+            for(const index in this.$store.state.pokedex.currentDex) {
+                var currentName = this.$store.state.pokedex.currentDex[index]['name']
+                var currentCell = document.querySelector('#number' + index + ' .data-name')
+                currentCell.classList.add('not-found')
+                currentCell.textContent = currentName
+            }
         }
     },
 

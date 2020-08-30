@@ -1,11 +1,30 @@
 .game {
     padding: 20px;
 
-    .input-wrapper {
-        .enterNamesInstruct {
+    .interface-wrapper {
+
+        .score-wrapper {
             padding-bottom: 20px;
         }
+
+        .input-wrapper {
+            .enterNamesInstruct {
+                padding-bottom: 20px;
+            }
+        }
+
+        .btn-wrapper {
+            display: flex;
+            padding-top: 20px;
+            .btn {
+                padding: 20px;
+                border-radius: 5px;
+                background: #F04747;
+                cursor: pointer;
+            }
+        }
     }
+
 
     .table-wrapper {
         display: flex;
@@ -100,6 +119,18 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+
+                        &.valid-answer {
+                            background-color: #43B581;
+                        }
+
+                        &.not-found {
+                            color: #F04747;
+                        }
+
+                        &.transition {
+                            transition: ease-in .3s;
+                        }
                     }
     
                     .data-type1 {

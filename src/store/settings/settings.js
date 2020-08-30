@@ -2,7 +2,12 @@ export default {
     state: {
         selectedGeneration: [],
         selectedTypes: [],
-        selectedDifficulty: ""
+        selectedDifficulty: "",
+        secondsPerPokemon: {
+            "easy" : 12,
+            "medium" : 10,
+            "hard" : 8
+        }
     },
 
     mutations: {
