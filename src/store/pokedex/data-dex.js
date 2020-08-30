@@ -2508,4 +2508,704 @@ export default {
         "gen": "2",
         "type": ["psychic", "grass"]
     },
+
+    "252": {
+        "name": {
+            "english": "Treecko",
+            "french": "Arcko",
+            "german": "Geckarbor"
+        },
+        "gen": "3",
+        "type": ["grass"]
+    },
+
+    "253": {
+        "name": {
+            "english": "Grovyle",
+            "french": "Massko",
+            "german": "Reptain"
+        },
+        "gen": "3",
+        "type": ["grass"]
+    },
+
+    "254": {
+        "name": {
+            "english": "Sceptile",
+            "french": "Jungko",
+            "german": "Gewaldro"
+        },
+        "gen": "3",
+        "type": ["grass"]
+    },
+
+    "255": {
+        "name": {
+            "english": "Torchic",
+            "french": "Poussifeu",
+            "german": "Flemmli"
+        },
+        "gen": "3",
+        "type": ["fire"]
+    },
+
+    "256": {
+        "name": {
+            "english": "Combusken",
+            "french": "Galifeu",
+            "german": "Jungglut"
+        },
+        "gen": "3",
+        "type": ["fire", "fighting"]
+    },
+
+    "257": {
+        "name": {
+            "english": "Blaziken",
+            "french": "Braségali",
+            "german": "Lohgock"
+        },
+        "gen": "3",
+        "type": ["fire", "fighting"]
+    },
+
+    "258": {
+        "name": {
+            "english": "Mudkip",
+            "french": "Gobou",
+            "german": "Hydropi"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "259": {
+        "name": {
+            "english": "Marshtomp",
+            "french": "Flobio",
+            "german": "Moorabbel"
+        },
+        "gen": "3",
+        "type": ["water", "ground"]
+    },
+
+    "260": {
+        "name": {
+            "english": "Swampert",
+            "french": "Laggron",
+            "german": "Sumpex"
+        },
+        "gen": "3",
+        "type": ["water", "ground"]
+    },
+
+    "261": {
+        "name": {
+            "english": "Poochyena",
+            "french": "Medhyèna",
+            "german": "Fiffyen"
+        },
+        "gen": "3",
+        "type": ["dark"]
+    },
+
+    "262": {
+        "name": {
+            "english": "Mightyena",
+            "french": "Grahyèna",
+            "german": "Magnayen"
+        },
+        "gen": "3",
+        "type": ["dark"]
+    },
+
+    "263": {
+        "name": {
+            "english": "Zigzagoon",
+            "french": "Zigzaton",
+            "german": "Zigzachs"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "264": {
+        "name": {
+            "english": "Linoone",
+            "french": "Linéon",
+            "german": "Geradaks"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "265": {
+        "name": {
+            "english": "Wurmple",
+            "french": "Chenipotte",
+            "german": "Waumpel"
+        },
+        "gen": "3",
+        "type": ["bug"]
+    },
+
+    "266": {
+        "name": {
+            "english": "Silcoon",
+            "french": "Armulys",
+            "german": "Schaloko"
+        },
+        "gen": "3",
+        "type": ["bug"]
+    },
+
+    "267": {
+        "name": {
+            "english": "Beautifly",
+            "french": "Charmillon",
+            "german": "Papinella"
+        },
+        "gen": "3",
+        "type": ["bug", "flying"]
+    },
+
+    "268": {
+        "name": {
+            "english": "Cascoon",
+            "french": "Blindalys",
+            "german": "Panekon"
+        },
+        "gen": "3",
+        "type": ["bug"]
+    },
+
+    "269": {
+        "name": {
+            "english": "Dustox",
+            "french": "Papinox",
+            "german": "Pudox"
+        },
+        "gen": "3",
+        "type": ["bug", "poison"]
+    },
+
+    "270": {
+        "name": {
+            "english": "Lotad",
+            "french": "Nénupiot",
+            "german": "Loturzel"
+        },
+        "gen": "3",
+        "type": ["water", "grass"]
+    },
+
+    "271": {
+        "name": {
+            "english": "Lombre",
+            "french": "Lombre",
+            "german": "Lombrero"
+        },
+        "gen": "3",
+        "type": ["water", "grass"]
+    },
+
+    "272": {
+        "name": {
+            "english": "Ludicolo",
+            "french": "Ludicolo",
+            "german": "Kappalores"
+        },
+        "gen": "3",
+        "type": ["water", "grass"]
+    },
+
+    "273": {
+        "name": {
+            "english": "Seedot",
+            "french": "Grainipiot",
+            "german": "Samurzel"
+        },
+        "gen": "3",
+        "type": ["grass"]
+    },
+
+    "274": {
+        "name": {
+            "english": "Nuzleaf",
+            "french": "Pifeuil",
+            "german": "Blanas"
+        },
+        "gen": "3",
+        "type": ["grass", "dark"]
+    },
+
+    "275": {
+        "name": {
+            "english": "Shiftry",
+            "french": "Tengalice",
+            "german": "Tengulist"
+        },
+        "gen": "3",
+        "type": ["grass", "dark"]
+    },
+
+    "276": {
+        "name": {
+            "english": "Taillow",
+            "french": "Nirondelle",
+            "german": "Schwalbini"
+        },
+        "gen": "3",
+        "type": ["normal", "flying"]
+    },
+
+    "277": {
+        "name": {
+            "english": "Swellow",
+            "french": "Hélédelle",
+            "german": "Schwalboss"
+        },
+        "gen": "3",
+        "type": ["normal", "flying"]
+    },
+
+    "278": {
+        "name": {
+            "english": "Wingull",
+            "french": "Goélise",
+            "german": "Wingull"
+        },
+        "gen": "3",
+        "type": ["water", "flying"]
+    },
+
+    "279": {
+        "name": {
+            "english": "Pelipper",
+            "french": "Bekipan",
+            "german": "Pelipper"
+        },
+        "gen": "3",
+        "type": ["water", "flying"]
+    },
+
+    "280": {
+        "name": {
+            "english": "Ralts",
+            "french": "Tarsal",
+            "german": "Trasla"
+        },
+        "gen": "3",
+        "type": ["psychic", "fairy"]
+    },
+
+    "281": {
+        "name": {
+            "english": "Kirlia",
+            "french": "Kirlia",
+            "german": "Kirlia"
+        },
+        "gen": "3",
+        "type": ["psychic", "fairy"]
+    },
+
+    "282": {
+        "name": {
+            "english": "Gardevoir",
+            "french": "Gardevoir",
+            "german": "Guardevoir"
+        },
+        "gen": "3",
+        "type": ["psychic", "fairy"]
+    },
+
+    "283": {
+        "name": {
+            "english": "Surskit",
+            "french": "Arakdo",
+            "german": "Gehweiher"
+        },
+        "gen": "3",
+        "type": ["bug", "water"]
+    },
+
+    "284": {
+        "name": {
+            "english": "Masquerain",
+            "french": "Maskadra",
+            "german": "Maskeregen"
+        },
+        "gen": "3",
+        "type": ["bug", "flying"]
+    },
+
+    "285": {
+        "name": {
+            "english": "Shroomish",
+            "french": "Balignon",
+            "german": "Knilz"
+        },
+        "gen": "3",
+        "type": ["grass"]
+    },
+
+    "286": {
+        "name": {
+            "english": "Breloom",
+            "french": "Chapignon",
+            "german": "Kapilz"
+        },
+        "gen": "3",
+        "type": ["grass", "fighting"]
+    },
+
+    "287": {
+        "name": {
+            "english": "Slakoth",
+            "french": "Parecool",
+            "german": "Bummelz"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "288": {
+        "name": {
+            "english": "Vigoroth",
+            "french": "Vigoroth",
+            "german": "Muntier"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "289": {
+        "name": {
+            "english": "Slaking",
+            "french": "Monaflèmit",
+            "german": "Letarking"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "290": {
+        "name": {
+            "english": "Nincada",
+            "french": "Ningale",
+            "german": "Nincada"
+        },
+        "gen": "3",
+        "type": ["bug", "ground"]
+    },
+
+    "291": {
+        "name": {
+            "english": "Ninjask",
+            "french": "Ninjask",
+            "german": "Ninjask"
+        },
+        "gen": "3",
+        "type": ["bug", "flying"]
+    },
+
+    "292": {
+        "name": {
+            "english": "Shedinja",
+            "french": "Munja",
+            "german": "Ninjatom"
+        },
+        "gen": "3",
+        "type": ["bug", "ghost"]
+    },
+
+    "293": {
+        "name": {
+            "english": "Whismur",
+            "french": "Chuchmur",
+            "german": "Flurmel"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "294": {
+        "name": {
+            "english": "Loudred",
+            "french": "Ramboum",
+            "german": "Krakeelo"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "295": {
+        "name": {
+            "english": "Exploud",
+            "french": "Brouhabam",
+            "german": "Krawumms"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "296": {
+        "name": {
+            "english": "Makuhita",
+            "french": "Makuhita",
+            "german": "Makuhita"
+        },
+        "gen": "3",
+        "type": ["fighting"]
+    },
+
+    "297": {
+        "name": {
+            "english": "Hariyama",
+            "french": "Hariyama",
+            "german": "Hariyama"
+        },
+        "gen": "3",
+        "type": ["fighting"]
+    },
+
+    "298": {
+        "name": {
+            "english": "Azurill",
+            "french": "Azurill",
+            "german": "Azurill"
+        },
+        "gen": "3",
+        "type": ["normal", "fairy"]
+    },
+
+    "299": {
+        "name": {
+            "english": "Nosepass",
+            "french": "Tarinor",
+            "german": "Nasgnet"
+        },
+        "gen": "3",
+        "type": ["rock"]
+    },
+
+    "300": {
+        "name": {
+            "english": "Skitty",
+            "french": "Skitty",
+            "german": "Eneco"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "301": {
+        "name": {
+            "english": "Delcatty",
+            "french": "Delcatty",
+            "german": "Enekoro"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "302": {
+        "name": {
+            "english": "Sableye",
+            "french": "Ténéfix",
+            "german": "Zobiris"
+        },
+        "gen": "3",
+        "type": ["dark", "ghost"]
+    },
+
+    "303": {
+        "name": {
+            "english": "Mawile",
+            "french": "Mysdibule",
+            "german": "Flunkifer"
+        },
+        "gen": "3",
+        "type": ["steel", "fairy"]
+    },
+
+    "304": {
+        "name": {
+            "english": "Aron",
+            "french": "Galekid",
+            "german": "Stollunior"
+        },
+        "gen": "3",
+        "type": ["steel", "rock"]
+    },
+
+    "305": {
+        "name": {
+            "english": "Lairon",
+            "french": "Galegon",
+            "german": "Stollrak"
+        },
+        "gen": "3",
+        "type": ["steel", "rock"]
+    },
+
+    "306": {
+        "name": {
+            "english": "Aggron",
+            "french": "Galeking",
+            "german": "Stolloss"
+        },
+        "gen": "3",
+        "type": ["steel", "rock"]
+    },
+
+    "307": {
+        "name": {
+            "english": "Meditite",
+            "french": "Méditikka",
+            "german": "Meditie"
+        },
+        "gen": "3",
+        "type": ["fighting", "psychic"]
+    },
+
+    "308": {
+        "name": {
+            "english": "Medicham",
+            "french": "Charmina",
+            "german": "Meditalis"
+        },
+        "gen": "3",
+        "type": ["fighting", "psychic"]
+    },
+
+    "309": {
+        "name": {
+            "english": "Electrike",
+            "french": "Dynavolt",
+            "german": "Frizelbliz"
+        },
+        "gen": "3",
+        "type": ["electric"]
+    },
+
+    "310": {
+        "name": {
+            "english": "Manectric",
+            "french": "Élecsprint",
+            "german": "Voltenso"
+        },
+        "gen": "3",
+        "type": ["electric"]
+    },
+
+    "311": {
+        "name": {
+            "english": "Plusle",
+            "french": "Posipi",
+            "german": "Plusle"
+        },
+        "gen": "3",
+        "type": ["electric"]
+    },
+
+    "312": {
+        "name": {
+            "english": "Minun",
+            "french": "Négapi",
+            "german": "Minun"
+        },
+        "gen": "3",
+        "type": ["electric"]
+    },
+
+    "313": {
+        "name": {
+            "english": "Volbeat",
+            "french": "Muciole",
+            "german": "Volbeat"
+        },
+        "gen": "3",
+        "type": ["bug"]
+    },
+
+    "314": {
+        "name": {
+            "english": "Illumise",
+            "french": "Lumivole",
+            "german": "Illumise"
+        },
+        "gen": "3",
+        "type": ["bug"]
+    },
+
+    "315": {
+        "name": {
+            "english": "Roselia",
+            "french": "Rosélia",
+            "german": "Roselia"
+        },
+        "gen": "3",
+        "type": ["grass", "poison"]
+    },
+
+    "316": {
+        "name": {
+            "english": "Gulpin",
+            "french": "Gloupti",
+            "german": "Schluppuck"
+        },
+        "gen": "3",
+        "type": ["poison"]
+    },
+
+    "317": {
+        "name": {
+            "english": "Swalot",
+            "french": "Avaltout",
+            "german": "Schlukwech"
+        },
+        "gen": "3",
+        "type": ["poison"]
+    },
+
+    "318": {
+        "name": {
+            "english": "Carvanha",
+            "french": "Carvanha",
+            "german": "Kanivanha"
+        },
+        "gen": "3",
+        "type": ["water", "dark"]
+    },
+
+    "319": {
+        "name": {
+            "english": "Sharpedo",
+            "french": "Sharpedo",
+            "german": "Tohaido"
+        },
+        "gen": "3",
+        "type": ["water", "dark"]
+    },
+
+    "320": {
+        "name": {
+            "english": "Wailmer",
+            "french": "Wailmer",
+            "german": "Wailmer"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "321": {
+        "name": {
+            "english": "Wailord",
+            "french": "Wailord",
+            "german": "Wailord"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
 }
