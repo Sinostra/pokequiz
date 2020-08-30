@@ -3518,4 +3518,344 @@ export default {
         "gen": "3",
         "type": ["normal"]
     },
+
+    "353": {
+        "name": {
+            "english": "Shuppet",
+            "french": "Polichombr",
+            "german": "Shuppet"
+        },
+        "gen": "3",
+        "type": ["ghost"]
+    },
+
+    "354": {
+        "name": {
+            "english": "Banette",
+            "french": "Branette",
+            "german": "Banette"
+        },
+        "gen": "3",
+        "type": ["ghost"]
+    },
+
+    "355": {
+        "name": {
+            "english": "Duskull",
+            "french": "Skelénox",
+            "german": "Zwirrlicht"
+        },
+        "gen": "3",
+        "type": ["ghost"]
+    },
+
+    "356": {
+        "name": {
+            "english": "Dusclops",
+            "french": "Téraclope",
+            "german": "Zwirrklop"
+        },
+        "gen": "3",
+        "type": ["ghost"]
+    },
+
+    "357": {
+        "name": {
+            "english": "Tropius",
+            "french": "Tropius",
+            "german": "Tropius"
+        },
+        "gen": "3",
+        "type": ["grass", "flying"]
+    },
+
+    "358": {
+        "name": {
+            "english": "Chimecho",
+            "french": "Éoko",
+            "german": "Palimpalim"
+        },
+        "gen": "3",
+        "type": ["psychic"]
+    },
+
+    "359": {
+        "name": {
+            "english": "Absol",
+            "french": "Absol",
+            "german": "Absol"
+        },
+        "gen": "3",
+        "type": ["dark"]
+    },
+
+    "360": {
+        "name": {
+            "english": "Wynaut",
+            "french": "Okéoké",
+            "german": "Isso"
+        },
+        "gen": "3",
+        "type": ["psychic"]
+    },
+
+    "361": {
+        "name": {
+            "english": "Snorunt",
+            "french": "Stalgamin",
+            "german": "Schneppke"
+        },
+        "gen": "3",
+        "type": ["ice"]
+    },
+
+    "362": {
+        "name": {
+            "english": "Glalie",
+            "french": "Oniglali",
+            "german": "Firnontor"
+        },
+        "gen": "3",
+        "type": ["ice"]
+    },
+
+    "363": {
+        "name": {
+            "english": "Spheal",
+            "french": "Obalie",
+            "german": "Seemops"
+        },
+        "gen": "3",
+        "type": ["ice", "water"]
+    },
+
+    "364": {
+        "name": {
+            "english": "Sealeo",
+            "french": "Phogleur",
+            "german": "Seejong"
+        },
+        "gen": "3",
+        "type": ["ice", "water"]
+    },
+
+    "365": {
+        "name": {
+            "english": "Walrein",
+            "french": "Kaimorse",
+            "german": "Walraisa"
+        },
+        "gen": "3",
+        "type": ["ice", "water"]
+    },
+
+    "366": {
+        "name": {
+            "english": "Clamperl",
+            "french": "Coquiperl",
+            "german": "Perlu"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "367": {
+        "name": {
+            "english": "Huntail",
+            "french": "Serpang",
+            "german": "Aalabyss"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "368": {
+        "name": {
+            "english": "Gorebyss",
+            "french": "Rosabyss",
+            "german": "Saganabyss"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "369": {
+        "name": {
+            "english": "Relicanth",
+            "french": "Relicanth",
+            "german": "Relicanth"
+        },
+        "gen": "3",
+        "type": ["water", "rock"]
+    },
+
+    "370": {
+        "name": {
+            "english": "Luvdisc",
+            "french": "Lovdisc",
+            "german": "Liebiskus"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "371": {
+        "name": {
+            "english": "Bagon",
+            "french": "Draby",
+            "german": "Kindwurm"
+        },
+        "gen": "3",
+        "type": ["dragon"]
+    },
+
+    "372": {
+        "name": {
+            "english": "Shelgon",
+            "french": "Drackhaus",
+            "german": "Draschel"
+        },
+        "gen": "3",
+        "type": ["dragon"]
+    },
+
+    "373": {
+        "name": {
+            "english": "Salamence",
+            "french": "Drattak",
+            "german": "Brutalanda"
+        },
+        "gen": "3",
+        "type": ["dragon", "flying"]
+    },
+
+    "374": {
+        "name": {
+            "english": "Beldum",
+            "french": "Terhal",
+            "german": "Tanhel"
+        },
+        "gen": "3",
+        "type": ["steel", "psychic"]
+    },
+
+    "375": {
+        "name": {
+            "english": "Metang",
+            "french": "Métang",
+            "german": "Metang"
+        },
+        "gen": "3",
+        "type": ["steel", "psychic"]
+    },
+
+    "376": {
+        "name": {
+            "english": "Metagross",
+            "french": "Métalosse",
+            "german": "Metagross"
+        },
+        "gen": "3",
+        "type": ["steel", "psychic"]
+    },
+
+    "377": {
+        "name": {
+            "english": "Regirock",
+            "french": "Regirock",
+            "german": "Regirock"
+        },
+        "gen": "3",
+        "type": ["rock"]
+    },
+
+    "378": {
+        "name": {
+            "english": "Regice",
+            "french": "Regice",
+            "german": "Regice"
+        },
+        "gen": "3",
+        "type": ["ice"]
+    },
+
+    "379": {
+        "name": {
+            "english": "Registeel",
+            "french": "Registeel",
+            "german": "Registeel"
+        },
+        "gen": "3",
+        "type": ["steel"]
+    },
+
+    "380": {
+        "name": {
+            "english": "Latias",
+            "french": "Latias",
+            "german": "Latias"
+        },
+        "gen": "3",
+        "type": ["dragon", "psychic"]
+    },
+
+    "381": {
+        "name": {
+            "english": "Latios",
+            "french": "Latios",
+            "german": "Latios"
+        },
+        "gen": "3",
+        "type": ["dragon", "psychic"]
+    },
+
+    "382": {
+        "name": {
+            "english": "Kyogre",
+            "french": "Kyogre",
+            "german": "Kyogre"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "383": {
+        "name": {
+            "english": "Groudon",
+            "french": "Groudon",
+            "german": "Groudon"
+        },
+        "gen": "3",
+        "type": ["ground"]
+    },
+
+    "384": {
+        "name": {
+            "english": "Rayquaza",
+            "french": "Rayquaza",
+            "german": "Rayquaza"
+        },
+        "gen": "3",
+        "type": ["dragon", "flying"]
+    },
+
+    "385": {
+        "name": {
+            "english": "Jirachi",
+            "french": "Jirachi",
+            "german": "Jirachi"
+        },
+        "gen": "3",
+        "type": ["steel", "psychic"]
+    },
+
+    "386": {
+        "name": {
+            "english": "Deoxys",
+            "french": "Deoxys",
+            "german": "Deoxys"
+        },
+        "gen": "3",
+        "type": ["psychic"]
+    },
 }
