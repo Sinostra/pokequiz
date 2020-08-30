@@ -3208,4 +3208,314 @@ export default {
         "gen": "3",
         "type": ["water"]
     },
+
+    "322": {
+        "name": {
+            "english": "Numel",
+            "french": "Chamallot",
+            "german": "Camaub"
+        },
+        "gen": "3",
+        "type": ["fire", "ground"]
+    },
+
+    "323": {
+        "name": {
+            "english": "Camerupt",
+            "french": "Camérupt",
+            "german": "Camerupt"
+        },
+        "gen": "3",
+        "type": ["fire", "ground"]
+    },
+
+    "324": {
+        "name": {
+            "english": "Torkoal",
+            "french": "Chartor",
+            "german": "Qurtel"
+        },
+        "gen": "3",
+        "type": ["fire"]
+    },
+
+    "325": {
+        "name": {
+            "english": "Spoink",
+            "french": "Spoink",
+            "german": "Spoink"
+        },
+        "gen": "3",
+        "type": ["psychic"]
+    },
+
+    "326": {
+        "name": {
+            "english": "Grumpig",
+            "french": "Groret",
+            "german": "Groink"
+        },
+        "gen": "3",
+        "type": ["psychic"]
+    },
+
+    "327": {
+        "name": {
+            "english": "Spinda",
+            "french": "Spinda",
+            "german": "Pandir"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "328": {
+        "name": {
+            "english": "Trapinch",
+            "french": "Kraknoix",
+            "german": "Knacklion"
+        },
+        "gen": "3",
+        "type": ["ground"]
+    },
+
+    "329": {
+        "name": {
+            "english": "Vibrava",
+            "french": "Vibraninf",
+            "german": "Vibrava"
+        },
+        "gen": "3",
+        "type": ["ground", "dragon"]
+    },
+
+    "330": {
+        "name": {
+            "english": "Flygon",
+            "french": "Libégon",
+            "german": "Libelldra"
+        },
+        "gen": "3",
+        "type": ["ground", "dragon"]
+    },
+
+    "331": {
+        "name": {
+            "english": "Cacnea",
+            "french": "Cacnea",
+            "german": "Tuska"
+        },
+        "gen": "3",
+        "type": ["grass"]
+    },
+
+    "332": {
+        "name": {
+            "english": "Cacturne",
+            "french": "Cacturne",
+            "german": "Noktuska"
+        },
+        "gen": "3",
+        "type": ["grass", "dark"]
+    },
+
+    "333": {
+        "name": {
+            "english": "Swablu",
+            "french": "Tylton",
+            "german": "Wablu"
+        },
+        "gen": "3",
+        "type": ["normal", "flying"]
+    },
+
+    "334": {
+        "name": {
+            "english": "Altaria",
+            "french": "Altaria",
+            "german": "Altaria"
+        },
+        "gen": "3",
+        "type": ["dragon", "flying"]
+    },
+
+    "335": {
+        "name": {
+            "english": "Zangoose",
+            "french": "Mangriff",
+            "german": "Sengo"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "336": {
+        "name": {
+            "english": "Seviper",
+            "french": "Séviper",
+            "german": "Vipitis"
+        },
+        "gen": "3",
+        "type": ["poison"]
+    },
+
+    "337": {
+        "name": {
+            "english": "Lunatone",
+            "french": "Séléroc",
+            "german": "Lunastein"
+        },
+        "gen": "3",
+        "type": ["rock", "psychic"]
+    },
+
+    "338": {
+        "name": {
+            "english": "Solrock",
+            "french": "Solaroc",
+            "german": "Sonnfel"
+        },
+        "gen": "3",
+        "type": ["rock", "psychic"]
+    },
+
+    "339": {
+        "name": {
+            "english": "Barboach",
+            "french": "Barloche",
+            "german": "Schmerbe"
+        },
+        "gen": "3",
+        "type": ["water", "ground"]
+    },
+
+    "340": {
+        "name": {
+            "english": "Whiscash",
+            "french": "Barbicha",
+            "german": "Welsar"
+        },
+        "gen": "3",
+        "type": ["water", "ground"]
+    },
+
+    "341": {
+        "name": {
+            "english": "Corphish",
+            "french": "Écrapince",
+            "german": "Krebscorps"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "342": {
+        "name": {
+            "english": "Crawdaunt",
+            "french": "Colhomard",
+            "german": "Krebutack"
+        },
+        "gen": "3",
+        "type": ["water", "dark"]
+    },
+
+    "343": {
+        "name": {
+            "english": "Baltoy",
+            "french": "Balbuto",
+            "german": "Puppance"
+        },
+        "gen": "3",
+        "type": ["ground", "psychic"]
+    },
+
+    "344": {
+        "name": {
+            "english": "Claydol",
+            "french": "Kaorine",
+            "german": "Lepumentas"
+        },
+        "gen": "3",
+        "type": ["ground", "psychic"]
+    },
+
+    "345": {
+        "name": {
+            "english": "Lileep",
+            "french": "Lilia",
+            "german": "Liliep"
+        },
+        "gen": "3",
+        "type": ["rock", "grass"]
+    },
+
+    "346": {
+        "name": {
+            "english": "Cradily",
+            "french": "Vacilys",
+            "german": "Wielie"
+        },
+        "gen": "3",
+        "type": ["rock", "grass"]
+    },
+
+    "347": {
+        "name": {
+            "english": "Anorith",
+            "french": "Anorith",
+            "german": "Anorith"
+        },
+        "gen": "3",
+        "type": ["rock", "bug"]
+    },
+
+    "348": {
+        "name": {
+            "english": "Armaldo",
+            "french": "Armaldo",
+            "german": "Armaldo"
+        },
+        "gen": "3",
+        "type": ["rock", "bug"]
+    },
+
+    "349": {
+        "name": {
+            "english": "Feebas",
+            "french": "Barpau",
+            "german": "Barschwa"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "350": {
+        "name": {
+            "english": "Milotic",
+            "french": "Milobellus",
+            "german": "Milotic"
+        },
+        "gen": "3",
+        "type": ["water"]
+    },
+
+    "351": {
+        "name": {
+            "english": "Castform",
+            "french": "Morphéo",
+            "german": "Formeo"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
+
+    "352": {
+        "name": {
+            "english": "Kecleon",
+            "french": "Kecleon",
+            "german": "Kecleon"
+        },
+        "gen": "3",
+        "type": ["normal"]
+    },
 }
