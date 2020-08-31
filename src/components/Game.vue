@@ -158,6 +158,8 @@ export default {
             newString = newString.replace(/[û,ü,ù]/g, 'u')
             newString = newString.replace(/[ô,ö]/g, 'o')
             newString = newString.replace(/[œ]/g, 'oe')
+            newString = newString.replace(/[ç]/g, 'c')
+            newString = newString.replace(/[ß]/g, 'ss')
             newString = newString.replace(/[' ','.',':','♀','♂']/g, '')
             newString = newString.replace(/-/g, '')
             return newString
