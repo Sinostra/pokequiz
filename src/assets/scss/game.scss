@@ -232,12 +232,12 @@
                             background-color: #43B581;
                         }
 
-                        &.not-found {
-                            color: #F04747;
-                        }
-
                         &.transition {
                             transition: ease-in .3s;
+                        }
+
+                        .forgotten {
+                            color: #F04747;
                         }
                     }
     

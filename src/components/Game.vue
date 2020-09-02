@@ -50,17 +50,19 @@
 
         <div class="table-wrapper">
             <div class="pokemonTable">
-                <div class="block" v-for="object in displayDex" :key="object">
+                <div class="block" v-for="(object, cutObject) in displayDex" :key="cutObject">
                     <div class="tableHead">
                         <div class="number">#</div>
                         <div class="name">Pokémon</div>
                         <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="type1">{{$store.state.localisation.dataLang['tableTypeText']}} 1</div>
                         <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="type2">{{$store.state.localisation.dataLang['tableTypeText']}} 2</div>
                     </div>
-                    <div v-for="pokemon in object" :key="pokemon">
-                        <div :id="'number' + index" class="pokemon-data" v-for="(data, index) in pokemon" :key="data">
+                    <div v-for="(pokemon, dexNumber) in object" :key="dexNumber">
+                        <div :id="'number' + index" class="pokemon-data" v-for="(data, index) in pokemon" :key="index">
                             <div class="data-number">{{index}}</div>
-                            <div class="data-name"></div>
+                            <div class="data-name">
+                                <div :class="data.forgotten ? 'forgotten' : ''" v-if="data.found || data.forgotten">{{data.name}}</div>
+                            </div>
 
                             <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type1">
                                 <img :src="getUrl(data.type[0])">
@@ -123,28 +125,32 @@ export default {
 
         checkEnteredPokemon() {
             for(const index in this.$store.state.pokedex.currentDex) {
+
                 var currentName = this.$store.state.pokedex.currentDex[index]['name']
                 if(this.replaceAllSpecialChars(currentName) == this.replaceAllSpecialChars(this.enteredName)) {
-                    var currentCell = document.querySelector('#number' + index + ' .data-name')
-                    currentCell.textContent = currentName
 
-                    currentCell.classList.add('valid-answer')
+                    if(!this.$store.state.pokedex.currentDex[index]['found']) {
 
-                    setTimeout(() => {
-                        currentCell.classList.add('transition')
-                        currentCell.classList.remove('valid-answer')
-                    },1)
-
-                    delete this.$store.state.pokedex.currentDex[index]
-                    this.score++
-
-                    //Check victoire
-                    if(this.score == this.numberOfPokemons) {
-                        this.finishGame()
+                        var currentCell = document.querySelector('#number' + index + ' .data-name')
+    
+                        currentCell.classList.add('valid-answer')
+    
+                        setTimeout(() => {
+                            currentCell.classList.add('transition')
+                            currentCell.classList.remove('valid-answer')
+                        },1)
+    
+                        this.$store.state.pokedex.currentDex[index]['found'] = true
+                        this.score++
+    
+                        //Check victoire
+                        if(this.score == this.numberOfPokemons) {
+                            this.finishGame()
+                        }
+                        //Rappel de la fonction au cas où un autre Pokémon porte le même nom
+                        this.checkEnteredPokemon()
+                        this.enteredName = ''
                     }
-                    //Rappel de la fonction au cas où un autre Pokémon porte le même nom
-                    this.checkEnteredPokemon()
-                    this.enteredName = ''
                 }
                 
             }
@@ -166,11 +172,12 @@ export default {
         },
 
         fillMisssing() {
+
             for(const index in this.$store.state.pokedex.currentDex) {
-                var currentName = this.$store.state.pokedex.currentDex[index]['name']
-                var currentCell = document.querySelector('#number' + index + ' .data-name')
-                currentCell.classList.add('not-found')
-                currentCell.textContent = currentName
+
+                if(!this.$store.state.pokedex.currentDex[index]['found']) {
+                    this.$store.state.pokedex.currentDex[index]['forgotten'] = true
+                }
             }
         },
 
@@ -234,6 +241,11 @@ export default {
         else if(this.numberOfPokemons >= 200) this.splitNumber = 4
 
         this.totalTime = this.$store.state.settings.secondsPerPokemon[this.$store.state.settings.selectedDifficulty] * this.numberOfPokemons
+
+        for(const index in this.$store.state.pokedex.currentDex) {
+            this.$store.state.pokedex.currentDex[index]['found'] = false
+            this.$store.state.pokedex.currentDex[index]['forgotten'] = false
+        }
 
         setTimeout(() => {
             document.getElementById('quiz-wrapper').classList.remove('background')

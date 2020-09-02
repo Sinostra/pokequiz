@@ -8,9 +8,7 @@ export default {
 
     mutations: {
         refillDex(state) {
-            for (const property in state.currentDex) {
-                delete state.currentDex[property]
-            }
+            state.currentDex = {}
 
             Object.assign(state.currentDex, state.fullDex)
         },
