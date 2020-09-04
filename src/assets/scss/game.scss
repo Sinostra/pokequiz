@@ -1,8 +1,16 @@
 .game {
-    padding-top: 100px;
+
+    padding: 10px;
+
+    &.playing {
+        padding: 100px 10px 10px 10px;
+    }
     
     @media screen and (min-width: 768px) {
         padding: 20px;
+        &.playing {
+            padding: 20px;
+        }
     }
 
     .interface-wrapper {

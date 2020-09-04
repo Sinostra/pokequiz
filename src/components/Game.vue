@@ -1,5 +1,5 @@
 <template>
-    <div class="game">
+    <div class="game" :class="gameState == 'playing' ? 'playing' : ''">
         
         <div v-if="gameReady" class="interface-wrapper">
 
