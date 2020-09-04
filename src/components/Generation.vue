@@ -3,44 +3,53 @@
         <div class="instruction">{{$store.state.localisation.dataLang['genInstruct']}}</div>
         <div class="error-msg">{{$store.state.localisation.dataLang['genError']}}</div>
         <div class="gen-wrapper">
-            <div class="gen-box">
-                <div v-on:click="clickGeneration" class="gen gen-1"></div>
-                <div class="gen-number">1</div>
+
+            <div class="first-half">
+
+                <div class="gen-box">
+                    <div v-on:click="clickGeneration" class="gen gen-1"></div>
+                    <div class="gen-number">1</div>
+                </div>
+
+                <div class="gen-box">
+                    <div v-on:click="clickGeneration" class="gen gen-2"></div>
+                    <div class="gen-number">2</div>
+                </div>
+
+                <div class="gen-box">
+                    <div v-on:click="clickGeneration" class="gen gen-3"></div>
+                    <div class="gen-number">3</div>
+                </div>
+
+                <div class="gen-box">
+                    <div v-on:click="clickGeneration" class="gen gen-4"></div>
+                    <div class="gen-number">4</div>
+                </div>
+
             </div>
 
-            <div class="gen-box">
-                <div v-on:click="clickGeneration" class="gen gen-2"></div>
-                <div class="gen-number">2</div>
-            </div>
+            <div class="second-half">
 
-            <div class="gen-box">
-                <div v-on:click="clickGeneration" class="gen gen-3"></div>
-                <div class="gen-number">3</div>
-            </div>
+                <div class="gen-box">
+                    <div v-on:click="clickGeneration" class="gen gen-5"></div>
+                    <div class="gen-number">5</div>
+                </div>
 
-            <div class="gen-box">
-                <div v-on:click="clickGeneration" class="gen gen-4"></div>
-                <div class="gen-number">4</div>
-            </div>
+                <div class="gen-box">
+                    <div v-on:click="clickGeneration" class="gen gen-6"></div>
+                    <div class="gen-number">6</div>
+                </div>
 
-            <div class="gen-box">
-                <div v-on:click="clickGeneration" class="gen gen-5"></div>
-                <div class="gen-number">5</div>
-            </div>
+                <div class="gen-box">
+                    <div v-on:click="clickGeneration" class="gen gen-7"></div>
+                    <div class="gen-number">7</div>
+                </div>
 
-            <div class="gen-box">
-                <div v-on:click="clickGeneration" class="gen gen-6"></div>
-                <div class="gen-number">6</div>
-            </div>
+                <div class="gen-box">
+                    <div v-on:click="clickGeneration" class="gen gen-8"></div>
+                    <div class="gen-number">8</div>
+                </div>
 
-            <div class="gen-box">
-                <div v-on:click="clickGeneration" class="gen gen-7"></div>
-                <div class="gen-number">7</div>
-            </div>
-
-            <div class="gen-box">
-                <div v-on:click="clickGeneration" class="gen gen-8"></div>
-                <div class="gen-number">8</div>
             </div>
 
         </div>

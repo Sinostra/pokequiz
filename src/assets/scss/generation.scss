@@ -2,17 +2,33 @@
 
     .gen-wrapper {
         display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
+        justify-content: center;
+        flex-direction: row;
         align-items: center;
-        @media screen and (min-width: 1024px) {
-            flex-direction: row;
+
+        .first-half {
+            margin-right: 50px;
+            @media screen and (min-width: 768px) {
+                margin-right: 0;
+            }
         }
 
+        .first-half, .second-half {
+            display: flex;
+            flex-direction: column;
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+            }
+        }
+        
         .gen-box {
             display: flex;
             align-items: baseline;
             margin-bottom: 20px;
+            margin-right: 0;
+            @media screen and (min-width: 768px) {
+                margin-right: 15px;
+            }
             
             .gen {
                 width: 60px;

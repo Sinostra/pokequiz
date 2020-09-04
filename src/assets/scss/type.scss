@@ -45,11 +45,8 @@
     .types-wrapper {
         display: flex;
         justify-content: space-evenly;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        @media screen and (min-width: 1024px) {
-            flex-direction: row;
-        }
 
         .types-box {
             .specific-type {

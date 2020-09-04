@@ -20,8 +20,7 @@ export default {
     props: ['gameState'],
 
     watch: {
-        gameState: function(newVal, oldVal) {
-            console.log('Prop changed: ', newVal, ' | was: ', oldVal)
+        gameState: function(newVal) {
             if(newVal == "playing") {
                 this.startTimer();
             }
@@ -38,7 +37,6 @@ export default {
                 this.totalTime--
                 if(this.totalTime == 0) {
                     this.$emit('time-up')
-                    console.log('time is up')
                 }
             }, 1000);
         },

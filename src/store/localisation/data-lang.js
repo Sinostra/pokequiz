@@ -90,9 +90,9 @@ export default {
     },
 
     remainingTimeText: {
-        "english" : "Remaining time :",
-        "french" : "Temps restant :",
-        "german" : "Verbleibende Zeit :"
+        "english" : "Remaining time : ",
+        "french" : "Temps restant : ",
+        "german" : "Verbleibende Zeit : "
     },
 
     enterNameInstruct: {

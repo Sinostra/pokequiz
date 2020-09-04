@@ -1,10 +1,23 @@
 .game {
-    padding: 10px;
-    @media screen and (min-width: 1024px) {
+    padding: 0px;
+    
+    @media screen and (min-width: 768px) {
         padding: 20px;
     }
 
     .interface-wrapper {
+
+        position: fixed;
+        width: 100%;
+        background: #fff;
+        padding: 10px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, .5);;
+        @media screen and (min-width: 768px) {
+            position: static;
+            background: transparent;
+            padding: 0;
+            box-shadow: none;
+        }
 
         .gameInfos {
             display: flex;
@@ -31,8 +44,10 @@
 
                 .points {
                     padding: 0 0 20px 0;
+                    display: flex;
                     @media screen and (min-width: 768px) {
                         padding: 0 10px 0 0;
+                        flex-direction: column;
                     }
                     
                 }
@@ -42,8 +57,10 @@
             .timer {
                 text-align: center;
                 margin: 0 auto 20px;
+                display: flex;
                 @media screen and (min-width: 768px) {
                     margin-bottom: 0;
+                    flex-direction: column;
                 }
             }
 
@@ -89,13 +106,28 @@
             
             .input-wrapper {
                 margin-bottom: 20px;
+                width: 100%;
                 @media screen and (min-width: 768px) {
                     position: fixed;
                     margin-bottom: 0;
+                    background-color: #fff;
+                    left: 0;
+                    padding: 15px 0 15px 15px;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    max-width: 250px;
                 }
 
                 .enterNamesInstruct {
                     padding-bottom: 20px;
+                }
+
+                input {
+                    font-size: 20px;
+                    width: 100%;
+                    @media screen and (min-width: 768px) {
+                        width: 80%;
+                    }
                 }
             }
 
@@ -136,12 +168,16 @@
 
     .table-wrapper {
         display: flex;
+        padding-top: 380px;
+        @media screen and (min-width: 768px) {
+            padding-top: 0;
+        }
         .pokemonTable {
             display: flex;
             font-family: 'Open Sans', sans-serif;
             font-size: 12px;
             flex-wrap: wrap;
-            margin: 0 auto;
+            margin: 0 auto 20px;
     
             .block {
                 margin: 0 auto;
