@@ -91,6 +91,7 @@
 
         <div class="btn-wrapper">
             <div v-on:click="clickNext" class="btn">{{$store.state.localisation.dataLang['nextText']}}</div>
+            <div v-on:click="clickPrevious" class="btn">{{$store.state.localisation.dataLang['previousText']}}</div>
         </div>
     </div>
 </template>
@@ -147,9 +148,12 @@ export default {
                 })
 
                 this.$store.dispatch("setselectedTypes", typesList)
-                this.$store.dispatch("filterByType", typesList)
-                this.$store.dispatch("changecurrentComp")
+                this.$store.dispatch("nextComp")
             }
+        },
+
+        clickPrevious() {
+            this.$store.dispatch("previousComp")
         }
     }
 

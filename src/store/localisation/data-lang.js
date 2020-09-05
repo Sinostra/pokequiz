@@ -35,6 +35,12 @@ export default {
         "german" : "Weiter"
     },
 
+    previousText: {
+        "english" : "Back",
+        "french" : "Retour",
+        "german" : "Zurück"
+    },
+
     difficultyInstruct: {
         "english" : "Finally, select a difficulty.",
         "french" : "Enfin, choisissez une difficulté.",

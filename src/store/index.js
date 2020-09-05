@@ -9,17 +9,24 @@ export default createStore({
     compOrder: ["Language", "Generation", "Type", "Difficulty", "Game"]
   },
   mutations: {
-    changecurrentComp(state) {
+    nextComp(state) {
       var currentIndex = state.compOrder.indexOf(state.currentComp)
       state.currentComp = state.compOrder[currentIndex + 1]
+    },
+    previousComp(state) {
+      var currentIndex = state.compOrder.indexOf(state.currentComp)
+      state.currentComp = state.compOrder[currentIndex - 1]
     },
     rePlay(state) {
       state.currentComp = "Generation"
     }
   },
   actions: {
-    changecurrentComp(context) {
-      context.commit('changecurrentComp')
+    nextComp(context) {
+      context.commit('nextComp')
+    },
+    previousComp(context) {
+      context.commit('previousComp')
     },
     rePlay(context) {
       context.commit('rePlay')

@@ -17,6 +17,10 @@
                 <div class="text">{{$store.state.localisation.dataLang['hardText']}}</div>
             </div>
         </div>
+
+        <div class="btn-wrapper">
+            <div v-on:click="clickPrevious" class="btn">{{$store.state.localisation.dataLang['previousText']}}</div>
+        </div>
     </div>
 </template>
 
@@ -33,7 +37,15 @@ export default {
             else chosenDifficulty = element.target.parentElement.getAttribute("data-difficulty")
 
             this.$store.dispatch("setselectedDifficulty", chosenDifficulty)
-            this.$store.dispatch("changecurrentComp")           
+
+            this.$store.dispatch("filterByGen", this.$store.state.settings.selectedGeneration)
+            this.$store.dispatch("filterByType", this.$store.state.settings.selectedTypes)
+
+            this.$store.dispatch("nextComp")           
+        },
+
+        clickPrevious() {
+            this.$store.dispatch("previousComp")
         }
     }
 }
