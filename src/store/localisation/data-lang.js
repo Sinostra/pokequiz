@@ -36,8 +36,8 @@ export default {
     },
 
     previousText: {
-        "english" : "Back",
-        "french" : "Retour",
+        "english" : "Previous",
+        "french" : "Précédent",
         "german" : "Zurück"
     },
 
