@@ -284,20 +284,25 @@
                     }
     
                     .data-type1 {
-                        flex: 0 0 70px;
-                        max-width: 70px;
-                        min-width: 70px;
-                        text-align: center;
                         border-right: 1px solid #000;
-                        padding: 10px;
                     }
     
-                    .data-type2 {
+                    .data-type1, .data-type2 {
                         flex: 0 0 70px;
                         max-width: 70px;
                         min-width: 70px;
                         text-align: center;
                         padding: 10px;
+                        display: flex;
+                        align-items: center;
+
+                        .typeImg-wrapper {
+                            margin-bottom: 5px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
                     }
                 }
             }

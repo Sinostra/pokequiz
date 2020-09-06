@@ -4126,7 +4126,7 @@ export default {
             "german": "Burmadame"
         },
         "gen": "4",
-        "type": ["bug", "grass"]
+        "type": ["bug", ["grass", "ground", "steel"]]
     },
 
     "414": {
@@ -7407,7 +7407,7 @@ export default {
             "german": "Choreogel"
         },
         "gen": "7",
-        "type": ["fire", "flying"]
+        "type": [["fire", "electric", "psychic", "ghost"], "flying"]
     },
 
     "742": {
@@ -8917,7 +8917,7 @@ export default {
             "german": "Wulaosu"
         },
         "gen": "8",
-        "type": ["fighting", "dark"]
+        "type": ["fighting", ["dark", "water"]]
     },
 
     "893": {

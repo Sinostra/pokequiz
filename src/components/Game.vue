@@ -62,11 +62,19 @@
                             </div>
 
                             <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type1">
-                                <img :src="getUrl(data.type[0])">
+                                <div>
+                                    <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data.type[0])" :key="index">
+                                        <img :src="getUrl(type)">
+                                    </div>
+                                </div>
                             </div>
 
                             <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type2">
-                                <img v-if="data.type[1]" :src="getUrl(data.type[1])">
+                                <div v-if="data.type[1]">
+                                    <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data.type[1])" :key="index">
+                                        <img :src="getUrl(type)">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -101,6 +109,21 @@ export default {
     methods: {
         getUrl(type) {
             return require('../assets/img/languages/' + this.$store.state.localisation.chosenLang + '/types/'+ type + '.png')
+        },
+
+        displayTypes(types) {
+            var typesArray
+            if(Array.isArray(types)) {
+                typesArray = Array.from(types)
+            }
+
+            else {
+                typesArray = []
+                typesArray.push(types)
+            }
+
+            console.log(typesArray)
+            return typesArray
         },
 
         splitPokedex() {

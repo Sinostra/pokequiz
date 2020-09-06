@@ -38,8 +38,17 @@ export default {
             for (const property in state.currentDex) {
                 var intersection = false;
                 for (var i = 0; i < chosenTypes.length; i++) {
-                    if(Array.from(state.currentDex[property]["type"]).includes(chosenTypes[i])) {
-                        intersection = true;
+
+                    var typesArray = Array.from(state.currentDex[property]["type"])
+
+                    for(var j = 0; j < typesArray.length; j++) {
+                        if(!Array.isArray(typesArray[j])) {
+                            if(typesArray[j] == chosenTypes[i]) intersection = true;
+                        }
+
+                        else {
+                            if(typesArray[j].includes(chosenTypes[i])) intersection = true;
+                        }
                     }
                 }
 
