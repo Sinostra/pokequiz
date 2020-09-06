@@ -122,7 +122,6 @@ export default {
                 typesArray.push(types)
             }
 
-            console.log(typesArray)
             return typesArray
         },
 
