@@ -123,8 +123,13 @@
                     padding: 15px 0 15px 15px;
                     border-top-right-radius: 10px;
                     border-bottom-right-radius: 10px;
-                    max-width: 250px;
-                    top: inherit;
+                    max-width: 270px;
+                    top: 100px;
+                }
+
+                .last-found {
+                    font-size: 13px;
+                    padding-bottom: 10px;
                 }
 
                 .enterNamesInstruct {
@@ -134,8 +139,17 @@
                 input {
                     font-size: 20px;
                     width: 100%;
+                    background-color: #fff;
                     @media screen and (min-width: 768px) {
                         width: 80%;
+                    }
+
+                    &.valid {
+                        background-color: #43B581;
+                    }
+
+                    &.transition {
+                        transition: ease-in .3s;
                     }
                 }
             }

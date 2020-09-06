@@ -105,5 +105,11 @@ export default {
         "english" : "Enter the names here :",
         "french" : "Entrez les noms ici :",
         "german" : "Geben Sie hier die namen ein :"
+    },
+
+    lastFoundText: {
+        "english" : "Last found :",
+        "french" : "Dernier trouvé :",
+        "german" : "Letztes gefunden :"
     }
 }

@@ -30,6 +30,9 @@
                 </div>
 
                 <div v-if="gameState == 'playing'" class="input-wrapper">
+                    <div v-if="lastFound" class="last-found">
+                        {{$store.state.localisation.dataLang['lastFoundText']}} {{lastFound}}
+                    </div>
                     <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
                     <input v-model="enteredName" v-on:input="checkEnteredPokemon" type="text">
                 </div>
@@ -103,6 +106,7 @@ export default {
             displayDex: [],
             enteredName: '',
             score: 0,
+            lastFound: ''
         }
     },
 
@@ -155,14 +159,22 @@ export default {
                     if(!this.$store.state.pokedex.currentDex[index]['found']) {
 
                         var currentCell = document.querySelector('#number' + index + ' .data-name')
+                        var input = document.querySelector('.input-wrapper input')
     
                         currentCell.classList.add('valid-answer')
+
+                        input.classList.remove('transition')
+                        input.classList.add('valid')
     
                         setTimeout(() => {
                             currentCell.classList.add('transition')
                             currentCell.classList.remove('valid-answer')
+                            
+                            input.classList.add('transition')
+                            input.classList.remove('valid')
                         },1)
     
+                        this.lastFound = currentName
                         this.$store.state.pokedex.currentDex[index]['found'] = true
                         this.score++
     

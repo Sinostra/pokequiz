@@ -982,7 +982,7 @@ export default {
     "99": {
         "name": {
             "english": "Kingler",
-            "french": "Kraboss",
+            "french": "Krabboss",
             "german": "Kingler"
         },
         "gen": "1",
