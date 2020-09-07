@@ -5323,7 +5323,7 @@ export default {
     "533": {
         "name": {
             "english": "Gurdurr",
-            "french": "Ouvrifer",
+            "french": "Ouvrifier",
             "german": "Strepoli"
         },
         "gen": "5",
@@ -5553,7 +5553,7 @@ export default {
     "556": {
         "name": {
             "english": "Maractus",
-            "french": "Maracacchi",
+            "french": "Maracachi",
             "german": "Maracamba"
         },
         "gen": "5",
@@ -6343,7 +6343,7 @@ export default {
     "635": {
         "name": {
             "english": "Hydreigon",
-            "french": "Trioxydre",
+            "french": "Trioxhydre",
             "german": "Trikephalo"
         },
         "gen": "5",
