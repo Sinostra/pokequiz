@@ -44,7 +44,7 @@ export default {
     difficultyInstruct: {
         "english" : "Finally, select a difficulty.",
         "french" : "Enfin, choisissez une difficulté.",
-        "german" : "Schließlich, wählen Sie eine Schwierigkeit."
+        "german" : "Wählen Sie jetzt eine Schwierigkeit."
     },
 
     easyText: {
@@ -92,7 +92,7 @@ export default {
     scoreText: {
         "english" : "Score :",
         "french" : "Score :",
-        "german" : "Punktzahl :"
+        "german" : "Punktezahl :"
     },
 
     remainingTimeText: {
@@ -104,12 +104,12 @@ export default {
     enterNameInstruct: {
         "english" : "Enter the names here :",
         "french" : "Entrez les noms ici :",
-        "german" : "Geben Sie hier die namen ein :"
+        "german" : "Geben Sie hier die Namen ein :"
     },
 
     lastFoundText: {
         "english" : "Last found :",
         "french" : "Dernier trouvé :",
-        "german" : "Letztes gefunden :"
+        "german" : "Zuletzt gefunden :"
     }
 }
