@@ -4,4 +4,129 @@
     @media screen and (min-width: 768px) {
         padding: 20px;
     }
+
+    .score-wrapper {
+
+        margin: 50px 0 0;
+
+        .input-wrapper {
+            display: flex;
+            flex-direction: column;
+    
+            label {
+                text-align: center;
+            }
+    
+            input {
+                max-width: 200px;
+                margin: 20px auto;
+                font-size: 20px;
+            }
+    
+            .btn-wrapper {
+                display: flex;
+                justify-content: center;
+    
+                .btn {
+                    background-color: #43B581;
+                    padding: 20px;
+                    border-radius: 25px;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background: #45eca0;
+                    }
+                }
+            }
+        }
+
+        .table-scores-wrapper {
+
+            .settings {
+                text-align: center;
+
+                .chosenGens, .chosenTypes, .chosenDifficulty {
+                    display: flex;
+                    justify-content: center;
+                    padding: 20px 0 10px;
+                }
+
+                .chosenGens {
+                    flex-direction: column;
+
+                    .gens-wrapper {
+
+                        display: flex;
+                        justify-content: center;
+                        padding-top: 20px;
+
+                        .gen {
+                            position: relative;
+                            padding-right: 15px;
+                            &:not(:last-child):after {
+                                content: ",";
+                                position: absolute;
+                                top: 0;
+                                right: 8px;
+                            }
+                        }
+                    }
+
+                }
+
+                .chosenTypes {
+                    flex-direction: column;
+
+                    .types-wrapper {
+
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        padding-top: 20px;
+
+                        .type {
+                            padding: 10px 5px 0 0;
+                        }
+                    }
+
+                }
+            }
+
+            .emptyScores {
+                text-align: center;
+                padding-top: 20px;
+                font-size: 20px;
+            }
+
+            .table-scores {
+
+                max-width: fit-content;
+                margin: 0 auto;
+                background: #fff;
+                margin-top: 20px;
+
+                .table-head, .table-row {
+                    display: flex;
+                    border: 1px solid #000;
+
+                    &.playedGame {
+                        background-color: #43B581;
+                    }
+                }
+
+                .table-cell {
+                    padding: 10px 0;
+                    text-align: center;
+                    min-width: 100px;
+                    max-width: 100px;
+                    &:not(:last-child) {
+                        border-right: 1px solid #000;
+                    }
+                }
+
+            }
+
+        }
+    }
+
 }
