@@ -111,5 +111,11 @@ export default {
         "english" : "Last found :",
         "french" : "Dernier trouvé :",
         "german" : "Zuletzt gefunden :"
+    },
+
+    getToScoreText: {
+        "english" : "Get to scores",
+        "french" : "Aller aux scores",
+        "german" : "Punktezahlen"
     }
 }

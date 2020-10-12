@@ -20,13 +20,17 @@
                 <div class="timer-btn-wrapper">
                     <div v-if="gameState == 'playing'" v-on:click="pauseGame()" class="pauseBtn"></div>
                     <div v-if="gameState == 'paused'" v-on:click="startGame()" class="resumeBtn"></div>
+                    
                 </div>
+
+                <div v-if="gameState == 'finished'" class="regulator"></div>
             </div>
 
             <div class="interactive-wrapper">
 
                 <div v-if="gameState == 'toStart'" class="btn-wrapper">
                     <div v-on:click="startGame()" class="play btn">{{$store.state.localisation.dataLang['playText']}}</div>
+                    <div v-on:click="clickNext()" class="next btn">{{$store.state.localisation.dataLang['getToScoreText']}}</div>
                 </div>
 
                 <div v-if="gameState == 'playing'" class="input-wrapper">
@@ -37,12 +41,13 @@
                     <input v-model="enteredName" v-on:input="checkEnteredPokemon" type="text">
                 </div>
 
-                <div v-if="gameState == 'playing' || gameState == 'paused'" class="btn-wrapper middleBtn">
+                <div v-if="gameState == 'playing' || gameState == 'paused'" class="btn-wrapper">
                     <div v-on:click="finishGame()" class="giveUp btn">{{$store.state.localisation.dataLang['giveUpText']}}</div>
                 </div>
 
                 <div v-if="gameState == 'finished'" class="btn-wrapper">
                     <div v-on:click="playAgain()" class="playAgain btn">{{$store.state.localisation.dataLang['playAgainText']}}</div>
+                    <div v-on:click="clickNext()" class="next btn">{{$store.state.localisation.dataLang['getToScoreText']}}</div>
                 </div>
             </div>
 
@@ -229,13 +234,23 @@ export default {
             this.gameState = "paused"
         },
 
-        playAgain(){
-            this.$store.dispatch("refillDex")
-            this.$store.dispatch("rePlay")
+        playAgain() {
+            this.$store.dispatch("refillDex");
+            this.$store.dispatch("rePlay");
+        },
+
+        clickNext: function(){
+            if(this.gameState == "finished") {
+                this.$store.dispatch("setHasBeenPlayed", true)
+            }
+            this.$store.dispatch("nextComp")
         }
+
     },
 
     mounted: function() {
+
+        this.$store.dispatch("setHasBeenPlayed", false)
 
         this.numberOfPokemons = Object.keys(this.$store.state.pokedex.currentDex).length
 

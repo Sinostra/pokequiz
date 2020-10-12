@@ -1,7 +1,7 @@
 <template>
     <div class="timer">
         <div>{{$store.state.localisation.dataLang['remainingTimeText']}}</div>
-        <div>{{displayMinsAndSecs(totalTime)}}</div>
+        <div>{{displayMinsAndSecs(timeRemaining)}}</div>
     </div>
 </template>
 
@@ -13,6 +13,7 @@ export default {
         return {
             numberOfPokemons: 0,
             totalTime: 0,
+            timeRemaining: 0,
             interval: undefined,
         }
     },
@@ -25,6 +26,11 @@ export default {
                 this.startTimer();
             }
 
+            else if(newVal == "finished") {
+                this.pauseTimer();
+                this.$store.dispatch("setTimeUsed", this.totalTime - this.timeRemaining)
+            }
+
             else {
                 this.pauseTimer();
             }
@@ -34,8 +40,8 @@ export default {
     methods: {
         startTimer(){
             this.interval = setInterval(() => {
-                this.totalTime--
-                if(this.totalTime == 0) {
+                this.timeRemaining--
+                if(this.timeRemaining == 0) {
                     this.$emit('time-up')
                 }
             }, 1000);
@@ -69,6 +75,7 @@ export default {
     mounted: function(){
         this.numberOfPokemons = Object.keys(this.$store.state.pokedex.currentDex).length
         this.totalTime = this.$store.state.settings.secondsPerPokemon[this.$store.state.settings.selectedDifficulty] * this.numberOfPokemons
+        this.timeRemaining = this.totalTime
     }
 }
 </script>

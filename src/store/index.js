@@ -6,7 +6,7 @@ import pokedex from './pokedex/pokedex'
 export default createStore({
   state: {
     currentComp: "Language",
-    compOrder: ["Language", "Generation", "Type", "Difficulty", "Game"]
+    compOrder: ["Language", "Generation", "Type", "Difficulty", "Game", "Score"]
   },
   mutations: {
     nextComp(state) {

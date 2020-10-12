@@ -7,7 +7,10 @@ export default {
             "easy" : 12,
             "medium" : 10,
             "hard" : 8
-        }
+        },
+
+        timeUsed: 0,
+        hasBeenPlayed: false
     },
 
     mutations: {
@@ -21,6 +24,14 @@ export default {
 
         setselectedDifficulty(state, selectedDifficulty) {
             state.selectedDifficulty = selectedDifficulty;
+        },
+
+        setTimeUsed(state, time) {
+            state.timeUsed = time;
+        },
+
+        setHasBeenPlayed(state, bool) {
+            state.hasBeenPlayed = bool;
         }
     },
 
@@ -35,6 +46,14 @@ export default {
 
         setselectedDifficulty(context, selectedDifficulty) {
             context.commit('setselectedDifficulty', selectedDifficulty)
+        },
+
+        setTimeUsed(context, time) {
+            context.commit('setTimeUsed', time)
+        },
+
+        setHasBeenPlayed(context, bool) {
+            context.commit('setHasBeenPlayed', bool)
         }
     }
 }
