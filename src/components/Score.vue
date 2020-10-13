@@ -2,15 +2,16 @@
   <div class="score">
     <div class="score-wrapper">
 
-      <div v-if="hasError" class="error-msg">Une erreur est survenue, veuillez réessayer plus tard.</div>
+      <div v-if="hasError" class="ajax-error-msg">Une erreur est survenue, veuillez réessayer plus tard.</div>
 
       <div v-if="!hasError && !canDisplayScores && scoreToAdd && !loading" class="input-wrapper">
         <label for="name">Veuillez renseigner votre nom</label>
         <input v-model="playerName" id="name" type="text" />
-        <div class="input-error">Vous n'avez pas renseigné de nom</div>
+
+        <div class="error-msg">Vous n'avez pas renseigné de nom</div>
 
         <div class="btn-wrapper">
-          <div v-on:click="addScore()" class="btn submit">Valider</div>
+          <div v-on:click="clickValidate()" class="btn submit">Valider</div>
         </div>
         
       </div>
@@ -96,7 +97,7 @@ export default {
       allScores: {},
       lastEnteredId: 0,
       emptyScores: false,
-      serverUrl: '/server'
+      serverUrl: 'http://localhost:8081/'
     };
   },
 
@@ -165,6 +166,18 @@ export default {
         });
     },
 
+    clickValidate() {
+      if(this.playerName.length > 0) this.addScore();
+      else {
+        document.getElementsByClassName("error-msg")[0].classList.remove("transition")
+        document.getElementsByClassName("error-msg")[0].classList.add("displayed")
+        setTimeout(function(){
+            document.getElementsByClassName("error-msg")[0].classList.add("transition")
+            document.getElementsByClassName("error-msg")[0].classList.remove("displayed")
+        }, 1)
+      }
+    },
+
     playAgain() {
       this.$store.dispatch("refillDex");
       this.$store.dispatch("rePlay");
@@ -198,25 +211,6 @@ export default {
       this.scoreToAdd = false
       this.getScore();
     }
-
-    // if(this.$store.state.settings.hasBeenPlayed) {
-
-    //   for(const index in this.$store.state.pokedex.currentDex){
-    //     if(this.$store.state.pokedex.currentDex[index]['found']) this.numberOfFound++
-    //   }
-    // }
-
-    // else {
-
-    //   try {
-    //     this.getScore()
-    //   }
-
-    //   catch(error) {
-    //     console.log(error)
-    //     this.hasError = true;
-    //   }
-    // }
   },
 };
 </script>

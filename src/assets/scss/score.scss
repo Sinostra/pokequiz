@@ -22,13 +22,6 @@
                 margin: 20px auto;
                 font-size: 20px;
             }
-
-            .input-error {
-                text-align: center;
-                font-size: 15px;
-                padding-bottom: 20px;
-                color: #ff0000;
-            }
     
             .btn-wrapper {
                 display: flex;
@@ -162,7 +155,7 @@
             transform: translate(-50%, -50%);
         }
 
-        .error-msg {
+        .ajax-error-msg {
             font-size: 20px;
             text-align: center;
         }
