@@ -97,7 +97,7 @@ export default {
       allScores: {},
       lastEnteredId: 0,
       emptyScores: false,
-      serverUrl: '/server'
+      serverUrl: '/server/'
     };
   },
 
