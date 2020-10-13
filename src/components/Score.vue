@@ -97,7 +97,7 @@ export default {
       allScores: {},
       lastEnteredId: 0,
       emptyScores: false,
-      serverUrl: 'http://localhost:8081/'
+      serverUrl: '/server'
     };
   },
 

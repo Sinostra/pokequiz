@@ -122,19 +122,19 @@ export default {
     ajaxErrorText: {
         "english" : "An error occured, please try again later.",
         "french" : "Une erreur est survenue, veuillez réessayer plus tard.",
-        "german" : "Ein Fehler ist aufgetreten, versuchen Sie bitte später."
+        "german" : "Ein Fehler ist aufgetreten, versuchen Sie es bitte später noch einmal."
     },
 
     nameInstruct: {
         "english" : "Please enter your name",
         "french" : "Veuillez renseigner votre nom",
-        "german" : "Geben sir bitte ihren Name ein" 
+        "german" : "Geben sir bitte ihren Namen ein" 
     },
 
     nameError: {
         "english" : "You didn't enter your name",
         "french" : "Vous n'avez pas renseigné de nom",
-        "german" : "Sie haben kein Name eingegeben" 
+        "german" : "Sie haben keinen Namen eingegeben" 
     },
 
     validateNameText: {
@@ -164,7 +164,7 @@ export default {
     noScoreText: {
         "english" : "No score to be displayed",
         "french" : "Pas de score à afficher",
-        "german" : "Keine Punktezahl zu anzeigen" 
+        "german" : "Keine angezeigte Punktezahl" 
     },
 
     nameLabelText: {
