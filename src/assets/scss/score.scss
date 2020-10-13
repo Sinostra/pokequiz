@@ -22,6 +22,13 @@
                 margin: 20px auto;
                 font-size: 20px;
             }
+
+            .input-error {
+                text-align: center;
+                font-size: 15px;
+                padding-bottom: 20px;
+                color: #ff0000;
+            }
     
             .btn-wrapper {
                 display: flex;
@@ -98,6 +105,23 @@
                 font-size: 20px;
             }
 
+            .btn-wrapper {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+
+                .playAgain {
+                    background-color: #43B581;
+                    padding: 20px;
+                    border-radius: 25px;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background: #45eca0;
+                    }
+                }
+            }
+
             .table-scores {
 
                 max-width: fit-content;
@@ -126,6 +150,21 @@
 
             }
 
+        }
+
+        .loader {
+            width: 250px;
+            height: 177px;
+            position: absolute;
+            background: url($imagePath + 'ui/loader.gif');
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .error-msg {
+            font-size: 20px;
+            text-align: center;
         }
     }
 

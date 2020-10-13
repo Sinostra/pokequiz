@@ -1,16 +1,23 @@
 <template>
   <div class="score">
     <div class="score-wrapper">
-      <div v-if="!hasError && !canDisplayScores" class="input-wrapper">
+
+      <div v-if="hasError" class="error-msg">Une erreur est survenue, veuillez réessayer plus tard.</div>
+
+      <div v-if="!hasError && !canDisplayScores && scoreToAdd && !loading" class="input-wrapper">
         <label for="name">Veuillez renseigner votre nom</label>
         <input v-model="playerName" id="name" type="text" />
+        <div class="input-error">Vous n'avez pas renseigné de nom</div>
+
         <div class="btn-wrapper">
           <div v-on:click="addScore()" class="btn submit">Valider</div>
         </div>
+        
       </div>
-      <div v-if="!hasError && canDisplayScores" class="table-scores-wrapper">
 
-        <div class="settings">
+      <div v-if="!loading" class="table-scores-wrapper">
+
+        <div v-if="!hasError && canDisplayScores" class="settings">
           <div class="chosenGens">
             <div class="label">Générations choisies :</div>
             <div class="gens-wrapper">
@@ -35,9 +42,13 @@
           </div>
         </div>
 
-        <div class="emptyScores" v-if="emptyScores">Pas de score à afficher</div>
+        <div class="emptyScores" v-if="!hasError && canDisplayScores && emptyScores">Pas de score à afficher</div>
 
-        <div v-if="!emptyScores" class="table-scores">
+        <div class="btn-wrapper">
+          <div v-on:click="playAgain()" class="btn playAgain">{{$store.state.localisation.dataLang['playAgainText']}}</div>
+        </div>
+
+        <div v-if="!hasError && canDisplayScores && !emptyScores" class="table-scores">
           <div class="table-head">
             <div class="table-cell">Name</div>
             <div class="table-cell">Score</div>
@@ -55,9 +66,9 @@
           </div>
         </div>
       </div>
-      <div v-if="hasError">
-        Une erreur est survenue, veuillez réessayer plus tard.
-      </div>
+
+      <div v-if="loading" class="loader"></div>
+      
     </div>
   </div>
 </template>
@@ -80,14 +91,21 @@ export default {
       timeUsed: this.$store.state.settings.timeUsed,
       hasError: false,
       canDisplayScores: false,
+      scoreToAdd: true,
+      loading: false,
       allScores: {},
       lastEnteredId: 0,
-      emptyScores: false
+      emptyScores: false,
+      serverUrl: '/server'
     };
   },
 
   methods: {
     getScore() {
+
+      this.loading = true;
+      this.scoreToAdd = false;
+
       let payload = {
         settings: this.gameSettings,
       };
@@ -95,7 +113,7 @@ export default {
       var formData = new FormData();
       formData.append("payload", JSON.stringify(payload));
 
-      fetch("http://localhost:8081/", {
+      fetch(this.serverUrl, {
         method: "POST",
         body: formData,
       })
@@ -105,11 +123,18 @@ export default {
           this.emptyScores = data.empty;
           this.allScores = data;
           this.canDisplayScores = true;
+          this.loading = false;
         })
-        .catch(() => (this.hasError = true));
+        .catch(() => {
+          this.hasError = true
+          this.loading = false
+        });
     },
 
     addScore() {
+
+      this.loading = true;
+
       for(const index in this.$store.state.pokedex.currentDex){
         if(this.$store.state.pokedex.currentDex[index]['found']) this.numberOfFound++
       }
@@ -124,7 +149,7 @@ export default {
       var formData = new FormData();
       formData.append("payload", JSON.stringify(payload));
 
-      fetch("http://localhost:8081?route=add", {
+      fetch(this.serverUrl + "?route=add", {
         method: "POST",
         body: formData,
       })
@@ -134,7 +159,10 @@ export default {
           this.lastEnteredId = data.id;
           this.getScore()
         })
-        .catch(() => (this.hasError = true));
+        .catch(() => {
+          this.hasError = true
+          this.loading = false
+        });
     },
 
     playAgain() {
@@ -167,6 +195,7 @@ export default {
 
   mounted: function () {
     if (!this.$store.state.settings.hasBeenPlayed) {
+      this.scoreToAdd = false
       this.getScore();
     }
 
