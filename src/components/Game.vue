@@ -6,7 +6,7 @@
             <div class="gameInfos">
                 <div class="score-wrapper">
                     <div class="points">
-                        <div>{{$store.state.localisation.dataLang['scoreText']}} </div>
+                        <div>{{$store.state.localisation.dataLang['scoreText']}} :</div>
                         <div>{{score}}/{{numberOfPokemons}}</div>
                     </div>
                     <div v-if="gameState == 'finished'" class="percentage">

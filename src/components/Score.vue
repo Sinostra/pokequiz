@@ -2,16 +2,16 @@
   <div class="score">
     <div class="score-wrapper">
 
-      <div v-if="hasError" class="ajax-error-msg">Une erreur est survenue, veuillez réessayer plus tard.</div>
+      <div v-if="hasError" class="ajax-error-msg">{{$store.state.localisation.dataLang['ajaxErrorText']}}</div>
 
       <div v-if="!hasError && !canDisplayScores && scoreToAdd && !loading" class="input-wrapper">
-        <label for="name">Veuillez renseigner votre nom</label>
+        <label for="name">{{$store.state.localisation.dataLang['nameInstruct']}}</label>
         <input v-model="playerName" id="name" type="text" />
 
-        <div class="error-msg">Vous n'avez pas renseigné de nom</div>
+        <div class="error-msg">{{$store.state.localisation.dataLang['nameError']}}</div>
 
         <div class="btn-wrapper">
-          <div v-on:click="clickValidate()" class="btn submit">Valider</div>
+          <div v-on:click="clickValidate()" class="btn submit">{{$store.state.localisation.dataLang['validateNameText']}}</div>
         </div>
         
       </div>
@@ -20,7 +20,7 @@
 
         <div v-if="!hasError && canDisplayScores" class="settings">
           <div class="chosenGens">
-            <div class="label">Générations choisies :</div>
+            <div class="label">{{$store.state.localisation.dataLang['chosenGensText']}}</div>
             <div class="gens-wrapper">
               <div class="gen" v-for="(gen, cgen) in $store.state.settings.selectedGeneration" :key="cgen">
                 {{gen}}
@@ -29,7 +29,7 @@
           </div>
           
           <div class="chosenTypes">
-            <div class="label">Types choisis :</div>
+            <div class="label">{{$store.state.localisation.dataLang['chosenTypesText']}}</div>
             <div class="types-wrapper">
               <div class="type" v-for="(type, ctype) in $store.state.settings.selectedTypes" :key="ctype">
                 <img :src="getUrl(type)">
@@ -38,12 +38,12 @@
           </div>
 
           <div class="chosenDifficulty">
-            <div class="label">Difficulté choisie :</div>
+            <div class="label">{{$store.state.localisation.dataLang['chosenDifficultyText']}}</div>
             {{$store.state.localisation.dataLang[this.$store.state.settings.selectedDifficulty + 'Text']}}
           </div>
         </div>
 
-        <div class="emptyScores" v-if="!hasError && canDisplayScores && emptyScores">Pas de score à afficher</div>
+        <div class="emptyScores" v-if="!hasError && canDisplayScores && emptyScores">{{$store.state.localisation.dataLang['noScoreText']}}</div>
 
         <div class="btn-wrapper">
           <div v-on:click="playAgain()" class="btn playAgain">{{$store.state.localisation.dataLang['playAgainText']}}</div>
@@ -51,9 +51,9 @@
 
         <div v-if="!hasError && canDisplayScores && !emptyScores" class="table-scores">
           <div class="table-head">
-            <div class="table-cell">Name</div>
-            <div class="table-cell">Score</div>
-            <div class="table-cell">Time</div>
+            <div class="table-cell">{{$store.state.localisation.dataLang['nameLabelText']}}</div>
+            <div class="table-cell">{{$store.state.localisation.dataLang['scoreText']}}</div>
+            <div class="table-cell">{{$store.state.localisation.dataLang['timeLabelText']}}</div>
           </div>
           <div
             v-for="(score, index) in allScores['result']"

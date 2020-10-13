@@ -90,9 +90,9 @@ export default {
     },
 
     scoreText: {
-        "english" : "Score :",
-        "french" : "Score :",
-        "german" : "Punktezahl :"
+        "english" : "Score",
+        "french" : "Score",
+        "german" : "Punktezahl"
     },
 
     remainingTimeText: {
@@ -116,6 +116,66 @@ export default {
     getToScoreText: {
         "english" : "Get to scores",
         "french" : "Aller aux scores",
-        "german" : "Punktezahlen"
-    }
+        "german" : "Zu den Punktezahlen"
+    },
+
+    ajaxErrorText: {
+        "english" : "An error occured, please try again later.",
+        "french" : "Une erreur est survenue, veuillez réessayer plus tard.",
+        "german" : "Ein Fehler ist aufgetreten, versuchen Sie bitte später."
+    },
+
+    nameInstruct: {
+        "english" : "Please enter your name",
+        "french" : "Veuillez renseigner votre nom",
+        "german" : "Geben sir bitte ihren Name ein" 
+    },
+
+    nameError: {
+        "english" : "You didn't enter your name",
+        "french" : "Vous n'avez pas renseigné de nom",
+        "german" : "Sie haben kein Name eingegeben" 
+    },
+
+    validateNameText: {
+        "english" : "Validate",
+        "french" : "Valider",
+        "german" : "Bestätigen" 
+    },
+
+    chosenGensText: {
+        "english" : "Chosen generations :",
+        "french" : "Générations choisies :",
+        "german" : "Gewählte Generationen :" 
+    },
+
+    chosenTypesText: {
+        "english" : "Chosen types :",
+        "french" : "Types choisis :",
+        "german" : "Gewählte Typen :" 
+    },
+
+    chosenDifficultyText: {
+        "english" : "Chosen difficulty :",
+        "french" : "Difficulté choisie :",
+        "german" : "Gewählte Schwierigkeit :" 
+    },
+
+    noScoreText: {
+        "english" : "No score to be displayed",
+        "french" : "Pas de score à afficher",
+        "german" : "Keine Punktezahl zu anzeigen" 
+    },
+
+    nameLabelText: {
+        "english" : "Name",
+        "french" : "Nom",
+        "german" : "Name" 
+    },
+
+    timeLabelText: {
+        "english" : "Time",
+        "french" : "Temps",
+        "german" : "Zeit" 
+    },
 }
