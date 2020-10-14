@@ -46,11 +46,13 @@
         <div class="emptyScores" v-if="!hasError && canDisplayScores && emptyScores">{{$store.state.localisation.dataLang['noScoreText']}}</div>
 
         <div class="btn-wrapper">
-          <div v-on:click="playAgain()" class="btn playAgain">{{$store.state.localisation.dataLang['playAgainText']}}</div>
+          <div v-if="!$store.state.settings.hasBeenPlayed" v-on:click="clickPrevious()" class="btn previous">{{$store.state.localisation.dataLang['previousText']}}</div>
+          <div v-on:click="playAgain()" class="btn">{{$store.state.localisation.dataLang['playAgainText']}}</div>
         </div>
 
         <div v-if="!hasError && canDisplayScores && !emptyScores" class="table-scores">
           <div class="table-head">
+            <div class="table-cell rank">{{$store.state.localisation.dataLang['rangLabelText']}}</div>
             <div class="table-cell">{{$store.state.localisation.dataLang['nameLabelText']}}</div>
             <div class="table-cell">{{$store.state.localisation.dataLang['scoreText']}}</div>
             <div class="table-cell">{{$store.state.localisation.dataLang['timeLabelText']}}</div>
@@ -61,6 +63,7 @@
             class="table-row"
             :class="score.id == lastEnteredId ? 'playedGame' : ''"
           >
+            <div class="table-cell rank">{{ index + 1 }}</div>
             <div class="table-cell">{{ score.name }}</div>
             <div class="table-cell">{{ score.score }}/{{ totalNumber }}</div>
             <div class="table-cell">{{ displayMinsAndSecs(score.time) }}</div>
@@ -97,7 +100,8 @@ export default {
       allScores: {},
       lastEnteredId: 0,
       emptyScores: false,
-      serverUrl: '/server/'
+      serverUrl: '/server/',
+      // serverUrl: 'http://localhost:8081//server/'
     };
   },
 
@@ -204,6 +208,10 @@ export default {
     getUrl(type) {
       return require('../assets/img/languages/' + this.$store.state.localisation.chosenLang + '/types/'+ type + '.png')
     },
+
+    clickPrevious() {
+      this.$store.dispatch("previousComp")
+    }
   },
 
   mounted: function () {

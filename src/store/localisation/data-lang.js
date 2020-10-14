@@ -167,6 +167,12 @@ export default {
         "german" : "Keine angezeigte Punktezahl" 
     },
 
+    rangLabelText: {
+        "english" : "Rank",
+        "french" : "Rang",
+        "german" : "Rang" 
+    },
+
     nameLabelText: {
         "english" : "Name",
         "french" : "Nom",

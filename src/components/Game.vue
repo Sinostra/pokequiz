@@ -267,11 +267,20 @@ export default {
             this.$store.state.pokedex.currentDex[index]['forgotten'] = false
         }
 
-        setTimeout(() => {
-            document.getElementById('quiz-wrapper').classList.remove('background')
+        if(Array.from(document.getElementById('quiz-wrapper').classList).includes('background')) {
+
+            setTimeout(() => {
+                document.getElementById('quiz-wrapper').classList.remove('background')
+                this.splitPokedex()
+                this.gameReady = true
+            }, 2000)
+        }
+
+        else {
             this.splitPokedex()
             this.gameReady = true
-        }, 2000)
+        }
+
 
     },
 
