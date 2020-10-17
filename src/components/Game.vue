@@ -29,8 +29,8 @@
             <div class="interactive-wrapper">
 
                 <div v-if="gameState == 'toStart'" class="btn-wrapper">
-                    <div v-on:click="startGame()" class="play btn">{{$store.state.localisation.dataLang['playText']}}</div>
-                    <div v-on:click="clickNext()" class="next btn">{{$store.state.localisation.dataLang['getToScoreText']}}</div>
+                    <div v-on:click="startGame()" class="play btn green-btn">{{$store.state.localisation.dataLang['playText']}}</div>
+                    <div v-on:click="clickNext()" class="next btn green-btn">{{$store.state.localisation.dataLang['getToScoreText']}}</div>
                 </div>
 
                 <div v-if="gameState == 'playing'" class="input-wrapper">
@@ -42,12 +42,12 @@
                 </div>
 
                 <div v-if="gameState == 'playing' || gameState == 'paused'" class="btn-wrapper">
-                    <div v-on:click="finishGame()" class="giveUp btn">{{$store.state.localisation.dataLang['giveUpText']}}</div>
+                    <div v-on:click="finishGame()" class="giveUp btn red-btn">{{$store.state.localisation.dataLang['giveUpText']}}</div>
                 </div>
 
                 <div v-if="gameState == 'finished'" class="btn-wrapper">
-                    <div v-on:click="playAgain()" class="playAgain btn">{{$store.state.localisation.dataLang['playAgainText']}}</div>
-                    <div v-on:click="clickNext()" class="next btn">{{$store.state.localisation.dataLang['getToScoreText']}}</div>
+                    <div v-on:click="playAgain()" class="playAgain btn green-btn">{{$store.state.localisation.dataLang['playAgainText']}}</div>
+                    <div v-on:click="clickNext()" class="next btn green-btn">{{$store.state.localisation.dataLang['getToScoreText']}}</div>
                 </div>
             </div>
 

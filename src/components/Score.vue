@@ -11,7 +11,7 @@
         <div class="error-msg">{{$store.state.localisation.dataLang['nameError']}}</div>
 
         <div class="btn-wrapper">
-          <div v-on:click="clickValidate()" class="btn submit">{{$store.state.localisation.dataLang['validateNameText']}}</div>
+          <div v-on:click="clickValidate()" class="btn submit green-btn">{{$store.state.localisation.dataLang['validateNameText']}}</div>
         </div>
         
       </div>
@@ -46,8 +46,8 @@
         <div class="emptyScores" v-if="!hasError && canDisplayScores && emptyScores">{{$store.state.localisation.dataLang['noScoreText']}}</div>
 
         <div class="btn-wrapper">
-          <div v-if="!$store.state.settings.hasBeenPlayed" v-on:click="clickPrevious()" class="btn previous">{{$store.state.localisation.dataLang['previousText']}}</div>
-          <div v-on:click="playAgain()" class="btn">{{$store.state.localisation.dataLang['playAgainText']}}</div>
+          <div v-if="!$store.state.settings.hasBeenPlayed" v-on:click="clickPrevious()" class="btn previous green-btn">{{$store.state.localisation.dataLang['previousText']}}</div>
+          <div v-on:click="playAgain()" class="btn green-btn">{{$store.state.localisation.dataLang['playAgainText']}}</div>
         </div>
 
         <div v-if="!hasError && canDisplayScores && !emptyScores" class="table-scores">

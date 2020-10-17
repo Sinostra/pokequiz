@@ -150,19 +150,7 @@
     }
 
     .btn-wrapper {
-        display: flex;
         justify-content: center;
-
-        .btn {
-            background-color: #43B581;
-            padding: 20px;
-            border-radius: 25px;
-            cursor: pointer;
-
-            &:hover {
-                background: #45eca0;
-            }
-        }
     }
 
 }

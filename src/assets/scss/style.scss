@@ -2,6 +2,8 @@ $imagePath: "assets/img/";
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap');
+
 @font-face {
 	font-family: "pokemonH";
 	src: url("assets/fonts/Pokemon_Hollow.ttf");
@@ -24,7 +26,7 @@ body {
     margin: 0;
     
     background-repeat: no-repeat;
-    font-family: "pokemonS";
+    font-family: 'Nunito', sans-serif;
     background-color: #79C9FA;
     line-height: 1;
     transition: linear 1s;
@@ -44,6 +46,40 @@ body {
     &.in-game {
         background-position-y: 700px;
     }
+
+    .btn-wrapper {
+        display: flex;
+
+        .btn {
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+
+            &.white-btn {
+                background: #fff;
+
+                &:hover {
+                    background: #f1f1f1;
+                }
+            }
+
+            &.green-btn {
+                background-color: #43B581;
+
+                &:hover {
+                    background: #45eca0;
+                }
+            }
+
+            &.red-btn {
+                background: #F04747;
+                
+                &:hover {
+                    background: #ff8383;
+                }
+            }
+        }
+    }
 }
 
 .generation, .type, .difficulty, .score {
@@ -58,6 +94,8 @@ body {
         font-size: 25px;
         padding-bottom: 20px;
         line-height: 1;
+        font-family: "pokemonS";
+        letter-spacing: 3px;
     }
 
     .error-msg {

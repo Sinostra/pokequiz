@@ -90,8 +90,8 @@
         </div>
 
         <div class="btn-wrapper">
-            <div v-on:click="clickPrevious" class="btn">{{$store.state.localisation.dataLang['previousText']}}</div>
-            <div v-on:click="clickNext" class="btn">{{$store.state.localisation.dataLang['nextText']}}</div>
+            <div v-on:click="clickPrevious" class="btn white-btn">{{$store.state.localisation.dataLang['previousText']}}</div>
+            <div v-on:click="clickNext" class="btn white-btn">{{$store.state.localisation.dataLang['nextText']}}</div>
         </div>
     </div>
 </template>

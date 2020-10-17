@@ -159,33 +159,17 @@
             }
 
             .btn-wrapper {
-                display: flex;
                 width: 100%;;
 
                 .btn {
-                    padding: 20px;
-                    border-radius: 25px;
-                    cursor: pointer;
 
                     &.giveUp {
-                        background: #F04747;
                         margin: 0 auto;
 
-                        &:hover {
-                            background: #ff8383;
-                        }
                     }
 
                     &.playAgain, &.play {
                         position: absolute;
-                    }
-
-                    &.play, &.playAgain, &.next {
-                        background-color: #43B581;
-
-                        &:hover {
-                            background: #45eca0;
-                        }
                     }
 
                     &.next {
@@ -197,8 +181,6 @@
                 }
             }
         }
-
-
     }
 
 
