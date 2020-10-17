@@ -29,11 +29,24 @@
 
             .settings {
                 text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                @media screen and (min-width: 768px) {
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: flex-start;
+                }
 
                 .chosenGens, .chosenTypes, .chosenDifficulty {
                     display: flex;
                     justify-content: center;
-                    padding: 20px 0 10px;
+                    max-width: 300px;
+                    padding-top: 30px;
+                    @media screen and (min-width: 768px) {
+                        padding-top: 0;
+                    }
                 }
 
                 .chosenGens {
@@ -79,12 +92,12 @@
 
             .emptyScores {
                 text-align: center;
-                padding-top: 20px;
+                padding-top: 30px;
                 font-size: 20px;
             }
 
             .btn-wrapper {
-                margin-top: 20px;
+                margin-top: 30px;
 
                 .previous {
                     margin-right: 20px;
@@ -96,7 +109,7 @@
                 max-width: fit-content;
                 margin: 0 auto;
                 background: #fff;
-                margin-top: 20px;
+                margin-top: 30px;
 
                 .table-head, .table-row {
                     display: flex;
@@ -108,14 +121,32 @@
                 }
 
                 .table-cell {
+                    display: flex;
                     padding: 10px 5px;
                     text-align: center;
                     min-width: 100px;
                     max-width: 100px;
                     overflow: hidden;
                     text-overflow: ellipsis;
+                    justify-content: center;
+                    align-items: center;
                     &:not(:last-child) {
                         border-right: 1px solid #000;
+                    }
+
+                    &.score .percentage {
+                        display: none;
+                    }
+
+                    @media screen and (min-width: 768px) {
+                        &.name, &.score {
+                            min-width: 200px;
+                            max-width: 200px;
+                        }
+
+                        &.score .percentage {
+                            display: block;
+                        }
                     }
 
                     &.rank {
@@ -124,7 +155,7 @@
                         max-width: 80px;
 
                         @media screen and (min-width: 400px) {
-                            display: block; 
+                            display: flex; 
                         }
                     }
                 }

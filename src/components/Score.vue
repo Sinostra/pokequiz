@@ -39,7 +39,7 @@
 
           <div class="chosenDifficulty">
             <div class="label">{{$store.state.localisation.dataLang['chosenDifficultyText']}}</div>
-            {{$store.state.localisation.dataLang[this.$store.state.settings.selectedDifficulty + 'Text']}}
+            &nbsp;{{$store.state.localisation.dataLang[this.$store.state.settings.selectedDifficulty + 'Text']}}
           </div>
         </div>
 
@@ -53,8 +53,8 @@
         <div v-if="!hasError && canDisplayScores && !emptyScores" class="table-scores">
           <div class="table-head">
             <div class="table-cell rank">{{$store.state.localisation.dataLang['rangLabelText']}}</div>
-            <div class="table-cell">{{$store.state.localisation.dataLang['nameLabelText']}}</div>
-            <div class="table-cell">{{$store.state.localisation.dataLang['scoreText']}}</div>
+            <div class="table-cell name">{{$store.state.localisation.dataLang['nameLabelText']}}</div>
+            <div class="table-cell score">{{$store.state.localisation.dataLang['scoreText']}}</div>
             <div class="table-cell">{{$store.state.localisation.dataLang['timeLabelText']}}</div>
           </div>
           <div
@@ -64,8 +64,11 @@
             :class="score.id == lastEnteredId ? 'playedGame' : ''"
           >
             <div class="table-cell rank">{{ index + 1 }}</div>
-            <div class="table-cell">{{ score.name }}</div>
-            <div class="table-cell">{{ score.score }}/{{ totalNumber }}</div>
+            <div class="table-cell name">{{ score.name }}</div>
+            <div class="table-cell score">
+              <div>{{ score.score }}/{{ totalNumber }}</div>
+              <div class="percentage">&nbsp;({{parseInt((score.score / totalNumber) * 100)}}%)</div>
+            </div>
             <div class="table-cell">{{ displayMinsAndSecs(score.time) }}</div>
           </div>
         </div>
@@ -101,7 +104,7 @@ export default {
       lastEnteredId: 0,
       emptyScores: false,
       serverUrl: '/server/',
-      // serverUrl: 'http://localhost:8081//server/'
+      // serverUrl: 'http://localhost:8081/server/'
     };
   },
 
