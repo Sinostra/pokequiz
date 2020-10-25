@@ -8929,4 +8929,54 @@ export default {
         "gen": "8",
         "type": ["dark", "grass"]
     },
+
+    "894": {
+        "name": {
+            "english": "Regieleki",
+            "french": "Regieleki",
+            "german": "Regieleki"
+        },
+        "gen": "8",
+        "type": ["electric"]
+    },
+
+    "895": {
+        "name": {
+            "english": "Regidrago",
+            "french": "Regidrago",
+            "german": "Regidrago"
+        },
+        "gen": "8",
+        "type": ["dragon"]
+    },
+
+    "896": {
+        "name": {
+            "english": "Glastrier",
+            "french": "Blizzeval",
+            "german": "Polaross"
+        },
+        "gen": "8",
+        "type": ["ice"]
+    },
+
+    "897": {
+        "name": {
+            "english": "Spectrier",
+            "french": "Spectreval",
+            "german": "Phantoross"
+        },
+        "gen": "8",
+        "type": ["ghost"]
+    },
+
+    "898": {
+        "name": {
+            "english": "Calyrex",
+            "french": "Sylveroy",
+            "german": "Coronospa"
+        },
+        "gen": "8",
+        "type": ["psychic", "grass"]
+    },
 }
