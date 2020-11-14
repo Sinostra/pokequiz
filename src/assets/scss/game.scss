@@ -253,10 +253,19 @@
     
                 .pokemon-data {
                     display: flex;
+                    flex-direction: column;
                     border-left: 1px solid #000;
                     border-right: 1px solid #000;
-                    border-bottom: 1px solid #000;
                     background: #fff;
+
+                    .pokeForm {
+                        display: flex;
+                        border-bottom: 1px solid #000;
+
+                        > div {
+                            display: flex;
+                        }
+                    }
     
                     .data-number {
                         flex: 0 0 40px;

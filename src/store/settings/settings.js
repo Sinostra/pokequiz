@@ -10,7 +10,8 @@ export default {
         },
 
         timeUsed: 0,
-        hasBeenPlayed: false
+        hasBeenPlayed: false,
+        useAlternateForms: true
     },
 
     mutations: {

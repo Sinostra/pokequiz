@@ -16,6 +16,12 @@ export default {
         pokedexLanguage(state, chosenLanguage) {
             for (const property in state.fullDex) {
                 state.fullDex[property]["name"] = state.fullDex[property]["name"][chosenLanguage]
+
+                if(state.fullDex[property]['forms']) {
+                    for(const formName in state.fullDex[property]['forms']) {
+                        state.fullDex[property]['forms'][formName]["name"] = state.fullDex[property]['forms'][formName]["name"][chosenLanguage]
+                    }
+                }
             }
         },
 
@@ -37,26 +43,61 @@ export default {
         filterByType(state, chosenTypes) {
             for (const property in state.currentDex) {
                 var intersection = false;
+                var usedForm = []
                 for (var i = 0; i < chosenTypes.length; i++) {
 
                     var typesArray = Array.from(state.currentDex[property]["type"])
 
                     for(var j = 0; j < typesArray.length; j++) {
                         if(!Array.isArray(typesArray[j])) {
-                            if(typesArray[j] == chosenTypes[i]) intersection = true;
+                            if(typesArray[j] == chosenTypes[i]) {
+                                if(!usedForm.includes('regular')) usedForm.push('regular')
+                                intersection = true;
+                            } 
                         }
 
                         else {
-                            if(typesArray[j].includes(chosenTypes[i])) intersection = true;
+                            if(typesArray[j].includes(chosenTypes[i])) {
+                                if(!usedForm.includes('regular')) usedForm.push('regular')
+                                intersection = true;
+                            }
+                        }
+                    }
+
+                    if(state.currentDex[property]['forms'] && this.state.settings.useAlternateForms) {
+
+                        for(const formName in state.currentDex[property]['forms']) {
+
+                            typesArray = Array.from(state.currentDex[property]['forms'][formName]['type'])
+
+
+                            for(var k = 0; k < typesArray.length; k++) {
+                                if(!Array.isArray(typesArray[k])) {
+                                    if(typesArray[k] == chosenTypes[i]) {
+                                        if(!usedForm.includes(formName)) usedForm.push(formName)
+                                        intersection = true;
+                                    } 
+                                }
+        
+                                else {
+                                    if(typesArray[k].includes(chosenTypes[i])) {
+                                        if(!usedForm.includes(formName)) usedForm.push(formName)
+                                        intersection = true;
+                                    } 
+                                }
+                            }
+
                         }
                     }
                 }
 
+                state.currentDex[property]['usedForm'] = usedForm
                 if(!intersection) {
                     delete state.currentDex[property]
                 }
-            }
 
+                
+            }
         }
     },
 

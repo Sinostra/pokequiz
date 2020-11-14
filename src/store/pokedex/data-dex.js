@@ -186,7 +186,17 @@ export default {
             "german": "Rattfratz"
         },
         "gen": "1",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "alola": {
+                "type": ["dark", "normal"],
+                "name": {
+                    "english": "Alolan/start",
+                    "french": "d'alola/end",
+                    "german": "Alola/start"
+                }
+            }
+        }
     },
 
     "20": {
@@ -196,7 +206,17 @@ export default {
             "german": "Rattikarl"
         },
         "gen": "1",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "alola": {
+                "type": ["dark", "normal"],
+                "name": {
+                    "english": "Alolan/start",
+                    "french": "d'alola/end",
+                    "german": "Alola/start"
+                }
+            }
+        }
     },
 
     "21": {
@@ -516,7 +536,25 @@ export default {
             "german": "Mauzi"
         },
         "gen": "1",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "alola": {
+                "type": ["dark"],
+                "name": {
+                    "english": "Alolan/start",
+                    "french": "d'alola/end",
+                    "german": "Alola/start"
+                }
+            },
+            "galar": {
+                "type": ["steel"],
+                "name": {
+                    "english": "Galarian/start",
+                    "french": "de galar/end",
+                    "german": "Galar/start"
+                }
+            }
+        }
     },
 
     "53": {

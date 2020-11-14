@@ -64,23 +64,58 @@
                     </div>
                     <div v-for="(pokemon, dexNumber) in object" :key="dexNumber">
                         <div :id="'number' + index" class="pokemon-data" v-for="(data, index) in pokemon" :key="index">
-                            <div class="data-number">{{index}}</div>
-                            <div class="data-name">
-                                <div :class="data.forgotten ? 'forgotten' : ''" v-if="data.found || data.forgotten">{{data.name}}</div>
-                            </div>
+                            <div class="pokeForm" v-for="(form, currentForm) in data.usedForm" :key="currentForm">
+                                <div v-if="form == 'regular'">
+                                    <div class="data-number">{{index}}</div>
+                                    <div class="data-name">
+                                        <div :class="data.forgotten ? 'forgotten' : ''" v-if="data.found || data.forgotten">{{data.name}}</div>
+                                    </div>
 
-                            <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type1">
-                                <div>
-                                    <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data.type[0])" :key="index">
-                                        <img :src="getUrl(type)">
+                                    <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type1">
+                                        <div>
+                                            <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data.type[0])" :key="index">
+                                                <img :src="getUrl(type)">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type2">
+                                        <div v-if="data.type[1]">
+                                            <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data.type[1])" :key="index">
+                                                <img :src="getUrl(type)">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type2">
-                                <div v-if="data.type[1]">
-                                    <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data.type[1])" :key="index">
-                                        <img :src="getUrl(type)">
+                                <div v-if="form != 'regular'">
+                                    <div class="data-number">{{index}}</div>
+                                    <div class="data-name">
+                                        <div :class="data.forgotten ? 'forgotten' : ''" v-if="data.found || data.forgotten">
+                                            <div v-if="data['forms'][form]['name'].split('/')[1] == 'end'">
+                                                {{data.name + " " + data['forms'][form]['name'].split('/')[0]}}
+                                            </div>
+
+                                            <div v-if="data['forms'][form]['name'].split('/')[1] == 'start'">
+                                                {{data['forms'][form]['name'].split('/')[0] + " " + data.name}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type1">
+                                        <div>
+                                            <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data['forms'][form]['type'][0])" :key="index">
+                                                <img :src="getUrl(type)">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type2">
+                                        <div v-if="data['forms'][form]['type'][1]">
+                                            <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data['forms'][form]['type'][1])" :key="index">
+                                                <img :src="getUrl(type)">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -163,17 +198,21 @@ export default {
 
                     if(!this.$store.state.pokedex.currentDex[index]['found']) {
 
-                        var currentCell = document.querySelector('#number' + index + ' .data-name')
+                        var currentCells = document.querySelectorAll('#number' + index + ' .data-name')
                         var input = document.querySelector('.input-wrapper input')
     
-                        currentCell.classList.add('valid-answer')
+                        for(var i = 0; i < currentCells.length; i++) {
+                            currentCells[i].classList.add('valid-answer')
+                        }
 
                         input.classList.remove('transition')
                         input.classList.add('valid')
     
                         setTimeout(() => {
-                            currentCell.classList.add('transition')
-                            currentCell.classList.remove('valid-answer')
+                            for(var i = 0; i < currentCells.length; i++) {
+                                currentCells[i].classList.add('transition')
+                                currentCells[i].classList.remove('valid-answer')
+                            }
                             
                             input.classList.add('transition')
                             input.classList.remove('valid')
