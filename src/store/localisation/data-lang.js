@@ -190,4 +190,18 @@ export default {
         "french" : "Il n'y a pas de Pokémon correspondant à vos choix.",
         "german" : "Es gibt kein Pokemon, das Ihrer Auswahl entspricht."
     },
+
+    useAlternateFormsText: {
+        "english" : "Play with alternate forms",
+        "french" : "Jouer avec les formes alternatives",
+        "german" : "Mit alternativen Formen spielen"
+    },
+
+    alternateFormsExplanation: {
+        "english" : "With this option checked, the quiz will take alternate forms (regional forms, Mega Evolutions, ect...) that change a Pokemon's type into account, so forms such as Mega Charizard Y or Primal Kyogre will not be taken into account.",
+
+        "french" : "Avec cette option cochée, le quiz prendra en compte les formes alternatives (formes régionales, Méga-Évolutions, ect...) qui changent le type d'un Pokémon, les formes comme Méga-Dracaufeu Y ou Primo-Kyogre ne seront donc pas prises en compte.",
+
+        "german" : "Es gibt kein Pokemon, das Ihrer Auswahl entspricht."
+    },
 }

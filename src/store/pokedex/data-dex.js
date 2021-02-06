@@ -56,7 +56,17 @@ export default {
             "german": "Glurak"
         },
         "gen": "1",
-        "type": ["fire", "flying"]
+        "type": ["fire", "flying"],
+        "forms": {
+            "mega": {
+                "type": ["fire", "dragon"],
+                "name": {
+                    "english": "Mega Charizard X",
+                    "french": "Méga-Dracaufeu X",
+                    "german": "Mega-Glurak X"
+                }
+            }
+        }
     },
 
     "7": {
@@ -276,7 +286,17 @@ export default {
             "german": "Raichu"
         },
         "gen": "1",
-        "type": ["electric"]
+        "type": ["electric"],
+        "forms": {
+            "alola": {
+                "type": ["electric", "psychic"],
+                "name": {
+                    "english": "Alolan Raichu",
+                    "french": "Raichu d'Alola",
+                    "german": "Alola Raichu"
+                }
+            }
+        }
     },
 
     "27": {
@@ -286,7 +306,17 @@ export default {
             "german": "Sandan"
         },
         "gen": "1",
-        "type": ["ground"]
+        "type": ["ground"],
+        "forms": {
+            "alola": {
+                "type": ["ice", "steel"],
+                "name": {
+                    "english": "Alolan Sandshrew",
+                    "french": "Sabelette d'Alola",
+                    "german": "Alola Sandan"
+                }
+            }
+        }
     },
 
     "28": {
@@ -296,7 +326,17 @@ export default {
             "german": "Sandamer"
         },
         "gen": "1",
-        "type": ["ground"]
+        "type": ["ground"],
+        "forms": {
+            "alola": {
+                "type": ["ice", "steel"],
+                "name": {
+                    "english": "Alolan Sandslash",
+                    "french": "Sablaireau d'Alola",
+                    "german": "Alola Sandamer"
+                }
+            }
+        }
     },
 
     "29": {
@@ -386,7 +426,17 @@ export default {
             "german": "Vulpix"
         },
         "gen": "1",
-        "type": ["fire"]
+        "type": ["fire"],
+        "forms": {
+            "alola": {
+                "type": ["ice"],
+                "name": {
+                    "english": "Alolan Vulpix",
+                    "french": "Goupix d'Alola",
+                    "german": "Alola Vulpix"
+                }
+            }
+        }
     },
 
     "38": {
@@ -396,7 +446,17 @@ export default {
             "german": "Vulnona"
         },
         "gen": "1",
-        "type": ["fire"]
+        "type": ["fire"],
+        "forms": {
+            "alola": {
+                "type": ["ice", "fairy"],
+                "name": {
+                    "english": "Alolan Ninetales",
+                    "french": "Feunard d'Alola",
+                    "german": "Alola Vulnona"
+                }
+            }
+        }
     },
 
     "39": {
@@ -516,7 +576,17 @@ export default {
             "german": "Digda"
         },
         "gen": "1",
-        "type": ["ground"]
+        "type": ["ground"],
+        "forms": {
+            "alola": {
+                "type": ["ground", "steel"],
+                "name": {
+                    "english": "Alolan Diglett",
+                    "french": "Taupiqueur d'Alola",
+                    "german": "Alola Digda"
+                }
+            }
+        }
     },
 
     "51": {
@@ -526,7 +596,17 @@ export default {
             "german": "Digdri"
         },
         "gen": "1",
-        "type": ["ground"]
+        "type": ["ground"],
+        "forms": {
+            "alola": {
+                "type": ["ground", "steel"],
+                "name": {
+                    "english": "Alolan Dugtrio",
+                    "french": "Triopikeur d'Alola",
+                    "german": "Alola Digdri"
+                }
+            }
+        }
     },
 
     "52": {
@@ -564,7 +644,17 @@ export default {
             "german": "Snobilikat"
         },
         "gen": "1",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "alola": {
+                "type": ["dark"],
+                "name": {
+                    "english": "Alolan Persian",
+                    "french": "Persian d'Alola",
+                    "german": "Alola Snobilikat"
+                }
+            }
+        }
     },
 
     "54": {
@@ -774,7 +864,17 @@ export default {
             "german": "Kleinstein"
         },
         "gen": "1",
-        "type": ["rock", "ground"]
+        "type": ["rock", "ground"],
+        "forms": {
+            "alola": {
+                "type": ["rock", "electric"],
+                "name": {
+                    "english": "Alolan Geodude",
+                    "french": "Racaillou d'Alola",
+                    "german": "Alola Kleinstein"
+                }
+            }
+        }
     },
 
     "75": {
@@ -784,7 +884,17 @@ export default {
             "german": "Georok"
         },
         "gen": "1",
-        "type": ["rock", "ground"]
+        "type": ["rock", "ground"],
+        "forms": {
+            "alola": {
+                "type": ["rock", "electric"],
+                "name": {
+                    "english": "Alolan Graveler",
+                    "french": "Gravalanch d'Alola",
+                    "german": "Alola Georok"
+                }
+            }
+        }
     },
 
     "76": {
@@ -794,7 +904,17 @@ export default {
             "german": "Geowaz"
         },
         "gen": "1",
-        "type": ["rock", "ground"]
+        "type": ["rock", "ground"],
+        "forms": {
+            "alola": {
+                "type": ["rock", "electric"],
+                "name": {
+                    "english": "Alolan Golem",
+                    "french": "Grolem d'Alola",
+                    "german": "Alola Geowaz"
+                }
+            }
+        }
     },
 
     "77": {
@@ -804,7 +924,17 @@ export default {
             "german": "Ponita"
         },
         "gen": "1",
-        "type": ["fire"]
+        "type": ["fire"],
+        "forms": {
+            "galar": {
+                "type": ["psychic"],
+                "name": {
+                    "english": "Galarian Ponyta",
+                    "french": "Ponyta de Galar",
+                    "german": "Galar Geowaz"
+                }
+            }
+        }
     },
 
     "78": {
@@ -814,7 +944,17 @@ export default {
             "german": "Gallopa"
         },
         "gen": "1",
-        "type": ["fire"]
+        "type": ["fire"],
+        "forms": {
+            "galar": {
+                "type": ["psychic", "fairy"],
+                "name": {
+                    "english": "Galarian Rapidash",
+                    "french": "Galopa de Galar",
+                    "german": "Galar Gallopa"
+                }
+            }
+        }
     },
 
     "79": {
@@ -824,7 +964,17 @@ export default {
             "german": "Flegmon"
         },
         "gen": "1",
-        "type": ["water", "psychic"]
+        "type": ["water", "psychic"],
+        "forms": {
+            "galar": {
+                "type": ["psychic"],
+                "name": {
+                    "english": "Galarian Slowpoke",
+                    "french": "Ramoloss de Galar",
+                    "german": "Galar Flegmon"
+                }
+            }
+        }
     },
 
     "80": {
@@ -834,7 +984,17 @@ export default {
             "german": "Lahmus"
         },
         "gen": "1",
-        "type": ["water", "psychic"]
+        "type": ["water", "psychic"],
+        "forms": {
+            "galar": {
+                "type": ["poison", "psychic"],
+                "name": {
+                    "english": "Galarian Slowbro",
+                    "french": "Flagadoss de Galar",
+                    "german": "Galar Lahmus"
+                }
+            }
+        }
     },
 
     "81": {
@@ -864,7 +1024,17 @@ export default {
             "german": "Porenta"
         },
         "gen": "1",
-        "type": ["normal", "flying"]
+        "type": ["normal", "flying"],
+        "forms": {
+            "galar": {
+                "type": ["fighting"],
+                "name": {
+                    "english": "Galarian Farfetch'd",
+                    "french": "Canarticho de Galar",
+                    "german": "Galar Porenta"
+                }
+            }
+        }
     },
 
     "84": {
@@ -914,7 +1084,17 @@ export default {
             "german": "Sleima"
         },
         "gen": "1",
-        "type": ["poison"]
+        "type": ["poison"],
+        "forms": {
+            "alola": {
+                "type": ["poison", "dark"],
+                "name": {
+                    "english": "Alolan Grimer",
+                    "french": "Tadmorv d'Alola",
+                    "german": "Alola Sleima"
+                }
+            }
+        }
     },
 
     "89": {
@@ -924,7 +1104,17 @@ export default {
             "german": "Sleimok"
         },
         "gen": "1",
-        "type": ["poison"]
+        "type": ["poison"],
+        "forms": {
+            "alola": {
+                "type": ["poison", "dark"],
+                "name": {
+                    "english": "Alolan Muk",
+                    "french": "Grotadmorv d'Alola",
+                    "german": "Alola Sleimok"
+                }
+            }
+        }
     },
 
     "90": {
@@ -1064,7 +1254,17 @@ export default {
             "german": "Kokowei"
         },
         "gen": "1",
-        "type": ["grass", "psychic"]
+        "type": ["grass", "psychic"],
+        "forms": {
+            "alola": {
+                "type": ["grass", "dragon"],
+                "name": {
+                    "english": "Alolan Exeggutor",
+                    "french": "Noadkoko d'Alola",
+                    "german": "Alola Kokowei"
+                }
+            }
+        }
     },
 
     "104": {
@@ -1084,7 +1284,17 @@ export default {
             "german": "Knogga"
         },
         "gen": "1",
-        "type": ["ground"]
+        "type": ["ground"],
+        "forms": {
+            "alola": {
+                "type": ["fire", "ghost"],
+                "name": {
+                    "english": "Alolan Marowak",
+                    "french": "Ossatueur d'Alola",
+                    "german": "Alola Knogga"
+                }
+            }
+        }
     },
 
     "106": {
@@ -1134,7 +1344,17 @@ export default {
             "german": "Smogmog"
         },
         "gen": "1",
-        "type": ["poison"]
+        "type": ["poison"],
+        "forms": {
+            "galar": {
+                "type": ["poison", "fairy"],
+                "name": {
+                    "english": "Galarian Weezing",
+                    "french": "Smogogo de Galar",
+                    "german": "Galar Smogmog"
+                }
+            }
+        }
     },
 
     "111": {
@@ -1254,7 +1474,17 @@ export default {
             "german": "Pantimos"
         },
         "gen": "1",
-        "type": ["psychic", "fairy"]
+        "type": ["psychic", "fairy"],
+        "forms": {
+            "galar": {
+                "type": ["ice", "psychic"],
+                "name": {
+                    "english": "Galarian Mr. Mime",
+                    "french": "M. Mime de Galar",
+                    "german": "Galar Pantimos"
+                }
+            }
+        }
     },
 
     "123": {
@@ -1304,7 +1534,17 @@ export default {
             "german": "Pinsir"
         },
         "gen": "1",
-        "type": ["bug"]
+        "type": ["bug"],
+        "forms": {
+            "mega": {
+                "type": ["bug", "flying"],
+                "name": {
+                    "english": "Mega Pinsir",
+                    "french": "Méga-Scarabrute",
+                    "german": "Mega-Pinsir"
+                }
+            }
+        }
     },
 
     "128": {
@@ -1334,7 +1574,17 @@ export default {
             "german": "Garados"
         },
         "gen": "1",
-        "type": ["water", "flying"]
+        "type": ["water", "flying"],
+        "forms": {
+            "mega": {
+                "type": ["water", "dark"],
+                "name": {
+                    "english": "Mega Gyarados",
+                    "french": "Méga-Léviator",
+                    "german": "Mega-Garados"
+                }
+            }
+        }
     },
 
     "131": {
@@ -1474,7 +1724,17 @@ export default {
             "german": "Arktos"
         },
         "gen": "1",
-        "type": ["ice", "flying"]
+        "type": ["ice", "flying"],
+        "forms": {
+            "galar": {
+                "type": ["psychic", "flying"],
+                "name": {
+                    "english": "Galarian Articuno",
+                    "french": "Artikodin de Galar",
+                    "german": "Galar Arktos"
+                }
+            }
+        }
     },
 
     "145": {
@@ -1484,7 +1744,17 @@ export default {
             "german": "Zapdos"
         },
         "gen": "1",
-        "type": ["electric", "flying"]
+        "type": ["electric", "flying"],
+        "forms": {
+            "galar": {
+                "type": ["fighting", "flying"],
+                "name": {
+                    "english": "Galarian Zapdos",
+                    "french": "Électhor de Galar",
+                    "german": "Galar Zapdos"
+                }
+            }
+        }
     },
 
     "146": {
@@ -1494,7 +1764,17 @@ export default {
             "german": "Lavados"
         },
         "gen": "1",
-        "type": ["fire", "flying"]
+        "type": ["fire", "flying"],
+        "forms": {
+            "galar": {
+                "type": ["dark", "flying"],
+                "name": {
+                    "english": "Galarian Moltres",
+                    "french": "Sulfura de Galar",
+                    "german": "Galar Lavados"
+                }
+            }
+        }
     },
 
     "147": {
@@ -1534,7 +1814,17 @@ export default {
             "german": "Mewtu"
         },
         "gen": "1",
-        "type": ["psychic"]
+        "type": ["psychic"],
+        "forms": {
+            "mega": {
+                "type": ["psychic", "fighting"],
+                "name": {
+                    "english": "Mega Mewtwo X",
+                    "french": "Méga-Mewtwo X",
+                    "german": "Mega-Mewtu X"
+                }
+            }
+        }
     },
 
     "151": {
@@ -1844,7 +2134,17 @@ export default {
             "german": "Ampharos"
         },
         "gen": "2",
-        "type": ["electric"]
+        "type": ["electric"],
+        "forms": {
+            "mega": {
+                "type": ["electric", "dragon"],
+                "name": {
+                    "english": "Mega Ampharos",
+                    "french": "Méga-Pharamp",
+                    "german": "Mega-Ampharos"
+                }
+            }
+        }
     },
 
     "182": {
@@ -2024,7 +2324,17 @@ export default {
             "german": "Laschoking"
         },
         "gen": "2",
-        "type": ["water", "psychic"]
+        "type": ["water", "psychic"],
+        "forms": {
+            "galar": {
+                "type": ["poison", "psychic"],
+                "name": {
+                    "english": "Galarian Slowking",
+                    "french": "Roigada de Galar",
+                    "german": "Galar Laschoking"
+                }
+            }
+        }
     },
 
     "200": {
@@ -2254,7 +2564,17 @@ export default {
             "german": "Corasonn"
         },
         "gen": "2",
-        "type": ["water", "rock"]
+        "type": ["water", "rock"],
+        "forms": {
+            "galar": {
+                "type": ["ghost"],
+                "name": {
+                    "english": "Galarian Corsola",
+                    "french": "Corayon de Galar",
+                    "german": "Galar Corasonn"
+                }
+            }
+        }
     },
 
     "223": {
@@ -2574,7 +2894,17 @@ export default {
             "german": "Gewaldro"
         },
         "gen": "3",
-        "type": ["grass"]
+        "type": ["grass"],
+        "forms": {
+            "mega": {
+                "type": ["grass", "dragon"],
+                "name": {
+                    "english": "Mega Sceptile",
+                    "french": "Méga-Jungko",
+                    "german": "Mega-Gewaldro"
+                }
+            }
+        }
     },
 
     "255": {
@@ -2664,7 +2994,17 @@ export default {
             "german": "Zigzachs"
         },
         "gen": "3",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "galar": {
+                "type": ["dark", "normal"],
+                "name": {
+                    "english": "Galarian Zigzagoon",
+                    "french": "Zigzaton de Galar",
+                    "german": "Galar Zigzachs"
+                }
+            }
+        }
     },
 
     "264": {
@@ -2674,7 +3014,17 @@ export default {
             "german": "Geradaks"
         },
         "gen": "3",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "galar": {
+                "type": ["dark", "normal"],
+                "name": {
+                    "english": "Galarian Linoone",
+                    "french": "Linéon de Galar",
+                    "german": "Galar Geradaks"
+                }
+            }
+        }
     },
 
     "265": {
@@ -3094,7 +3444,17 @@ export default {
             "german": "Stolloss"
         },
         "gen": "3",
-        "type": ["steel", "rock"]
+        "type": ["steel", "rock"],
+        "forms": {
+            "mega": {
+                "type": ["steel"],
+                "name": {
+                    "english": "Mega Aggron",
+                    "french": "Méga-Galeking",
+                    "german": "Mega-Stolloss"
+                }
+            }
+        }
     },
 
     "307": {
@@ -3374,7 +3734,17 @@ export default {
             "german": "Altaria"
         },
         "gen": "3",
-        "type": ["dragon", "flying"]
+        "type": ["dragon", "flying"],
+        "forms": {
+            "mega": {
+                "type": ["dragon", "fairy"],
+                "name": {
+                    "english": "Mega Altaria",
+                    "french": "Méga-Altaria",
+                    "german": "Mega-Altaria"
+                }
+            }
+        }
     },
 
     "335": {
@@ -3864,7 +4234,17 @@ export default {
             "german": "Groudon"
         },
         "gen": "3",
-        "type": ["ground"]
+        "type": ["ground"],
+        "forms": {
+            "primo": {
+                "type": ["ground", "fire"],
+                "name": {
+                    "english": "Primal Groudon",
+                    "french": "Primo-Groudon",
+                    "german": "Proto-Groudon"
+                }
+            }
+        }
     },
 
     "384": {
@@ -4314,7 +4694,17 @@ export default {
             "german": "Schlapor"
         },
         "gen": "4",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "mega": {
+                "type": ["normal", "fighting"],
+                "name": {
+                    "english": "Mega Lopunny",
+                    "french": "Méga-Lockpin",
+                    "german": "Mega-Schlapor"
+                }
+            }
+        }
     },
 
     "429": {
@@ -5345,7 +5735,17 @@ export default {
             "german": "Ohrdoch"
         },
         "gen": "5",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "mega": {
+                "type": ["normal", "fairy"],
+                "name": {
+                    "english": "Mega Audino",
+                    "french": "Méga-Nanméouïe",
+                    "german": "Mega-Ohrdoch"
+                }
+            }
+        }
     },
 
     "532": {
@@ -5575,7 +5975,17 @@ export default {
             "german": "Flampion"
         },
         "gen": "5",
-        "type": ["fire"]
+        "type": ["fire"],
+        "forms": {
+            "galar": {
+                "type": ["ice"],
+                "name": {
+                    "english": "Galarian Darumaka",
+                    "french": "Darumarond de Galar",
+                    "german": "Galar Flampion"
+                }
+            }
+        }
     },
 
     "555": {
@@ -5585,7 +5995,33 @@ export default {
             "german": "Flampivian"
         },
         "gen": "5",
-        "type": ["fire"]
+        "type": ["fire"],
+        "forms": {
+            "zen": {
+                "type": ["fire", "psychic"],
+                "name": {
+                    "english": "Zen mode Darmanitan",
+                    "french": "Darumacho mode transe",
+                    "german": "Trance-Modus Flampivian"
+                }
+            },
+            "galar": {
+                "type": ["ice"],
+                "name": {
+                    "english": "Galarian Darmanitan",
+                    "french": "Darumacho de Galar",
+                    "german": "Galar Flampivian"
+                }
+            },
+            "galarzen": {
+                "type": ["ice", "fire"],
+                "name": {
+                    "english": "Galarian zen mode Darmanitan",
+                    "french": "Darumacho de Galar mode transe",
+                    "german": "Galar Trance-Modus Flampivian"
+                }
+            }
+        }
     },
 
     "556": {
@@ -5655,7 +6091,17 @@ export default {
             "german": "Makabaja"
         },
         "gen": "5",
-        "type": ["ghost"]
+        "type": ["ghost"],
+        "forms": {
+            "galar": {
+                "type": ["ground", "ghost"],
+                "name": {
+                    "english": "Galarian Yamask",
+                    "french": "Tutafeh de Galar",
+                    "german": "Galar Makabaja"
+                }
+            }
+        }
     },
 
     "563": {
@@ -6215,7 +6661,17 @@ export default {
             "german": "Flunschlik"
         },
         "gen": "5",
-        "type": ["ground", "electric"]
+        "type": ["ground", "electric"],
+        "forms": {
+            "galar": {
+                "type": ["ground", "steel"],
+                "name": {
+                    "english": "Galarian Stunfisk",
+                    "french": "Limonde de Galar",
+                    "german": "Galar Flunschlik"
+                }
+            }
+        }
     },
 
     "619": {

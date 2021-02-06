@@ -3,10 +3,10 @@
         <div class="instruction">{{$store.state.localisation.dataLang['difficultyInstruct']}}</div>
         <div class="settings">
             <div class="checkbox" v-on:click="clickAlternateForms()" :class="useAlternateForms ? 'checked': ''"></div>
-            <div class="label" v-on:click="clickAlternateForms()">Jouer avec les formes alternatives</div>
+            <div class="label" v-on:click="clickAlternateForms()">{{$store.state.localisation.dataLang['useAlternateFormsText']}}</div>
             <div class="question-mark">
                 ?
-                <div class="explanations">Explications</div>
+                <div class="explanations">{{$store.state.localisation.dataLang['alternateFormsExplanation']}}</div>
             </div>
         </div>
         <div class="difficulty-wrapper">
@@ -52,7 +52,6 @@ export default {
 
             this.$store.dispatch("setselectedDifficulty", chosenDifficulty)
             this.$store.dispatch("setAlternateForms", this.useAlternateForms)
-            console.log(this.useAlternateForms)
 
             this.$store.dispatch("filterByGen", this.$store.state.settings.selectedGeneration)
             this.$store.dispatch("filterByType", this.$store.state.settings.selectedTypes)
