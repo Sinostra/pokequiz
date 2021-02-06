@@ -3914,7 +3914,33 @@ export default {
             "german": "Formeo"
         },
         "gen": "3",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "sun": {
+                "type": ["fire"],
+                "name": {
+                    "english": "Castform Sunny Form",
+                    "french": "Morphéo Forme Solaire",
+                    "german": "Formeo Sonnenform"
+                }
+            },
+            "rain": {
+                "type": ["water"],
+                "name": {
+                    "english": "Castform Rainy Form",
+                    "french": "Morphéo Forme Eau de Pluie",
+                    "german": "Formeo Regenform"
+                }
+            },
+            "snow": {
+                "type": ["ice"],
+                "name": {
+                    "english": "Castform Snowy Form",
+                    "french": "Morphéo Forme Blizzard",
+                    "german": "Formeo Schneeform"
+                }
+            }
+        }
     },
 
     "352": {
@@ -5214,7 +5240,49 @@ export default {
             "german": "Rotom"
         },
         "gen": "4",
-        "type": ["electric", "ghost"]
+        "type": ["electric", "ghost"],
+        "forms": {
+            "heat": {
+                "type": ["electric", "fire"],
+                "name": {
+                    "english": "Rotom Heat",
+                    "french": "Motisma Forme Chaleur",
+                    "german": "Rotom Hitze-Form"
+                }
+            },
+            "wash": {
+                "type": ["electric", "water"],
+                "name": {
+                    "english": "Rotom Wash",
+                    "french": "Motisma Forme Lavage",
+                    "german": "Wasch-Form"
+                }
+            },
+            "frost": {
+                "type": ["electric", "ice"],
+                "name": {
+                    "english": "Rotom Frost",
+                    "french": "Motisma Forme Froid",
+                    "german": "Frost-Form"
+                }
+            },
+            "fan": {
+                "type": ["electric", "flying"],
+                "name": {
+                    "english": "Rotom Fan",
+                    "french": "Motisma Forme Hélice",
+                    "german": "Wirbel-Form"
+                }
+            },
+            "mow": {
+                "type": ["electric", "grass"],
+                "name": {
+                    "english": "Rotom Mow",
+                    "french": "Motisma Forme Tonte",
+                    "german": "Schneid-Form"
+                }
+            },
+        }
     },
 
     "480": {
@@ -5345,7 +5413,17 @@ export default {
             "german": "Shaymin"
         },
         "gen": "4",
-        "type": ["grass"]
+        "type": ["grass"],
+        "forms": {
+            "sky": {
+                "type": ["grass", "flying"],
+                "name": {
+                    "english": "Shaymin Sky",
+                    "french": "Shaymin Forme Céleste",
+                    "german": "Shaymin Zenitform"
+                }
+            }
+        }
     },
 
     "493": {
@@ -6971,7 +7049,17 @@ export default {
             "german": "Meloetta"
         },
         "gen": "5",
-        "type": ["normal", "psychic"]
+        "type": ["normal", "psychic"],
+        "forms": {
+            "pirouette": {
+                "type": ["normal", "fighting"],
+                "name": {
+                    "english": "Meloetta Pirouette Forme",
+                    "french": "Meloetta Forme Danse",
+                    "german": "Meloetta Tanzform"
+                }
+            }
+        }
     },
 
     "649": {
@@ -7691,7 +7779,17 @@ export default {
             "german": "Hoopa"
         },
         "gen": "6",
-        "type": ["psychic", "ghost"]
+        "type": ["psychic", "ghost"],
+        "forms": {
+            "unbound": {
+                "type": ["psychic", "dark"],
+                "name": {
+                    "english": "Hoopa Unbound",
+                    "french": "Hoopa Forme Déchaînée",
+                    "german": "Entfesseltes Hoopa"
+                }
+            }
+        }
     },
 
     "721": {
@@ -8491,7 +8589,33 @@ export default {
             "german": "Necrozma"
         },
         "gen": "7",
-        "type": ["psychic"]
+        "type": ["psychic"],
+        "forms": {
+            "dusk": {
+                "type": ["psychic", "steel"],
+                "name": {
+                    "english": "Dusk Mane Necrozma",
+                    "french": "Necrozma Crinière du Couchant",
+                    "german": "Abendmähne-Necrozma"
+                }
+            },
+            "dawn": {
+                "type": ["psychic", "ghost"],
+                "name": {
+                    "english": "Dawn Wings Necrozma",
+                    "french": "Necrozma Ailes de l'Aurore",
+                    "german": "Morgenschwingen-Necrozma"
+                }
+            },
+            "ultra": {
+                "type": ["psychic", "dragon"],
+                "name": {
+                    "english": "Ultra Necrozma",
+                    "french": "Ultra-Necrozma",
+                    "german": "Ultra-Necrozma"
+                }
+            }
+        }
     },
 
     "801": {
@@ -9371,7 +9495,17 @@ export default {
             "german": "Zacian"
         },
         "gen": "8",
-        "type": ["fairy", "steel"]
+        "type": ["fairy"],
+        "forms": {
+            "sword": {
+                "type": ["fairy", "steel"],
+                "name": {
+                    "english": "Crowned Sword Zacian",
+                    "french": "Zacian Forme Épée Suprême",
+                    "german": "Zacian König des Schwertes"
+                }
+            }
+        }
     },
 
     "889": {
@@ -9381,7 +9515,17 @@ export default {
             "german": "Zamazenta"
         },
         "gen": "8",
-        "type": ["fighting", "steel"]
+        "type": ["fighting"],
+        "forms": {
+            "shield": {
+                "type": ["fighting", "steel"],
+                "name": {
+                    "english": "Crowned Shield Zamazenta",
+                    "french": "Zamazenta Forme Bouclier Suprême",
+                    "german": "Zamazenta König des Schildes"
+                }
+            }
+        }
     },
 
     "890": {
@@ -9471,6 +9615,24 @@ export default {
             "german": "Coronospa"
         },
         "gen": "8",
-        "type": ["psychic", "grass"]
+        "type": ["psychic", "grass"],
+        "forms": {
+            "ice": {
+                "type": ["psychic", "ice"],
+                "name": {
+                    "english": "Ice Rider Calyrex",
+                    "french": "Sylveroy Cavalier du Froid",
+                    "german": "Coronospa Schimmelreiter"
+                }
+            },
+            "shadow": {
+                "type": ["psychic", "ghost"],
+                "name": {
+                    "english": "Shadow Rider Calyrex",
+                    "french": "Sylveroy Cavalier d'Effroi",
+                    "german": "Coronospa Rappenreiter"
+                }
+            }
+        }
     },
 }
