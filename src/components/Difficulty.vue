@@ -1,6 +1,14 @@
 <template>
     <div class="difficulty">
         <div class="instruction">{{$store.state.localisation.dataLang['difficultyInstruct']}}</div>
+        <div class="settings">
+            <div class="checkbox" v-on:click="clickAlternateForms()" :class="useAlternateForms ? 'checked': ''"></div>
+            <div class="label" v-on:click="clickAlternateForms()">Jouer avec les formes alternatives</div>
+            <div class="question-mark">
+                ?
+                <div class="explanations">Explications</div>
+            </div>
+        </div>
         <div class="difficulty-wrapper">
             <div class="easy difficulty-setting" v-on:click="clickDifficulty" data-difficulty="easy">
                 <div class="picto"></div>
@@ -28,6 +36,12 @@
 export default {
     name: 'Difficulty',
 
+    data: function(){
+        return {
+            useAlternateForms: false
+        }
+    },
+
     methods: {
         clickDifficulty: function(element) {
             var chosenDifficulty = ""
@@ -37,11 +51,17 @@ export default {
             else chosenDifficulty = element.target.parentElement.getAttribute("data-difficulty")
 
             this.$store.dispatch("setselectedDifficulty", chosenDifficulty)
+            this.$store.dispatch("setAlternateForms", this.useAlternateForms)
+            console.log(this.useAlternateForms)
 
             this.$store.dispatch("filterByGen", this.$store.state.settings.selectedGeneration)
             this.$store.dispatch("filterByType", this.$store.state.settings.selectedTypes)
 
             this.$store.dispatch("nextComp")           
+        },
+
+        clickAlternateForms: function(){
+            this.useAlternateForms = !this.useAlternateForms
         },
 
         clickPrevious() {

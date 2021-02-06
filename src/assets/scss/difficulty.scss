@@ -1,5 +1,42 @@
 .difficulty {
 
+    .settings {
+        display: flex;
+        justify-content: center;
+
+        .label {
+            padding: 0 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .question-mark {
+            flex: 0 0 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+
+            .explanations {
+                display: none;
+                position: absolute;
+                top: 100%;
+                background: #fff;
+                padding: 10px;
+            }
+
+            &:hover {
+                .explanations {
+                    display: block;
+                }
+            }
+        }
+    }
+
     .difficulty-wrapper {
         display: flex;
         justify-content: space-around;

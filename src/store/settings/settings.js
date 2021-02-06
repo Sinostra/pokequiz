@@ -11,7 +11,7 @@ export default {
 
         timeUsed: 0,
         hasBeenPlayed: false,
-        useAlternateForms: true
+        useAlternateForms: false
     },
 
     mutations: {
@@ -33,6 +33,10 @@ export default {
 
         setHasBeenPlayed(state, bool) {
             state.hasBeenPlayed = bool;
+        },
+
+        setAlternateForms(state, bool) {
+            state.useAlternateForms = bool;
         }
     },
 
@@ -55,6 +59,10 @@ export default {
 
         setHasBeenPlayed(context, bool) {
             context.commit('setHasBeenPlayed', bool)
+        },
+
+        setAlternateForms(context, bool) {
+            context.commit('setAlternateForms', bool)
         }
     }
 }

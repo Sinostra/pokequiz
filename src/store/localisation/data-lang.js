@@ -184,4 +184,10 @@ export default {
         "french" : "Temps",
         "german" : "Zeit" 
     },
+
+    noPokemonText: {
+        "english" : "There is no Pokemon matching your choices.",
+        "french" : "Il n'y a pas de Pokémon correspondant à vos choix.",
+        "german" : "Es gibt kein Pokemon, das Ihrer Auswahl entspricht."
+    },
 }

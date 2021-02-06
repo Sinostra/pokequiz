@@ -41,14 +41,19 @@ export default {
         },
 
         filterByType(state, chosenTypes) {
+            //Boucle sur le pokédex utilisé
             for (const property in state.currentDex) {
                 var intersection = false;
                 var usedForm = []
+
+                //Boucle sur les types choisis
                 for (var i = 0; i < chosenTypes.length; i++) {
 
+                    //Array des types du pokémon sur lequel on est
                     var typesArray = Array.from(state.currentDex[property]["type"])
 
                     for(var j = 0; j < typesArray.length; j++) {
+                        //Si il y a un seul type, et pas un array de types
                         if(!Array.isArray(typesArray[j])) {
                             if(typesArray[j] == chosenTypes[i]) {
                                 if(!usedForm.includes('regular')) usedForm.push('regular')
@@ -57,6 +62,7 @@ export default {
                         }
 
                         else {
+                            //Si il y a un array de types
                             if(typesArray[j].includes(chosenTypes[i])) {
                                 if(!usedForm.includes('regular')) usedForm.push('regular')
                                 intersection = true;
@@ -64,14 +70,18 @@ export default {
                         }
                     }
 
+                    //Si le pokémon sur lequel on est a plusieurs formes et si les formes alternatives sont activées
                     if(state.currentDex[property]['forms'] && this.state.settings.useAlternateForms) {
 
+                        //On boucle sur les différentes formes alternatives du pokémon sur lequel on est
                         for(const formName in state.currentDex[property]['forms']) {
 
+                            //Array des types de la forme alternative sur laquelle on est du pokémon sur lequel on est
                             typesArray = Array.from(state.currentDex[property]['forms'][formName]['type'])
 
 
                             for(var k = 0; k < typesArray.length; k++) {
+                                //Si il y a un seul type, et pas un array de types
                                 if(!Array.isArray(typesArray[k])) {
                                     if(typesArray[k] == chosenTypes[i]) {
                                         if(!usedForm.includes(formName)) usedForm.push(formName)
@@ -80,6 +90,7 @@ export default {
                                 }
         
                                 else {
+                                    //Si il y a un array de types
                                     if(typesArray[k].includes(chosenTypes[i])) {
                                         if(!usedForm.includes(formName)) usedForm.push(formName)
                                         intersection = true;
@@ -91,6 +102,12 @@ export default {
                     }
                 }
 
+                //S'il y a plusieurs formes utilisées, met la forme regular en première  position
+                if(usedForm.indexOf('regular') > 0) {
+                    usedForm.splice(usedForm.indexOf('regular'), 1);
+                    usedForm.unshift('regular')
+                }
+
                 state.currentDex[property]['usedForm'] = usedForm
                 if(!intersection) {
                     delete state.currentDex[property]
@@ -98,6 +115,7 @@ export default {
 
                 
             }
+
         }
     },
 

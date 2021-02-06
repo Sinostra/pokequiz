@@ -80,6 +80,26 @@ body {
             }
         }
     }
+
+    .checkbox {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-color: #f1f1f1;
+        }
+
+        &.checked {
+            background-image: url($imagePath + 'ui/check.png');
+        }
+
+    }
 }
 
 .generation, .type, .difficulty, .score {

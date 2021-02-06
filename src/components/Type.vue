@@ -44,7 +44,7 @@
                     <img class="label" :src="getUrl('ghost')">
                 </div>
                 <div class="specific-type" data-type="dark">
-                    <div v-on:click="clickType" :class="$store.state.settings.selectedGeneration.includes('1') == 1 && $store.state.settings.selectedGeneration.length == 1 ? 'disabled' : ''" class="checkbox"></div>
+                    <div v-on:click="clickType" class="checkbox"></div>
                     <img class="label" :src="getUrl('dark')">
                 </div>
                 <div class="specific-type" data-type="fighting">
@@ -106,9 +106,7 @@ export default {
         },
 
         clickType: function(element){
-            if(!Array.from(element.target.classList).includes("disabled")) {
-                element.target.classList.toggle("checked")
-            }
+            element.target.classList.toggle("checked")
         },
 
         clickAllTypes: function(element){

@@ -1,5 +1,5 @@
 <template>
-    <div class="game" :class="gameState == 'playing' ? 'playing' : ''">
+    <div v-if="numberOfPokemons > 0" class="game" :class="gameState == 'playing' ? 'playing' : ''">
         
         <div v-if="gameReady" class="interface-wrapper">
 
@@ -92,13 +92,7 @@
                                     <div class="data-number">{{index}}</div>
                                     <div class="data-name">
                                         <div :class="data.forgotten ? 'forgotten' : ''" v-if="data.found || data.forgotten">
-                                            <div v-if="data['forms'][form]['name'].split('/')[1] == 'end'">
-                                                {{data.name + " " + data['forms'][form]['name'].split('/')[0]}}
-                                            </div>
-
-                                            <div v-if="data['forms'][form]['name'].split('/')[1] == 'start'">
-                                                {{data['forms'][form]['name'].split('/')[0] + " " + data.name}}
-                                            </div>
+                                            {{data['forms'][form]['name']}}
                                         </div>
                                     </div>
 
@@ -124,6 +118,13 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div v-if="numberOfPokemons == 0" class="empty-pokedex">
+        <div class="error-mg">{{$store.state.localisation.dataLang['noPokemonText']}}</div>
+        <div class="btn-wrapper">
+            <div v-on:click="playAgain()" class="playAgain btn green-btn">{{$store.state.localisation.dataLang['playAgainText']}}</div>
+        </div>
+        
     </div>
 </template>
 <script>

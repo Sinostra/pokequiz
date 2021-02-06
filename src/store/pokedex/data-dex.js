@@ -191,9 +191,9 @@ export default {
             "alola": {
                 "type": ["dark", "normal"],
                 "name": {
-                    "english": "Alolan/start",
-                    "french": "d'alola/end",
-                    "german": "Alola/start"
+                    "english": "Alolan Rattata",
+                    "french": "Rattata d'Alola",
+                    "german": "Alola Rattfratz"
                 }
             }
         }
@@ -211,9 +211,9 @@ export default {
             "alola": {
                 "type": ["dark", "normal"],
                 "name": {
-                    "english": "Alolan/start",
-                    "french": "d'alola/end",
-                    "german": "Alola/start"
+                    "english": "Alolan Raticate",
+                    "french": "Rattatac d'Alola",
+                    "german": "Alola Rattikarl"
                 }
             }
         }
@@ -541,17 +541,17 @@ export default {
             "alola": {
                 "type": ["dark"],
                 "name": {
-                    "english": "Alolan/start",
-                    "french": "d'alola/end",
-                    "german": "Alola/start"
+                    "english": "Alolan Meowth",
+                    "french": "Miaouss d'Alola",
+                    "german": "Alola Mauzi"
                 }
             },
             "galar": {
                 "type": ["steel"],
                 "name": {
-                    "english": "Galarian/start",
-                    "french": "de galar/end",
-                    "german": "Galar/start"
+                    "english": "Galarian Meowth",
+                    "french": "Miaouss de Galar",
+                    "german": "Galar Mauzi"
                 }
             }
         }
