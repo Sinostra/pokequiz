@@ -1,9 +1,76 @@
 .difficulty {
 
+    .difficulty-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            margin: 20px auto 20px;
+        }
+
+        .difficulty-setting {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+            cursor: pointer;
+
+            @media screen and (min-width: 768px) {
+                margin-bottom: 0;
+            }
+
+            .picto {
+                width: 60px;
+                height: 60px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                filter: grayscale(1);
+
+                &.chosenDifficulty {
+                    filter: grayscale(0);
+                }
+            }
+
+            &.easy .picto {
+                background-image: url($imagePath + 'difficulties/easy.png');
+            }
+
+            &.medium .picto {
+                background-image: url($imagePath + 'difficulties/medium.png');
+            }
+
+            &.hard .picto {
+                background-image: url($imagePath + 'difficulties/hard.png');
+            }
+
+            .text {
+                text-align: center;
+                padding-top: 5px;
+
+                &.chosenDifficulty {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .options-insctruct {
+        text-align: center;
+        padding: 0 0 20px;
+        font-size: 25px;
+        font-weight: bold;
+        @media screen and (min-width: 768px) {
+            padding: 20px 0;
+        }
+    }
+
     .settings {
         display: flex;
         justify-content: center;
-        position: relative;
+        align-items: center;
 
         .label {
             padding: 0 10px;
@@ -20,21 +87,19 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            position: static;
-            @media screen and (min-width: 768px) {
-                position: relative;
-            }
+            position: relative;
 
             .explanations {
                 display: none;
                 position: absolute;
-                top: 100%;
                 background: #fff;
                 padding: 10px;
                 min-width: 250px;
                 max-width: 250px;
-                left: 50%;
-                transform: translateX(-50%);
+                top: 0;
+                left: 0;
+                transform: translate(-100%, -45%);
+                border-radius: 5px;
                 @media screen and (min-width: 768px) {
                     left: auto;
                     transform: initial;
@@ -58,53 +123,6 @@
                 .explanations {
                     display: block;
                 }
-            }
-        }
-    }
-
-    .difficulty-wrapper {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        width: 50%;
-        margin: 50px auto 0;
-        @media screen and (min-width: 768px) {
-            flex-direction: row;
-        }
-
-        .difficulty-setting {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 50px;
-            cursor: pointer;
-
-            @media screen and (min-width: 768px) {
-                margin-bottom: 0;
-            }
-
-            .picto {
-                width: 60px;
-                height: 60px;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-
-            &.easy .picto {
-                background-image: url($imagePath + 'difficulties/easy.png');
-            }
-
-            &.medium .picto {
-                background-image: url($imagePath + 'difficulties/medium.png');
-            }
-
-            &.hard .picto {
-                background-image: url($imagePath + 'difficulties/hard.png');
-            }
-
-            .text {
-                text-align: center;
-                padding-top: 5px;
             }
         }
     }

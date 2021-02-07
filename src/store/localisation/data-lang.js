@@ -47,6 +47,12 @@ export default {
         "german" : "Wählen Sie jetzt eine Schwierigkeit."
     },
 
+    difficultyError: {
+        "english" : "You didn't choose any difficulty.",
+        "french" : "Vous n'avez choisi aucune difficulté.",
+        "german" : "Sie haben keine Schwierigkeit gewählt."
+    },
+
     easyText: {
         "english" : "Easy",
         "french" : "Facile",
@@ -191,6 +197,12 @@ export default {
         "german" : "Es gibt kein Pokemon, das Ihrer Auswahl entspricht."
     },
 
+    otherOptionsText: {
+        "english" : "Other options",
+        "french" : "Autres options",
+        "german" : "Andere Optionen"
+    },
+
     useAlternateFormsText: {
         "english" : "Play with alternate forms",
         "french" : "Jouer avec les formes alternatives",
@@ -202,6 +214,6 @@ export default {
 
         "french" : "Avec cette option cochée, le quiz prendra en compte les formes alternatives (formes régionales, Méga-Évolutions, ect...) qui changent le type d'un Pokémon, les formes comme Méga-Dracaufeu Y ou Primo-Kyogre ne seront donc pas prises en compte.",
 
-        "german" : "Es gibt kein Pokemon, das Ihrer Auswahl entspricht."
+        "german" : "Placeholder."
     },
 }

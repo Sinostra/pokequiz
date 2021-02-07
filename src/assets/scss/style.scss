@@ -123,14 +123,27 @@ body {
         font-size: 15px;
         padding-bottom: 20px;
         color: #ff0000;
-        opacity: 0;
+        visibility: hidden;
 
-        &.displayed {
-            opacity: 1;
+        &.visible {
+            visibility: visible;
         }
+        
 
-        &.transition {
+        &.fadeOut {
             transition: ease-in 1s;
+            opacity: 0;
+        }
+    }
+}
+
+.type, .difficulty {
+    .btn-wrapper {
+        justify-content: center;
+        padding: 50px 0 20px;
+
+        .btn:first-child {
+            margin-right: 20px;
         }
     }
 }

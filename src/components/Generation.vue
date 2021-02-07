@@ -1,28 +1,28 @@
 <template>
     <div class="generation">
         <div class="instruction">{{$store.state.localisation.dataLang['genInstruct']}}</div>
-        <div class="error-msg">{{$store.state.localisation.dataLang['genError']}}</div>
+        <div :class="getErrorMsgClass()" class="error-msg">{{$store.state.localisation.dataLang['genError']}}</div>
         <div class="gen-wrapper">
 
             <div class="first-half">
 
                 <div class="gen-box">
-                    <div v-on:click="clickGeneration" class="gen gen-1"></div>
+                    <div v-on:click="clickGeneration(1)" :class="getCheckBoxClass(1)" class="gen gen-1"></div>
                     <div class="gen-number">1</div>
                 </div>
 
                 <div class="gen-box">
-                    <div v-on:click="clickGeneration" class="gen gen-2"></div>
+                    <div v-on:click="clickGeneration(2)" :class="getCheckBoxClass(2)" class="gen gen-2"></div>
                     <div class="gen-number">2</div>
                 </div>
 
                 <div class="gen-box">
-                    <div v-on:click="clickGeneration" class="gen gen-3"></div>
+                    <div v-on:click="clickGeneration(3)" :class="getCheckBoxClass(3)" class="gen gen-3"></div>
                     <div class="gen-number">3</div>
                 </div>
 
                 <div class="gen-box">
-                    <div v-on:click="clickGeneration" class="gen gen-4"></div>
+                    <div v-on:click="clickGeneration(4)" :class="getCheckBoxClass(4)" class="gen gen-4"></div>
                     <div class="gen-number">4</div>
                 </div>
 
@@ -31,22 +31,22 @@
             <div class="second-half">
 
                 <div class="gen-box">
-                    <div v-on:click="clickGeneration" class="gen gen-5"></div>
+                    <div v-on:click="clickGeneration(5)" :class="getCheckBoxClass(5)" class="gen gen-5"></div>
                     <div class="gen-number">5</div>
                 </div>
 
                 <div class="gen-box">
-                    <div v-on:click="clickGeneration" class="gen gen-6"></div>
+                    <div v-on:click="clickGeneration(6)" :class="getCheckBoxClass(6)" class="gen gen-6"></div>
                     <div class="gen-number">6</div>
                 </div>
 
                 <div class="gen-box">
-                    <div v-on:click="clickGeneration" class="gen gen-7"></div>
+                    <div v-on:click="clickGeneration(7)" :class="getCheckBoxClass(7)" class="gen gen-7"></div>
                     <div class="gen-number">7</div>
                 </div>
 
                 <div class="gen-box">
-                    <div v-on:click="clickGeneration" class="gen gen-8"></div>
+                    <div v-on:click="clickGeneration(8)" :class="getCheckBoxClass(8)" class="gen gen-8"></div>
                     <div class="gen-number">8</div>
                 </div>
 
@@ -63,30 +63,54 @@
 export default {
   name: 'Generation',
 
-  methods: {
-    clickGeneration: function(element) {
-        element.target.classList.toggle("active")
-    },
+  data:function() {
+    return {
+        chosenGensList: [],
+        hasError: false,
+        errorFadeOut: false,
+    }
+  },
 
-    clickNext: function(){
-        if(!document.getElementsByClassName("active").length) {
-            document.getElementsByClassName("error-msg")[0].classList.remove("transition")
-            document.getElementsByClassName("error-msg")[0].classList.add("displayed")
-            setTimeout(function(){
-                document.getElementsByClassName("error-msg")[0].classList.add("transition")
-                document.getElementsByClassName("error-msg")[0].classList.remove("displayed")
-            }, 1)
+  methods: {
+
+    clickGeneration(genNumber) {
+        if(this.chosenGensList.indexOf(genNumber) > -1) {
+            this.chosenGensList.splice(this.chosenGensList.indexOf(genNumber), 1)
         }
 
         else {
-            var chosenGensList = Array.from(document.getElementsByClassName("active"))
-            var gensNumber = []
+            this.chosenGensList.push(genNumber)
+        }
+    },
 
-            chosenGensList.forEach(function(element){
-                gensNumber.push(element.classList[1].split('-')[1])
-            })
+    getCheckBoxClass(genNumber) {
+        return {
+            active: this.chosenGensList.indexOf(genNumber) > -1
+        }
+    },
 
-            this.$store.dispatch("setselectedGeneration", gensNumber)
+    getErrorMsgClass() {
+        return {
+            fadeOut: this.errorFadeOut,
+            visible: this.hasError
+        }
+    },
+
+    clickNext: function(){
+        if(!this.chosenGensList.length) {
+            if(this.errorFadeOut == false) {
+                this.errorFadeOut = true
+                this.hasError = true
+                setTimeout(() => {
+                    this.hasError = false
+                    this.errorFadeOut = false
+                }, 1000)
+            }
+        }
+
+        else {
+
+            this.$store.dispatch("setselectedGeneration", this.chosenGensList)
             this.$store.dispatch("nextComp")
         }
     }

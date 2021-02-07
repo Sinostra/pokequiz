@@ -5433,7 +5433,153 @@ export default {
             "german": "Arceus"
         },
         "gen": "4",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "grass": {
+                "type": ["grass"],
+                "name": {
+                    "english": "Arceus-Grass",
+                    "french": "Arceus Plante",
+                    "german": "Arceus-Pflanze"
+                }
+            },
+            "fire": {
+                "type": ["fire"],
+                "name": {
+                    "english": "Arceus-Fire",
+                    "french": "Arceus Feu",
+                    "german": "Arceus-Feuer"
+                }
+            },
+            "water": {
+                "type": ["water"],
+                "name": {
+                    "english": "Arceus-Water",
+                    "french": "Arceus Eau",
+                    "german": "Arceus-Wasser"
+                }
+            },
+            "electric": {
+                "type": ["electric"],
+                "name": {
+                    "english": "Arceus-Electric",
+                    "french": "Arceus Électrik",
+                    "german": "Arceus-Elektro"
+                }
+            },
+            "ground": {
+                "type": ["ground"],
+                "name": {
+                    "english": "Arceus-Ground",
+                    "french": "Arceus Sol",
+                    "german": "Arceus-Boden"
+                }
+            },
+            "rock": {
+                "type": ["rock"],
+                "name": {
+                    "english": "Arceus-Rock",
+                    "french": "Arceus Roche",
+                    "german": "Arceus-Gestein"
+                }
+            },
+            "psychic": {
+                "type": ["psychic"],
+                "name": {
+                    "english": "Arceus-Psychic",
+                    "french": "Arceus Psy",
+                    "german": "Arceus-Psycho"
+                }
+            },
+            "ghost": {
+                "type": ["ghost"],
+                "name": {
+                    "english": "Arceus-Ghost",
+                    "french": "Arceus Spectre",
+                    "german": "Arceus-Geist"
+                }
+            },
+            "dark": {
+                "type": ["dark"],
+                "name": {
+                    "english": "Arceus-Dark",
+                    "french": "Arceus Ténèbres",
+                    "german": "Arceus-Unlicht"
+                }
+            },
+            "fighting": {
+                "type": ["fighting"],
+                "name": {
+                    "english": "Arceus-Fighting",
+                    "french": "Arceus Combat",
+                    "german": "Arceus-Kampf"
+                }
+            },
+            "fairy": {
+                "type": ["fairy"],
+                "name": {
+                    "english": "Arceus-Fairy",
+                    "french": "Arceus Fée",
+                    "german": "Arceus-Fee"
+                }
+            },
+            "steel": {
+                "type": ["steel"],
+                "name": {
+                    "english": "Arceus-Steel",
+                    "french": "Arceus Acier",
+                    "german": "Arceus-Stahl"
+                }
+            },
+            "normal": {
+                "type": ["normal"],
+                "name": {
+                    "english": "Arceus-Normal",
+                    "french": "Arceus Normal",
+                    "german": "Arceus-Normal"
+                }
+            },
+            "flying": {
+                "type": ["flying"],
+                "name": {
+                    "english": "Arceus-Flying",
+                    "french": "Arceus Vol",
+                    "german": "Arceus-Flug"
+                }
+            },
+            "ice": {
+                "type": ["ice"],
+                "name": {
+                    "english": "Arceus-Ice",
+                    "french": "Arceus Glace",
+                    "german": "Arceus-Eis"
+                }
+            },
+            "dragon": {
+                "type": ["dragon"],
+                "name": {
+                    "english": "Arceus-Dragon",
+                    "french": "Arceus Dragon",
+                    "german": "Arceus-Drache"
+                }
+            },
+            "poison": {
+                "type": ["poison"],
+                "name": {
+                    "english": "Arceus-Poison",
+                    "french": "Arceus Poison",
+                    "german": "Arceus-Gift"
+                }
+            },
+            "bug": {
+                "type": ["bug"],
+                "name": {
+                    "english": "Arceus-Bug",
+                    "french": "Arceus Insecte",
+                    "german": "Arceus-Käfer"
+                }
+            },
+        }
     },
 
     "494": {
