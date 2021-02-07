@@ -2,7 +2,7 @@
   <div
     id="quiz-wrapper"
     class="background"
-    :class="$store.state.currentComp == 'Game' || $store.state.currentComp == 'Score' ? 'in-game' : ''"
+    :class="getBackgroundClass()"
   >
     <Home v-if="$store.state.currentComp == 'Language'" />
     <Generation v-if="$store.state.currentComp == 'Generation'" />
@@ -31,6 +31,20 @@ export default {
     Game,
     Score,
   },
+
+  data:function(){
+    return {
+      backgroundDisplayed: true
+    }
+  },
+  methods: {
+    getBackgroundClass() {
+      return {
+        inGame: this.$store.state.currentComp == 'Game' || this.$store.state.currentComp == 'Score',
+        noBackground: !this.$store.state.displayedBackground
+      }
+    }
+  }
 };
 </script>
 

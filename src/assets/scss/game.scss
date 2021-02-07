@@ -144,16 +144,13 @@
                     font-size: 20px;
                     width: 100%;
                     background-color: #fff;
+                    transition: ease-in .2s;
                     @media screen and (min-width: 768px) {
                         width: 80%;
                     }
 
                     &.valid {
                         background-color: #43B581;
-                    }
-
-                    &.transition {
-                        transition: ease-in .3s;
                     }
                 }
             }
@@ -287,14 +284,16 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        line-height: 16px;
 
-                        &.valid-answer {
+                        &.validanswer {
                             background-color: #43B581;
+                            &.transition {
+                                transition: ease-in .2s;
+                                background-color: #fff;
+                            }
                         }
 
-                        &.transition {
-                            transition: ease-in .3s;
-                        }
 
                         .forgotten {
                             color: #F04747;

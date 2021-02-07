@@ -1,7 +1,7 @@
 <template>
-    <div v-if="numberOfPokemons > 0" class="game" :class="gameState == 'playing' ? 'playing' : ''">
+    <div v-show="numberOfPokemons > 0" class="game" :class="gameState == 'playing' ? 'playing' : ''">
         
-        <div v-if="gameReady" class="interface-wrapper">
+        <div v-show="gameReady" class="interface-wrapper">
 
             <div class="gameInfos">
                 <div class="score-wrapper">
@@ -33,12 +33,12 @@
                     <div v-on:click="clickNext()" class="next btn green-btn">{{$store.state.localisation.dataLang['getToScoreText']}}</div>
                 </div>
 
-                <div v-if="gameState == 'playing'" class="input-wrapper">
+                <div v-show="gameState == 'playing'" class="input-wrapper">
                     <div v-if="lastFound" class="last-found">
                         {{$store.state.localisation.dataLang['lastFoundText']}} {{lastFound}}
                     </div>
                     <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
-                    <input v-model="enteredName" v-on:input="checkEnteredPokemon" type="text">
+                    <input v-model="enteredName" v-on:input="checkEnteredPokemon" ref="pokemonInput" type="text" :class="answerFound ? 'valid': ''">
                 </div>
 
                 <div v-if="gameState == 'playing' || gameState == 'paused'" class="btn-wrapper">
@@ -67,9 +67,11 @@
                             <div class="pokeForm" v-for="(form, currentForm) in data.usedForm" :key="currentForm">
                                 <div v-if="form == 'regular'">
                                     <div class="data-number">{{index}}</div>
-                                    <div class="data-name">
-                                        <div :class="data.forgotten ? 'forgotten' : ''" v-if="data.found || data.forgotten">{{data.name}}</div>
-                                    </div>
+                                        <transition name="colorFade">
+                                            <div class="data-name" :class="getNameCellClass(index)">
+                                                <div :class="getNameClass(index)" v-if="data.found || data.forgotten">{{data.name}}</div>
+                                            </div>
+                                        </transition>
 
                                     <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type1">
                                         <div>
@@ -90,8 +92,8 @@
 
                                 <div v-if="form != 'regular'">
                                     <div class="data-number">{{index}}</div>
-                                    <div class="data-name">
-                                        <div :class="data.forgotten ? 'forgotten' : ''" v-if="data.found || data.forgotten">
+                                    <div class="data-name" :class="getNameCellClass(index)">
+                                        <div :class="getNameClass(index)" v-if="data.found || data.forgotten">
                                             {{data['forms'][form]['name']}}
                                         </div>
                                     </div>
@@ -147,13 +149,27 @@ export default {
             displayDex: [],
             enteredName: '',
             score: 0,
-            lastFound: ''
+            lastFound: '',
+            answerFound: false
         }
     },
 
     methods: {
         getUrl(type) {
             return require('../assets/img/languages/' + this.$store.state.localisation.chosenLang + '/types/'+ type + '.png')
+        },
+
+        getNameCellClass(index) {
+            return {
+                validanswer : this.$store.state.pokedex.currentDex[index]['found'],
+                transition: this.$store.state.pokedex.currentDex[index]['transition']
+            }
+        },
+
+        getNameClass(index) {
+            return {
+                forgotten : this.$store.state.pokedex.currentDex[index]['forgotten']
+            }
         },
 
         displayTypes(types) {
@@ -195,32 +211,20 @@ export default {
             for(const index in this.$store.state.pokedex.currentDex) {
 
                 var currentName = this.$store.state.pokedex.currentDex[index]['name']
-                if(this.replaceAllSpecialChars(currentName) == this.replaceAllSpecialChars(this.enteredName)) {
+                if(this.replaceAllSpecialChars(this.enteredName) == this.replaceAllSpecialChars(currentName)) {
 
                     if(!this.$store.state.pokedex.currentDex[index]['found']) {
-
-                        var currentCells = document.querySelectorAll('#number' + index + ' .data-name')
-                        var input = document.querySelector('.input-wrapper input')
-    
-                        for(var i = 0; i < currentCells.length; i++) {
-                            currentCells[i].classList.add('valid-answer')
-                        }
-
-                        input.classList.remove('transition')
-                        input.classList.add('valid')
-    
-                        setTimeout(() => {
-                            for(var i = 0; i < currentCells.length; i++) {
-                                currentCells[i].classList.add('transition')
-                                currentCells[i].classList.remove('valid-answer')
-                            }
-                            
-                            input.classList.add('transition')
-                            input.classList.remove('valid')
-                        },1)
     
                         this.lastFound = currentName
                         this.$store.state.pokedex.currentDex[index]['found'] = true
+                        this.answerFound = true
+
+                        //Gère la transition du vert sur l'input et le nom
+                        setTimeout(() => {
+                            this.$store.state.pokedex.currentDex[index]['transition'] = true
+                            this.answerFound = false
+                        }, 200)
+                        
                         this.score++
     
                         //Check victoire
@@ -248,6 +252,11 @@ export default {
             newString = newString.replace(/[ß]/g, 'ss')
             newString = newString.replace(/[' ','.',':','♀','♂']/g, '')
             newString = newString.replace(/-/g, '')
+            newString = newString.replace(/galarian/g, '')
+            newString = newString.replace(/alolan/g, '')
+            newString = newString.replace(/galar/g, '')
+            newString = newString.replace(/alola/g, '')
+            newString = newString.replace(/mega/g, '')
             return newString
         },
 
@@ -263,6 +272,9 @@ export default {
 
         startGame(){
             this.gameState = "playing"
+            this.$nextTick().then(() => {
+                this.$refs.pokemonInput.focus()
+            })
         },
 
         finishGame(){
@@ -307,10 +319,9 @@ export default {
             this.$store.state.pokedex.currentDex[index]['forgotten'] = false
         }
 
-        if(Array.from(document.getElementById('quiz-wrapper').classList).includes('background')) {
-
+        if(this.$store.state.displayedBackground) {
             setTimeout(() => {
-                document.getElementById('quiz-wrapper').classList.remove('background')
+                this.$store.dispatch("displayBackground", false)
                 this.splitPokedex()
                 this.gameReady = true
             }, 2000)
@@ -320,8 +331,6 @@ export default {
             this.splitPokedex()
             this.gameReady = true
         }
-
-
     },
 
 }

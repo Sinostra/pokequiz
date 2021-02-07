@@ -6,7 +6,8 @@ import pokedex from './pokedex/pokedex'
 export default createStore({
   state: {
     currentComp: "Language",
-    compOrder: ["Language", "Generation", "Type", "Difficulty", "Game", "Score"]
+    compOrder: ["Language", "Generation", "Type", "Difficulty", "Game", "Score"],
+    displayedBackground: true
   },
   mutations: {
     nextComp(state) {
@@ -19,6 +20,9 @@ export default createStore({
     },
     rePlay(state) {
       state.currentComp = "Generation"
+    },
+    displayBackground(state, bool) {
+      state.displayedBackground = bool;
     }
   },
   actions: {
@@ -30,6 +34,9 @@ export default createStore({
     },
     rePlay(context) {
       context.commit('rePlay')
+    },
+    displayBackground(context, bool) {
+      context.commit('displayBackground', bool)
     }
   },
   modules: {

@@ -90,6 +90,10 @@ export default {
             this.$store.dispatch("nextComp")
         }
     }
+  },
+
+  mounted: function() {
+    this.$store.dispatch("displayBackground", true)
   }
 }
 </script>
