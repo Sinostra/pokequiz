@@ -150,13 +150,19 @@ export default {
             enteredName: '',
             score: 0,
             lastFound: '',
-            answerFound: false
+            answerFound: false,
+            leftToFind: [],
+            hintedPokemon: ''
         }
     },
 
     methods: {
         getUrl(type) {
             return require('../assets/img/languages/' + this.$store.state.localisation.chosenLang + '/types/'+ type + '.png')
+        },
+
+        getAudioUrl(index) {
+            return require('../assets/pokedex/' + index + '/' + index + '.mp3');
         },
 
         getNameCellClass(index) {
@@ -218,6 +224,9 @@ export default {
                         this.lastFound = currentName
                         this.$store.state.pokedex.currentDex[index]['found'] = true
                         this.answerFound = true
+                        this.leftToFind.splice(this.leftToFind.indexOf(index), 1)
+                        if(index == this.hintedPokemon)
+                        this.getRandomLeftToFindPokemon()
 
                         //Gère la transition du vert sur l'input et le nom
                         setTimeout(() => {
@@ -291,6 +300,19 @@ export default {
             this.$store.dispatch("rePlay");
         },
 
+        getRandomLeftToFindPokemon() {
+            for (var i = this.leftToFind.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                [this.leftToFind[i], this.leftToFind[j]] = [this.leftToFind[j], this.leftToFind[i]];
+            }
+            this.hintedPokemon = this.leftToFind[0]
+        },
+
+        playHintedPokemonCry(index) {
+            var audio = new Audio(this.getAudioUrl(index))
+            audio.play()
+        },
+
         clickNext: function(){
             if(this.gameState == "finished") {
                 this.$store.dispatch("setHasBeenPlayed", true)
@@ -315,6 +337,7 @@ export default {
         else if(this.numberOfPokemons >= 200) this.splitNumber = 4
 
         for(const index in this.$store.state.pokedex.currentDex) {
+            this.leftToFind.push(index)
             this.$store.state.pokedex.currentDex[index]['found'] = false
             this.$store.state.pokedex.currentDex[index]['forgotten'] = false
         }
@@ -331,6 +354,8 @@ export default {
             this.splitPokedex()
             this.gameReady = true
         }
+
+        this.getRandomLeftToFindPokemon()
     },
 
 }

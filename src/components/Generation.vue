@@ -98,13 +98,13 @@ export default {
 
     clickNext: function(){
         if(!this.chosenGensList.length) {
-            if(this.errorFadeOut == false) {
-                this.errorFadeOut = true
+            if(!this.errorFadeOut) {
                 this.hasError = true
+                this.errorFadeOut = true
                 setTimeout(() => {
                     this.hasError = false
                     this.errorFadeOut = false
-                }, 1000)
+                }, 3000)
             }
         }
 

@@ -5531,14 +5531,6 @@ export default {
                     "german": "Arceus-Stahl"
                 }
             },
-            "normal": {
-                "type": ["normal"],
-                "name": {
-                    "english": "Arceus-Normal",
-                    "french": "Arceus Normal",
-                    "german": "Arceus-Normal"
-                }
-            },
             "flying": {
                 "type": ["flying"],
                 "name": {
@@ -8465,7 +8457,145 @@ export default {
             "german": "Amigento"
         },
         "gen": "7",
-        "type": ["normal"]
+        "type": ["normal"],
+        "forms": {
+            "grass": {
+                "type": ["grass"],
+                "name": {
+                    "english": "Silvally-Grass",
+                    "french": "Silvallié Plante",
+                    "german": "Amigento-Pflanze"
+                }
+            },
+            "fire": {
+                "type": ["fire"],
+                "name": {
+                    "english": "Silvally-Fire",
+                    "french": "Silvallié Feu",
+                    "german": "Amigento-Feuer"
+                }
+            },
+            "water": {
+                "type": ["water"],
+                "name": {
+                    "english": "Silvally-Water",
+                    "french": "Silvallié Eau",
+                    "german": "Amigento-Wasser"
+                }
+            },
+            "electric": {
+                "type": ["electric"],
+                "name": {
+                    "english": "Silvally-Electric",
+                    "french": "Silvallié Électrik",
+                    "german": "Amigento-Elektro"
+                }
+            },
+            "ground": {
+                "type": ["ground"],
+                "name": {
+                    "english": "Silvally-Ground",
+                    "french": "Silvallié Sol",
+                    "german": "Amigento-Boden"
+                }
+            },
+            "rock": {
+                "type": ["rock"],
+                "name": {
+                    "english": "Silvally-Rock",
+                    "french": "Silvallié Roche",
+                    "german": "Amigento-Gestein"
+                }
+            },
+            "psychic": {
+                "type": ["psychic"],
+                "name": {
+                    "english": "Silvally-Psychic",
+                    "french": "Silvallié Psy",
+                    "german": "Amigento-Psycho"
+                }
+            },
+            "ghost": {
+                "type": ["ghost"],
+                "name": {
+                    "english": "Silvally-Ghost",
+                    "french": "Silvallié Spectre",
+                    "german": "Amigento-Geist"
+                }
+            },
+            "dark": {
+                "type": ["dark"],
+                "name": {
+                    "english": "Silvally-Dark",
+                    "french": "Silvallié Ténèbres",
+                    "german": "Amigento-Unlicht"
+                }
+            },
+            "fighting": {
+                "type": ["fighting"],
+                "name": {
+                    "english": "Silvally-Fighting",
+                    "french": "Silvallié Combat",
+                    "german": "Amigento-Kampf"
+                }
+            },
+            "fairy": {
+                "type": ["fairy"],
+                "name": {
+                    "english": "Silvally-Fairy",
+                    "french": "Silvallié Fée",
+                    "german": "Amigento-Fee"
+                }
+            },
+            "steel": {
+                "type": ["steel"],
+                "name": {
+                    "english": "Silvally-Steel",
+                    "french": "Silvallié Acier",
+                    "german": "Amigento-Stahl"
+                }
+            },
+            "flying": {
+                "type": ["flying"],
+                "name": {
+                    "english": "Silvally-Flying",
+                    "french": "Silvallié Vol",
+                    "german": "Amigento-Flug"
+                }
+            },
+            "ice": {
+                "type": ["ice"],
+                "name": {
+                    "english": "Silvally-Ice",
+                    "french": "Silvallié Glace",
+                    "german": "Amigento-Eis"
+                }
+            },
+            "dragon": {
+                "type": ["dragon"],
+                "name": {
+                    "english": "Silvally-Dragon",
+                    "french": "Silvallié Dragon",
+                    "german": "Amigento-Drache"
+                }
+            },
+            "poison": {
+                "type": ["poison"],
+                "name": {
+                    "english": "Silvally-Poison",
+                    "french": "Silvallié Poison",
+                    "german": "Amigento-Gift"
+                }
+            },
+            "bug": {
+                "type": ["bug"],
+                "name": {
+                    "english": "Silvally-Bug",
+                    "french": "Silvallié Insecte",
+                    "german": "Amigento-Käfer"
+                }
+            },
+        }
     },
 
     "774": {

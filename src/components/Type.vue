@@ -122,8 +122,6 @@ export default {
             else {
                 this.chosenTypesList.push(type)
             }
-
-            console.log(this.chosenTypesList)
         },
 
         clickAllTypes: function(){
@@ -159,13 +157,13 @@ export default {
 
         clickNext: function() {
             if(!this.chosenTypesList.length) {
-            if(this.errorFadeOut == false) {
+            if(!this.errorFadeOut) {
                 this.errorFadeOut = true
                 this.hasError = true
                 setTimeout(() => {
                     this.hasError = false
                     this.errorFadeOut = false
-                }, 1000)
+                }, 3000)
             }
         }
 

@@ -18,7 +18,7 @@
                 <div :class="getDifficultyClass('hard')" class="text">{{$store.state.localisation.dataLang['hardText']}}</div>
             </div>
         </div>
-        <div class="options-insctruct">Autres options</div>
+        <div class="options-insctruct">{{$store.state.localisation.dataLang['otherOptionsText']}}</div>
         <div class="settings">
             <div class="checkbox" v-on:click="clickAlternateForms()" :class="useAlternateForms ? 'checked': ''"></div>
             <div class="label" v-on:click="clickAlternateForms()">{{$store.state.localisation.dataLang['useAlternateFormsText']}}</div>
@@ -63,13 +63,13 @@ export default {
 
         clickNext() {
             if(!this.chosenDifficulty) {
-               if(this.errorFadeOut == false) {
+               if(!this.errorFadeOut) {
                     this.errorFadeOut = true
                     this.hasError = true
                     setTimeout(() => {
                         this.hasError = false
                         this.errorFadeOut = false
-                    }, 1000)
+                    }, 3000)
                 }
             }
 

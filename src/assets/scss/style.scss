@@ -124,14 +124,14 @@ body {
         padding-bottom: 20px;
         color: #ff0000;
         visibility: hidden;
+        
 
         &.visible {
             visibility: visible;
         }
         
-
         &.fadeOut {
-            transition: ease-in 1s;
+            transition: ease-in 3s;
             opacity: 0;
         }
     }
