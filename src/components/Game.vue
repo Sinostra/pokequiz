@@ -39,6 +39,10 @@
                     </div>
                     <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
                     <input v-model="enteredName" v-on:input="checkEnteredPokemon" ref="pokemonInput" type="text" :class="answerFound ? 'valid': ''">
+                    <div class="hint-wrapper">
+                        <div v-on:click="playHintedPokemonCry(hintedPokemon)" class="hint-label">Cliquez ici pour entendre un indice</div>
+                        <div v-on:click="getRandomLeftToFindPokemon()" :class="animRefresh ? 'anim':''" class="hint-picto"></div>
+                    </div>
                 </div>
 
                 <div v-if="gameState == 'playing' || gameState == 'paused'" class="btn-wrapper">
@@ -67,11 +71,9 @@
                             <div class="pokeForm" v-for="(form, currentForm) in data.usedForm" :key="currentForm">
                                 <div v-if="form == 'regular'">
                                     <div class="data-number">{{index}}</div>
-                                        <transition name="colorFade">
-                                            <div class="data-name" :class="getNameCellClass(index)">
-                                                <div :class="getNameClass(index)" v-if="data.found || data.forgotten">{{data.name}}</div>
-                                            </div>
-                                        </transition>
+                                        <div class="data-name" :class="getNameCellClass(index)">
+                                            <div :class="getNameClass(index)" v-if="data.found || data.forgotten">{{data.name}}</div>
+                                        </div>
 
                                     <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type1">
                                         <div>
@@ -152,7 +154,8 @@ export default {
             lastFound: '',
             answerFound: false,
             leftToFind: [],
-            hintedPokemon: ''
+            hintedPokemon: '',
+            animRefresh: false
         }
     },
 
@@ -225,9 +228,8 @@ export default {
                         this.$store.state.pokedex.currentDex[index]['found'] = true
                         this.answerFound = true
                         this.leftToFind.splice(this.leftToFind.indexOf(index), 1)
-                        if(index == this.hintedPokemon)
-                        this.getRandomLeftToFindPokemon()
-
+                        if(index == this.hintedPokemon) this.getRandomLeftToFindPokemon(false)
+                        
                         //Gère la transition du vert sur l'input et le nom
                         setTimeout(() => {
                             this.$store.state.pokedex.currentDex[index]['transition'] = true
@@ -300,12 +302,20 @@ export default {
             this.$store.dispatch("rePlay");
         },
 
-        getRandomLeftToFindPokemon() {
-            for (var i = this.leftToFind.length - 1; i > 0; i--) {
-                var j = Math.floor(Math.random() * (i + 1));
-                [this.leftToFind[i], this.leftToFind[j]] = [this.leftToFind[j], this.leftToFind[i]];
+        getRandomLeftToFindPokemon(playerTriggered = true) {
+            if(!this.animRefresh || !playerTriggered) {
+                this.animRefresh = true;
+                for (var i = this.leftToFind.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    [this.leftToFind[i], this.leftToFind[j]] = [this.leftToFind[j], this.leftToFind[i]];
+                }
+                if(this.leftToFind.length > 1 && this.hintedPokemon == this.leftToFind[0]) {
+                    this.hintedPokemon = this.leftToFind[1]
+                }
+                else this.hintedPokemon = this.leftToFind[0]
+                this.animRefresh = true;
+                setTimeout(() => {this.animRefresh = false}, 2000)
             }
-            this.hintedPokemon = this.leftToFind[0]
         },
 
         playHintedPokemonCry(index) {
@@ -355,7 +365,7 @@ export default {
             this.gameReady = true
         }
 
-        this.getRandomLeftToFindPokemon()
+        this.getRandomLeftToFindPokemon(false)
     },
 
 }

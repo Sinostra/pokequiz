@@ -153,7 +153,33 @@
                         background-color: #43B581;
                     }
                 }
+
+                .hint-wrapper {
+                    padding-top: 10px;
+                    display: flex;
+
+                    .hint-label {
+                        cursor: pointer;
+                        text-decoration: underline;
+                        font-size: 12px;
+                        margin-right: 10px;
+                    }
+
+                    .hint-picto {
+                        cursor: pointer;
+                        width: 15px;
+                        height: 15px;
+                        background: url($imagePath + 'ui/refresh.png') center no-repeat;
+                        background-size: cover;
+
+                        &.anim {
+                            animation-name: spin;
+                            animation-duration: 2s;
+                        }
+                    }
+                }
             }
+
 
             .btn-wrapper {
                 width: 100%;;
@@ -336,4 +362,9 @@
     .btn-wrapper {
         justify-content: center;
     }
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(180deg);}
 }
