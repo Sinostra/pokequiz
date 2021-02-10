@@ -69,8 +69,35 @@
 
     .settings {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+
+        .setting-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 250px;
+            text-align: center;
+            background-color: rgba($color: #fff, $alpha: 0.6);
+            padding: 10px;
+            border-radius: 5px;
+            &:first-of-type {
+                margin-bottom: 20px;
+            }
+            @media screen and (min-width: 768px) {
+                padding: 0;
+                background-color: transparent;
+                flex: 1;
+                justify-content: center;
+                &:first-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
 
         .label {
             padding: 0 10px;
@@ -102,6 +129,7 @@
                 border-radius: 5px;
                 line-height: 19px;
                 text-align: center;
+                z-index: 1;
                 @media screen and (min-width: 768px) {
                     left: auto;
                     transform: initial;

@@ -156,7 +156,14 @@
 
                 .hint-wrapper {
                     padding-top: 10px;
-                    display: flex;
+
+                    .hint-ready {
+                        display: flex;
+                    }
+
+                    .hint-not-ready {
+                        font-size: 12px;
+                    }
 
                     .hint-label {
                         cursor: pointer;

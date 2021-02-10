@@ -11,7 +11,8 @@ export default {
 
         timeUsed: 0,
         hasBeenPlayed: false,
-        useAlternateForms: false
+        useAlternateForms: false,
+        useHints: false
     },
 
     mutations: {
@@ -37,6 +38,10 @@ export default {
 
         setAlternateForms(state, bool) {
             state.useAlternateForms = bool;
+        },
+
+        setHint(state, bool) {
+            state.useHints = bool;
         }
     },
 
@@ -63,6 +68,10 @@ export default {
 
         setAlternateForms(context, bool) {
             context.commit('setAlternateForms', bool)
+        },
+
+        setHint(context, bool) {
+            context.commit('setHint', bool)
         }
     }
 }

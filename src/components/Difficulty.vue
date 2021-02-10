@@ -19,12 +19,24 @@
             </div>
         </div>
         <div class="options-insctruct">{{$store.state.localisation.dataLang['otherOptionsText']}}</div>
+
         <div class="settings">
-            <div class="checkbox" v-on:click="clickAlternateForms()" :class="useAlternateForms ? 'checked': ''"></div>
-            <div class="label" v-on:click="clickAlternateForms()">{{$store.state.localisation.dataLang['useAlternateFormsText']}}</div>
-            <div class="question-mark">
-                ?
-                <div class="explanations">{{$store.state.localisation.dataLang['alternateFormsExplanation']}}</div>
+            <div class="setting-wrapper">
+                <div class="checkbox" v-on:click="clickAlternateForms()" :class="useAlternateForms ? 'checked': ''"></div>
+                <div class="label" v-on:click="clickAlternateForms()">{{$store.state.localisation.dataLang['useAlternateFormsText']}}</div>
+                <div class="question-mark">
+                    ?
+                    <div class="explanations">{{$store.state.localisation.dataLang['alternateFormsExplanation']}}</div>
+                </div>
+            </div>
+
+            <div class="setting-wrapper">
+                <div class="checkbox" v-on:click="clickHints()" :class="useHints ? 'checked': ''"></div>
+                <div class="label" v-on:click="clickHints()">{{$store.state.localisation.dataLang['useHintsText']}}</div>
+                <div class="question-mark">
+                    ?
+                    <div class="explanations">{{$store.state.localisation.dataLang['hintsExplanation']}}</div>
+                </div>
             </div>
         </div>
 
@@ -43,6 +55,7 @@ export default {
         return {
             chosenDifficulty: '',
             useAlternateForms: false,
+            useHints: false,
             hasError: false,
             errorFadeOut: false,
         }
@@ -55,6 +68,10 @@ export default {
 
         clickAlternateForms: function(){
             this.useAlternateForms = !this.useAlternateForms
+        },
+
+        clickHints: function(){
+            this.useHints = !this.useHints
         },
 
         clickPrevious() {
@@ -76,6 +93,7 @@ export default {
             else {
                 this.$store.dispatch("setselectedDifficulty", this.chosenDifficulty)
                 this.$store.dispatch("setAlternateForms", this.useAlternateForms)
+                this.$store.dispatch("setHint", this.useHints)
 
                 this.$store.dispatch("filterByGen", this.$store.state.settings.selectedGeneration)
                 this.$store.dispatch("filterByType", this.$store.state.settings.selectedTypes)

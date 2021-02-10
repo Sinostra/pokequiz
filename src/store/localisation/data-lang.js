@@ -209,6 +209,12 @@ export default {
         "german" : "Mit alternativen Formen spielen"
     },
 
+    useHintsText: {
+        "english" : "Play with hints",
+        "french" : "Jouer avec les indices",
+        "german" : "Mit Hinweisen spielen"
+    },
+
     alternateFormsExplanation: {
         "english" : "With this option checked, the quiz will take alternate forms (regional forms, Mega Evolutions, ect...) that change a Pokemon's type into account, so forms such as Mega Charizard Y or Primal Kyogre will not be taken into account.",
 
@@ -216,4 +222,24 @@ export default {
 
         "german" : "Placeholder."
     },
+
+    hintsExplanation: {
+        "english" : "With this option checked, you will sometimes have the possibility to play the cry of a Pokemon left to find.",
+
+        "french" : "Avec cette option cochée, vous aurez de temps en temps la possibilité de jouer le cri d'un Pokémon à trouver.",
+
+        "german" : "Placeholder."
+    },
+
+    clickHintText: {
+        "english" : "Click here to hear a hint",
+        "french" : "Cliquez ici pour entendre un indice",
+        "german" : "Klicken Sie hier, um einen Hinweis zu hören"
+    },
+
+    nextHintText: {
+        "english" : "Next hint in : ",
+        "french" : "Prochain indice dans : ",
+        "german" : "Nächster Hinweis in : "
+    }
 }

@@ -1,4 +1,5 @@
 // vue.config.js
 module.exports = {
-    filenameHashing: false
+    filenameHashing: false,
+    lintOnSave: false
 }

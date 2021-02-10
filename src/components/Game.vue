@@ -39,7 +39,7 @@
                     </div>
                     <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
                     <input v-model="enteredName" v-on:input="checkEnteredPokemon" ref="pokemonInput" type="text" :class="answerFound ? 'valid': ''">
-                    <HintManager :lastFound="lastFound"/>
+                    <HintManager v-if="$store.state.settings.useHints" :lastFound="lastFound" :gameState="gameState"/>
                 </div>
 
                 <div v-if="gameState == 'playing' || gameState == 'paused'" class="btn-wrapper">
@@ -131,8 +131,8 @@
 </template>
 <script>
 
-import Timer from './Timer.vue'
-import HintManager from './HintManager.vue'
+import Timer from './gameComponent/Timer.vue'
+import HintManager from './gameComponent/HintManager.vue'
 
 export default {
     name: 'Game',
@@ -294,7 +294,7 @@ export default {
         },
 
         clickNext: function(){
-            if(this.gameState == "finished") {
+            if(this.gameState == "finished" && this.score > 0) {
                 this.$store.dispatch("setHasBeenPlayed", true)
             }
             this.$store.dispatch("nextComp")
@@ -317,6 +317,7 @@ export default {
         else if(this.numberOfPokemons >= 200) this.splitNumber = 4
 
         for(const index in this.$store.state.pokedex.currentDex) {
+            console.log(this.$store.state.pokedex.currentDex[index]['usedForm'])
             this.$store.state.pokedex.currentDex[index]['found'] = false
             this.$store.state.pokedex.currentDex[index]['forgotten'] = false
         }
