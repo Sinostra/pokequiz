@@ -35,14 +35,11 @@
 
                 <div v-show="gameState == 'playing'" class="input-wrapper">
                     <div v-if="lastFound" class="last-found">
-                        {{$store.state.localisation.dataLang['lastFoundText']}} {{lastFound}}
+                        {{$store.state.localisation.dataLang['lastFoundText']}} {{$store.state.pokedex.currentDex[lastFound]['name']}}
                     </div>
                     <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
                     <input v-model="enteredName" v-on:input="checkEnteredPokemon" ref="pokemonInput" type="text" :class="answerFound ? 'valid': ''">
-                    <div class="hint-wrapper">
-                        <div v-on:click="playHintedPokemonCry(hintedPokemon)" class="hint-label">Cliquez ici pour entendre un indice</div>
-                        <div v-on:click="getRandomLeftToFindPokemon()" :class="animRefresh ? 'anim':''" class="hint-picto"></div>
-                    </div>
+                    <HintManager :lastFound="lastFound"/>
                 </div>
 
                 <div v-if="gameState == 'playing' || gameState == 'paused'" class="btn-wrapper">
@@ -124,6 +121,7 @@
         </div>
     </div>
     <div v-if="numberOfPokemons == 0" class="empty-pokedex">
+        <div class="error-img"></div>
         <div class="error-mg">{{$store.state.localisation.dataLang['noPokemonText']}}</div>
         <div class="btn-wrapper">
             <div v-on:click="playAgain()" class="playAgain btn green-btn">{{$store.state.localisation.dataLang['playAgainText']}}</div>
@@ -134,12 +132,14 @@
 <script>
 
 import Timer from './Timer.vue'
+import HintManager from './HintManager.vue'
 
 export default {
     name: 'Game',
 
     components: {
         Timer,
+        HintManager
     },
 
     data: function(){
@@ -153,19 +153,12 @@ export default {
             score: 0,
             lastFound: '',
             answerFound: false,
-            leftToFind: [],
-            hintedPokemon: '',
-            animRefresh: false
         }
     },
 
     methods: {
         getUrl(type) {
             return require('../assets/img/languages/' + this.$store.state.localisation.chosenLang + '/types/'+ type + '.png')
-        },
-
-        getAudioUrl(index) {
-            return require('../assets/pokedex/' + index + '/' + index + '.mp3');
         },
 
         getNameCellClass(index) {
@@ -224,11 +217,9 @@ export default {
 
                     if(!this.$store.state.pokedex.currentDex[index]['found']) {
     
-                        this.lastFound = currentName
+                        this.lastFound = index
                         this.$store.state.pokedex.currentDex[index]['found'] = true
                         this.answerFound = true
-                        this.leftToFind.splice(this.leftToFind.indexOf(index), 1)
-                        if(index == this.hintedPokemon) this.getRandomLeftToFindPokemon(false)
                         
                         //Gère la transition du vert sur l'input et le nom
                         setTimeout(() => {
@@ -302,27 +293,6 @@ export default {
             this.$store.dispatch("rePlay");
         },
 
-        getRandomLeftToFindPokemon(playerTriggered = true) {
-            if(!this.animRefresh || !playerTriggered) {
-                this.animRefresh = true;
-                for (var i = this.leftToFind.length - 1; i > 0; i--) {
-                    var j = Math.floor(Math.random() * (i + 1));
-                    [this.leftToFind[i], this.leftToFind[j]] = [this.leftToFind[j], this.leftToFind[i]];
-                }
-                if(this.leftToFind.length > 1 && this.hintedPokemon == this.leftToFind[0]) {
-                    this.hintedPokemon = this.leftToFind[1]
-                }
-                else this.hintedPokemon = this.leftToFind[0]
-                this.animRefresh = true;
-                setTimeout(() => {this.animRefresh = false}, 2000)
-            }
-        },
-
-        playHintedPokemonCry(index) {
-            var audio = new Audio(this.getAudioUrl(index))
-            audio.play()
-        },
-
         clickNext: function(){
             if(this.gameState == "finished") {
                 this.$store.dispatch("setHasBeenPlayed", true)
@@ -347,7 +317,6 @@ export default {
         else if(this.numberOfPokemons >= 200) this.splitNumber = 4
 
         for(const index in this.$store.state.pokedex.currentDex) {
-            this.leftToFind.push(index)
             this.$store.state.pokedex.currentDex[index]['found'] = false
             this.$store.state.pokedex.currentDex[index]['forgotten'] = false
         }
@@ -364,8 +333,6 @@ export default {
             this.splitPokedex()
             this.gameReady = true
         }
-
-        this.getRandomLeftToFindPokemon(false)
     },
 
 }

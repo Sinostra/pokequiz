@@ -354,6 +354,19 @@
 }
 
 .empty-pokedex {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .error-img {
+        width: 320px;
+        height: 171.5px;
+        background: url($imagePath + 'ui/sad-pikachu.png') center no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+    }
+
     .error-mg {
         padding: 20px 10px 30px;
         text-align: center;

@@ -2,9 +2,9 @@
     <div class="homepage">
 
       <div class="flags-wrapper">
-        <div v-on:click="selectLanguage" class="english flag"></div>
-        <div v-on:click="selectLanguage" class="french flag"></div>
-        <div v-on:click="selectLanguage" class="german flag"></div>
+        <div v-on:click="selectLanguage('english')" class="english flag"></div>
+        <div v-on:click="selectLanguage('french')" class="french flag"></div>
+        <div v-on:click="selectLanguage('german')" class="german flag"></div>
       </div>
 
     </div>
@@ -17,9 +17,9 @@ export default {
 
   methods: {
 
-    selectLanguage: function(element){
-      this.$store.dispatch("chooseLanguage", element.target.classList[0])
-      this.$store.dispatch("pokedexLanguage", element.target.classList[0])
+    selectLanguage: function(language){
+      this.$store.dispatch("chooseLanguage", language)
+      this.$store.dispatch("pokedexLanguage", language)
       this.$store.dispatch("nextComp")
     }
   }
