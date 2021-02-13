@@ -124,8 +124,8 @@ export default {
       allScores: {},
       lastEnteredId: 0,
       emptyScores: false,
-      // serverUrl: '/server/',
-      serverUrl: 'http://localhost:8081/server/'
+      serverUrl: '/server/',
+      // serverUrl: 'http://localhost:8081/server/'
     };
   },
 
