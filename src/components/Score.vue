@@ -233,6 +233,9 @@ export default {
     },
 
     clickPrevious() {
+      this.$store.dispatch("refillDex");
+      this.$store.dispatch("filterByGen", this.$store.state.settings.selectedGeneration)
+      this.$store.dispatch("filterByType", this.$store.state.settings.selectedTypes)
       this.$store.dispatch("previousComp")
     }
   },
