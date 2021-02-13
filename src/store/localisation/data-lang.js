@@ -224,9 +224,9 @@ export default {
     },
 
     hintsExplanation: {
-        "english" : "With this option checked, you will sometimes have the possibility to play the cry of a Pokemon left to find.",
+        "english" : "With this option checked, you will sometimes have the possibility of playing the cry of a Pokemon left to find, as well as of changing the cry being played.",
 
-        "french" : "Avec cette option cochée, vous aurez de temps en temps la possibilité de jouer le cri d'un Pokémon à trouver.",
+        "french" : "Avec cette option cochée, vous aurez de temps en temps la possibilité de jouer le cri d'un Pokémon à trouver, ainsi que de changer de cri à jouer.",
 
         "german" : "Placeholder."
     },

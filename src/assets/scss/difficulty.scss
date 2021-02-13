@@ -1,4 +1,5 @@
 .difficulty {
+    position: relative;
 
     .difficulty-wrapper {
         display: flex;
@@ -114,7 +115,9 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            position: relative;
+            @media screen and (min-width: 768px) {
+                position: relative;
+            }
 
             .explanations {
                 display: none;
@@ -123,9 +126,9 @@
                 padding: 10px;
                 min-width: 250px;
                 max-width: 250px;
-                top: 0;
-                left: 0;
-                transform: translate(-100%, -45%);
+                top: 74%;
+                left: 50%;
+                transform: translate(-50%, 0);
                 border-radius: 5px;
                 line-height: 19px;
                 text-align: center;
