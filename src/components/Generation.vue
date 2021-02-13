@@ -1,7 +1,7 @@
 <template>
     <div class="generation">
         <div class="instruction">{{$store.state.localisation.dataLang['genInstruct']}}</div>
-        <div :class="getErrorMsgClass()" class="error-msg">{{$store.state.localisation.dataLang['genError']}}</div>
+        <Error :message="$store.state.localisation.dataLang['genError']" :hasError="hasError" v-on:errorFaded="hasError = false"/>
         <div class="gen-wrapper">
 
             <div class="first-half">
@@ -60,14 +60,19 @@
 </template>
 
 <script>
+
+import Error from './interfaceComponents/Error.vue'
 export default {
   name: 'Generation',
+
+  components: {
+    Error
+  },
 
   data:function() {
     return {
         chosenGensList: [],
         hasError: false,
-        errorFadeOut: false,
     }
   },
 
@@ -89,23 +94,9 @@ export default {
         }
     },
 
-    getErrorMsgClass() {
-        return {
-            fadeOut: this.errorFadeOut,
-            visible: this.hasError
-        }
-    },
-
     clickNext: function(){
         if(!this.chosenGensList.length) {
-            if(!this.errorFadeOut) {
-                this.hasError = true
-                this.errorFadeOut = true
-                setTimeout(() => {
-                    this.hasError = false
-                    this.errorFadeOut = false
-                }, 3000)
-            }
+            this.hasError = true
         }
 
         else {

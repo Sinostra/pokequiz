@@ -1,7 +1,7 @@
 <template>
     <div class="type">
         <div class="instruction">{{$store.state.localisation.dataLang['typeInstruct']}}</div>
-        <div :class="getErrorMsgClass()" class="error-msg">{{$store.state.localisation.dataLang['typeError']}}</div>
+        <Error :message="$store.state.localisation.dataLang['typeError']" :hasError="hasError" v-on:errorFaded="hasError = false"/>
         <div class="all-wrapper">
             <div v-on:click="clickAllTypes" :class="getCheckboxAllClass()" class="checkbox"></div>
             <div class="label">{{$store.state.localisation.dataLang['allTypesText']}}</div>
@@ -97,14 +97,18 @@
 </template>
 
 <script>
+import Error from './interfaceComponents/Error.vue'
 export default {
     name: 'Type',
+
+    components: {
+        Error
+    },
 
     data:function() {
         return {
             chosenTypesList: [],
             hasError: false,
-            errorFadeOut: false,
             allTypesChecked: false
         }
     },
@@ -148,23 +152,9 @@ export default {
             }
         },
 
-        getErrorMsgClass() {
-            return {
-                fadeOut: this.errorFadeOut,
-                visible: this.hasError
-            }
-        },
-
         clickNext: function() {
             if(!this.chosenTypesList.length) {
-            if(!this.errorFadeOut) {
-                this.errorFadeOut = true
-                this.hasError = true
-                setTimeout(() => {
-                    this.hasError = false
-                    this.errorFadeOut = false
-                }, 3000)
-            }
+            this.hasError = true
         }
 
             else {

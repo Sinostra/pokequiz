@@ -65,12 +65,12 @@
                     </div>
                     <div v-for="(pokemon, dexNumber) in object" :key="dexNumber">
                         <div :id="'number' + index" class="pokemon-data" v-for="(data, index) in pokemon" :key="index">
-                            <div class="pokeForm" v-for="(form, currentForm) in data.usedForm" :key="currentForm">
-                                <div v-if="form == 'regular'">
-                                    <div class="data-number">{{index}}</div>
-                                        <div class="data-name" :class="getNameCellClass(index)">
-                                            <div :class="getNameClass(index)" v-if="data.found || data.forgotten">{{data.name}}</div>
-                                        </div>
+                            <div class="pokeForm">
+                                <div>
+                                    <div class="data-number">{{index.split("-")[0]}}</div>
+                                    <div class="data-name" :class="getNameCellClass(index)">
+                                        <div :class="getNameClass(index)" v-if="data.found || data.forgotten">{{data.displayName || data.name}}</div>
+                                    </div>
 
                                     <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type1">
                                         <div>
@@ -83,31 +83,6 @@
                                     <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type2">
                                         <div v-if="data.type[1]">
                                             <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data.type[1])" :key="index">
-                                                <img :src="getUrl(type)">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div v-if="form != 'regular'">
-                                    <div class="data-number">{{index}}</div>
-                                    <div class="data-name" :class="getNameCellClass(index)">
-                                        <div :class="getNameClass(index)" v-if="data.found || data.forgotten">
-                                            {{data['forms'][form]['name']}}
-                                        </div>
-                                    </div>
-
-                                    <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type1">
-                                        <div>
-                                            <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data['forms'][form]['type'][0])" :key="index">
-                                                <img :src="getUrl(type)">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div v-if="$store.state.settings.selectedDifficulty != 'hard'" class="data-type2">
-                                        <div v-if="data['forms'][form]['type'][1]">
-                                            <div class="typeImg-wrapper" v-for="(type, index) in displayTypes(data['forms'][form]['type'][1])" :key="index">
                                                 <img :src="getUrl(type)">
                                             </div>
                                         </div>
@@ -188,10 +163,38 @@ export default {
             return typesArray
         },
 
-        splitPokedex() {
+        splitPokedex(numberOfPokemons) {
             //Nombre de pokémons à afficher par colonne
-            var splitDex = Math.floor(this.numberOfPokemons / this.splitNumber)
+            var splitDex = Math.floor(numberOfPokemons / this.splitNumber)
             var lDex = this.$store.state.pokedex.currentDex
+
+            //Méthode pour que lDex considère les formes alternatives comme des pokémon à part entière
+            for(const index in lDex) {
+                var currentFormsPokemon = lDex[index]['usedForm']
+
+                if(currentFormsPokemon.length > 1 || !currentFormsPokemon.includes('regular')) {
+
+                    for(var f = 0; f < currentFormsPokemon.length; f++) {
+
+                        if(currentFormsPokemon[f] != 'regular') {
+                            var newPokemon = {
+                                name: lDex[index]['name'],
+                                displayName: lDex[index]['forms'][currentFormsPokemon[f]]['name'],
+                                type: lDex[index]['forms'][currentFormsPokemon[f]]['type'],
+                                found: false,
+                                forgotten: false
+                            }
+
+                            lDex[index + '-' + f] = newPokemon
+                        }
+                    }
+                }
+
+                if(!currentFormsPokemon.includes('regular')) {
+                    delete lDex[index]
+                }
+            }
+
             this.displayDex = []
             var startSlice = 0
             var endSlice = splitDex
@@ -207,17 +210,28 @@ export default {
                     endSlice += splitDex
                 }
             }
+
+            //Méthode pour trier displayDex en prenant en compte les formes alternatives ajoutées
+            for(var j = 0; j < this.displayDex.length; j++) {
+                this.displayDex[j].sort(function(a, b) {
+                    a = parseInt(Object.keys(a))
+                    b = parseInt(Object.keys(b))
+                    return a -b
+                })
+            }
+
+            // console.log(this.displayDex)
         },
 
         checkEnteredPokemon() {
+            // console.log(this.$store.state.pokedex.currentDex)
             for(const index in this.$store.state.pokedex.currentDex) {
 
                 var currentName = this.$store.state.pokedex.currentDex[index]['name']
                 if(this.replaceAllSpecialChars(this.enteredName) == this.replaceAllSpecialChars(currentName)) {
 
                     if(!this.$store.state.pokedex.currentDex[index]['found']) {
-    
-                        this.lastFound = index
+
                         this.$store.state.pokedex.currentDex[index]['found'] = true
                         this.answerFound = true
                         
@@ -226,13 +240,19 @@ export default {
                             this.$store.state.pokedex.currentDex[index]['transition'] = true
                             this.answerFound = false
                         }, 200)
-                        
-                        this.score++
+
+                        //Permet de ne pas compter deux fois le même pokémon si plusieurs formes
+                        if(index.split('-')[0] != this.lastFound.split('-')[0]) {
+                            this.score++
+                        }
+
+                        this.lastFound = index
     
                         //Check victoire
                         if(this.score == this.numberOfPokemons) {
                             this.finishGame()
                         }
+
                         //Rappel de la fonction au cas où un autre Pokémon porte le même nom
                         this.checkEnteredPokemon()
                         this.enteredName = ''
@@ -307,31 +327,32 @@ export default {
         this.$store.dispatch("setHasBeenPlayed", false)
 
         this.numberOfPokemons = Object.keys(this.$store.state.pokedex.currentDex).length
-
-        if(this.numberOfPokemons < 20) this.splitNumber = 1
-
-        else if(this.numberOfPokemons >= 20 && this.numberOfPokemons < 100) this.splitNumber = 2
-
-        else if(this.numberOfPokemons >= 100 && this.numberOfPokemons < 200) this.splitNumber = 3
-
-        else if(this.numberOfPokemons >= 200) this.splitNumber = 4
+        var pokemonAmount = 0;
 
         for(const index in this.$store.state.pokedex.currentDex) {
-            console.log(this.$store.state.pokedex.currentDex[index]['usedForm'])
+            pokemonAmount += this.$store.state.pokedex.currentDex[index]['usedForm'].length
             this.$store.state.pokedex.currentDex[index]['found'] = false
             this.$store.state.pokedex.currentDex[index]['forgotten'] = false
         }
 
+        if(pokemonAmount < 20) this.splitNumber = 1
+
+        else if(pokemonAmount >= 20 && pokemonAmount < 100) this.splitNumber = 2
+
+        else if(pokemonAmount >= 100 && pokemonAmount < 200) this.splitNumber = 3
+
+        else if(pokemonAmount >= 200) this.splitNumber = 4
+
         if(this.$store.state.displayedBackground) {
             setTimeout(() => {
                 this.$store.dispatch("displayBackground", false)
-                this.splitPokedex()
+                this.splitPokedex(pokemonAmount)
                 this.gameReady = true
             }, 2000)
         }
 
         else {
-            this.splitPokedex()
+            this.splitPokedex(pokemonAmount)
             this.gameReady = true
         }
     },

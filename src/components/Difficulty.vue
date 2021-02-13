@@ -1,7 +1,7 @@
 <template>
     <div class="difficulty">
         <div class="instruction">{{$store.state.localisation.dataLang['difficultyInstruct']}}</div>
-        <div :class="getErrorMsgClass()" class="error-msg">{{$store.state.localisation.dataLang['difficultyError']}}</div>
+        <Error :message="$store.state.localisation.dataLang['difficultyError']" :hasError="hasError" v-on:errorFaded="hasError = false"/>
         <div class="difficulty-wrapper">
             <div class="easy difficulty-setting" v-on:click="clickDifficulty('easy')">
                 <div :class="getDifficultyClass('easy')" class="picto"></div>
@@ -48,8 +48,14 @@
 </template>
 
 <script>
+
+import Error from './interfaceComponents/Error.vue'
 export default {
     name: 'Difficulty',
+
+    components: {
+        Error
+    },
 
     data: function(){
         return {
@@ -57,7 +63,6 @@ export default {
             useAlternateForms: false,
             useHints: false,
             hasError: false,
-            errorFadeOut: false,
         }
     },
 
@@ -81,12 +86,7 @@ export default {
         clickNext() {
             if(!this.chosenDifficulty) {
                if(!this.errorFadeOut) {
-                    this.errorFadeOut = true
-                    this.hasError = true
-                    setTimeout(() => {
-                        this.hasError = false
-                        this.errorFadeOut = false
-                    }, 3000)
+                    this.hasError = true;
                 }
             }
 
@@ -107,14 +107,6 @@ export default {
                 chosenDifficulty: difficulty == this.chosenDifficulty
             }
         },
-
-
-        getErrorMsgClass() {
-            return {
-                fadeOut: this.errorFadeOut,
-                visible: this.hasError
-            }
-        }
     }
 }
 </script>

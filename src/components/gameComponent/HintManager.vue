@@ -18,8 +18,8 @@ export default {
             animRefresh: false,
             availableHint: true,
             hintTimer: undefined,
-            hintCoolDown: 30,
-            hintCoolDownLeft: 60,
+            hintCoolDown: 3,
+            hintCoolDownLeft: 6,
             hintedSuccession: []
         }
     },
@@ -31,6 +31,7 @@ export default {
 
     watch: {
         lastFound: function(newVal){
+            newVal = newVal.split('-')[0]
             this.leftToFind.splice(this.leftToFind.indexOf(newVal), 1)
             if(this.hintedSuccession.includes(newVal)) {
                 this.startCoolDown();
