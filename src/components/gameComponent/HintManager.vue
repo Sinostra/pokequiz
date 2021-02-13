@@ -18,9 +18,11 @@ export default {
             animRefresh: false,
             availableHint: true,
             hintTimer: undefined,
-            hintCoolDown: 3,
-            hintCoolDownLeft: 6,
-            hintedSuccession: []
+            hintCoolDown: 30,
+            hintCoolDownLeft: 60,
+            hintedSuccession: [],
+            hintCoolDownPerPokemon: 1,
+            hintCoolDownStartPerPokemon: 2
         }
     },
 
@@ -87,6 +89,13 @@ export default {
     },
 
     mounted: function() {
+        var numberOfPokemons = Object.keys(this.$store.state.pokedex.currentDex).length
+
+        if(numberOfPokemons < 30) {
+            this.hintCoolDown = this.hintCoolDownPerPokemon * numberOfPokemons
+            this.hintCoolDownLeft = this.hintCoolDownStartPerPokemon * numberOfPokemons
+        }
+
         for(const index in this.$store.state.pokedex.currentDex) {
             this.leftToFind.push(index)
         }

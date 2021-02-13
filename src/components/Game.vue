@@ -219,12 +219,9 @@ export default {
                     return a -b
                 })
             }
-
-            // console.log(this.displayDex)
         },
 
         checkEnteredPokemon() {
-            // console.log(this.$store.state.pokedex.currentDex)
             for(const index in this.$store.state.pokedex.currentDex) {
 
                 var currentName = this.$store.state.pokedex.currentDex[index]['name']
