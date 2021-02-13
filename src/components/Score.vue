@@ -6,9 +6,10 @@
 
       <div v-if="!hasError && !canDisplayScores && scoreToAdd && !loading" class="input-wrapper">
         <label for="name">{{$store.state.localisation.dataLang['nameInstruct']}}</label>
-        <input v-model="playerName" id="name" type="text" />
 
-        <div class="error-msg">{{$store.state.localisation.dataLang['nameError']}}</div>
+        <Error :message="$store.state.localisation.dataLang['nameError']" :hasError="playerNameError" v-on:errorFaded="playerNameError = false"/>
+
+        <input v-model="playerName" id="name" type="text" />
 
         <div class="btn-wrapper">
           <div v-on:click="clickValidate()" class="btn submit green-btn">{{$store.state.localisation.dataLang['validateNameText']}}</div>
@@ -38,8 +39,19 @@
           </div>
 
           <div class="chosenDifficulty">
-            <div class="label">{{$store.state.localisation.dataLang['chosenDifficultyText']}}</div>
-            &nbsp;{{$store.state.localisation.dataLang[this.$store.state.settings.selectedDifficulty + 'Text']}}
+            <div class="difficulty-label">
+              {{$store.state.localisation.dataLang['chosenDifficultyText']}} {{$store.state.localisation.dataLang[this.$store.state.settings.selectedDifficulty + 'Text']}}
+            </div>
+            <div class="aternateForms-label">
+              {{$store.state.localisation.dataLang['alternateFormsText']}}
+              <span v-if="$store.state.settings.useAlternateForms">{{$store.state.localisation.dataLang['withText']}}</span>
+              <span v-if="!$store.state.settings.useAlternateForms">{{$store.state.localisation.dataLang['withoutText']}}</span>
+            </div>
+            <div class="hints-label">
+              {{$store.state.localisation.dataLang['hintsText']}}
+              <span v-if="$store.state.settings.useHints">{{$store.state.localisation.dataLang['withText']}}</span>
+              <span v-if="!$store.state.settings.useHints">{{$store.state.localisation.dataLang['withoutText']}}</span>
+            </div>
           </div>
         </div>
 
@@ -81,12 +93,21 @@
 </template>
 
 <script>
+
+import Error from './interfaceComponents/Error.vue'
 export default {
   name: "Score",
+
+  components: {
+    Error
+  },
 
   data: function () {
     return {
       playerName: "",
+      playerNameError: false,
+      useAlternateForms: 0,
+      useHints: 0,
       gameSettings:
         this.$store.state.settings.selectedGeneration +
         " " +
@@ -103,8 +124,8 @@ export default {
       allScores: {},
       lastEnteredId: 0,
       emptyScores: false,
-      serverUrl: '/server/',
-      // serverUrl: 'http://localhost:8081/server/'
+      // serverUrl: '/server/',
+      serverUrl: 'http://localhost:8081/server/'
     };
   },
 
@@ -116,6 +137,8 @@ export default {
 
       let payload = {
         settings: this.gameSettings,
+        alternateForms: this.useAlternateForms,
+        hints: this.useHints
       };
 
       var formData = new FormData();
@@ -152,6 +175,8 @@ export default {
         name: this.playerName,
         score: this.numberOfFound,
         time: this.timeUsed,
+        alternateForms: this.useAlternateForms,
+        hints: this.useHints
       };
 
       var formData = new FormData();
@@ -176,12 +201,7 @@ export default {
     clickValidate() {
       if(this.playerName.length > 0) this.addScore();
       else {
-        document.getElementsByClassName("error-msg")[0].classList.remove("transition")
-        document.getElementsByClassName("error-msg")[0].classList.add("displayed")
-        setTimeout(function(){
-            document.getElementsByClassName("error-msg")[0].classList.add("transition")
-            document.getElementsByClassName("error-msg")[0].classList.remove("displayed")
-        }, 1)
+        this.playerNameError = true
       }
     },
 
@@ -218,6 +238,8 @@ export default {
   },
 
   mounted: function () {
+    if(this.$store.state.settings.useAlternateForms) this.useAlternateForms = 1
+    if(this.$store.state.settings.useHints) this.useHints = 1
     if (!this.$store.state.settings.hasBeenPlayed) {
       this.scoreToAdd = false
       this.getScore();

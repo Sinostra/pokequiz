@@ -167,6 +167,30 @@ export default {
         "german" : "Gewählte Schwierigkeit :" 
     },
 
+    alternateFormsText: {
+        "english" : "Alternate forms :",
+        "french" : "Formes alternatives :",
+        "german" : "Alternativen Formen :"
+    },
+
+    hintsText: {
+        "english" : "Hints :",
+        "french" : "Indices :",
+        "german" : "Hinweise :"
+    },
+
+    withText: {
+        "english" : "with",
+        "french" : "avec",
+        "german" : "mit"
+    },
+
+    withoutText: {
+        "english" : "without",
+        "french" : "sans",
+        "german" : "ohne"
+    },
+
     noScoreText: {
         "english" : "No score to be displayed",
         "french" : "Pas de score à afficher",
@@ -220,15 +244,15 @@ export default {
 
         "french" : "Avec cette option cochée, le quiz prendra en compte les formes alternatives (formes régionales, Méga-Évolutions, ect...) qui changent le type d'un Pokémon, les formes comme Méga-Dracaufeu Y ou Primo-Kyogre ne seront donc pas prises en compte.",
 
-        "german" : "Placeholder."
+        "german" : "Mit dieser gewählten Option werden im Quiz alternative Formen (Regionalformen, Mega-Entwicklung, ect...) die den Typ eines Pokemons verändern miteinbezogen, Formen wie Mega-Glurak Y oder Proto-Kyogre werden deshalb nicht miteinbezogen."
     },
 
     hintsExplanation: {
-        "english" : "With this option checked, you will sometimes have the possibility of playing the cry of a Pokemon left to find, as well as of changing the cry being played.",
+        "english" : "With this option checked, you will sometimes have the possibility of playing the cry of a Pokemon left to find, as well as changing the cry being played.",
 
         "french" : "Avec cette option cochée, vous aurez de temps en temps la possibilité de jouer le cri d'un Pokémon à trouver, ainsi que de changer de cri à jouer.",
 
-        "german" : "Placeholder."
+        "german" : "Mit dieser gewählten Option werden Sie manchmal die Möglichkeit haben, den Ruf des Pokemons zu spielen sowie den zu spielenden Ruf zu ändern"
     },
 
     clickHintText: {

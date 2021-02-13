@@ -4,8 +4,6 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type');
 header('Access-Control-Allow-Methods: POST, GET');
 
-//$pdo = new PDO("sqlite:pokequiz.db");
-
 $data = [];
 //adminer link : http://localhost:8000/test/adminer-sqlite.php?sqlite=&username=&db=pokequiz.db
 // https://github.com/FrancoisCapon/LoginToASqlite3DatabaseWithoutCredentialsWithAdminer
@@ -18,20 +16,22 @@ class MyDB extends SQLite3 {
     /**
      * 
      */
-    function insertScore($name, $settings, $score, $time) {
+    function insertScore($name, $settings, $score, $time, $alternateForms, $hints) {
 
         $data = [
             "error" => false,
         ];
 
         $statement = $this->prepare('
-            INSERT INTO "scores" (name, settings, score, time) VALUES (:name, :settings, :score, :time)
+            INSERT INTO "scores" (name, settings, score, time, alternateForms, hints) VALUES (:name, :settings, :score, :time, :alternateForms, :hints)
         ');
 
         $statement->bindValue(':name', $name);
         $statement->bindValue(':settings', $settings);
         $statement->bindValue(':score', $score);
         $statement->bindValue(':time', $time);
+        $statement->bindValue(':alternateForms', $alternateForms);
+        $statement->bindValue(':hints', $hints);
 
         $result = $statement->execute();
 
@@ -49,7 +49,7 @@ class MyDB extends SQLite3 {
     /**
      * 
      */
-    function listScore($settings) {
+    function listScore($settings, $alternateForms, $hints) {
 
         $data = [
             "error" => false,
@@ -57,7 +57,7 @@ class MyDB extends SQLite3 {
         ];
 
         $sql = '
-            SELECT * FROM "scores" WHERE "settings" = "'.$settings.'" ORDER BY "score" DESC, "time" ASC
+            SELECT * FROM "scores" WHERE "settings" = "'.$settings.'" AND "alternateForms" = "'.$alternateForms.'" AND "hints" = "'.$hints.'"  ORDER BY "score" DESC, "time" ASC
         ';
 
 
@@ -95,11 +95,11 @@ if(!$db) {
 
     switch($route) {
         case 'select':
-            $data = $db->listScore($params['settings']);
+            $data = $db->listScore($params['settings'], $params['alternateForms'], $params['hints']);
         break;
 
         case 'add':
-            $data = $db->insertScore($params['name'], $params['settings'], $params['score'], $params['time']);
+            $data = $db->insertScore($params['name'], $params['settings'], $params['score'], $params['time'], $params['alternateForms'], $params['hints']);
         break;
     }
 
