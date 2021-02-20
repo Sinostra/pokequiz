@@ -39,7 +39,7 @@
                     </div>
                     <div class="enterNamesInstruct">{{$store.state.localisation.dataLang['enterNameInstruct']}}</div>
                     <input v-model="enteredName" v-on:input="checkEnteredPokemon" ref="pokemonInput" type="text" :class="answerFound ? 'valid': ''">
-                    <HintManager v-if="$store.state.settings.useHints" :lastFound="lastFound" :gameState="gameState"/>
+                    <HintManager v-if="$store.state.settings.useHints" :lastFound="lastFound" :gameState="gameState" :gameRefs="this.$refs"/>
                 </div>
 
                 <div v-if="gameState == 'playing' || gameState == 'paused'" class="btn-wrapper">
