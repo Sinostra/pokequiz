@@ -3,14 +3,22 @@
     padding: 10px;
 
     &.playing {
-        padding: 110px 10px 10px 10px;
+        padding: 130px 10px 10px 10px;
+        &.hints {
+            padding-top: 160px;
+        }
     }
+
     
     @media screen and (min-width: 768px) {
         padding: 20px;
         &.playing {
             padding: 20px;
+            &.hints {
+                padding-top: 20px;
+            }
         }
+
     }
 
     .interface-wrapper {
@@ -54,6 +62,10 @@
                         padding: 0 10px 0 0;
                         flex-direction: column;
                     }
+
+                    > div:first-child {
+                        padding-right: 5px;
+                    }
                     
                 }
                 
@@ -66,6 +78,10 @@
                 @media screen and (min-width: 768px) {
                     margin-bottom: 0;
                     flex-direction: column;
+                }
+
+                > div:first-child {
+                    padding-right: 5px;
                 }
             }
 

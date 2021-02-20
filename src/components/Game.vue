@@ -1,5 +1,5 @@
 <template>
-    <div v-show="numberOfPokemons > 0" class="game" :class="gameState == 'playing' ? 'playing' : ''">
+    <div v-show="numberOfPokemons > 0" class="game" :class="getGameClass()">
         
         <div v-show="gameReady" class="interface-wrapper">
 
@@ -134,6 +134,13 @@ export default {
     methods: {
         getUrl(type) {
             return require('../assets/img/languages/' + this.$store.state.localisation.chosenLang + '/types/'+ type + '.png')
+        },
+
+        getGameClass() {
+            return {
+                playing : this.gameState == 'playing',
+                hints : this.$store.state.settings.useHints
+            }
         },
 
         getNameCellClass(index) {

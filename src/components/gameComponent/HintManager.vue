@@ -2,7 +2,7 @@
     <div class="hint-wrapper">
         <div v-if="availableHint" class="hint-ready">
             <div v-on:click="playHintedPokemonCry(hintedPokemon)" class="hint-label">{{$store.state.localisation.dataLang['clickHintText']}}</div>
-            <div v-on:click="getRandomLeftToFindPokemon()" :class="animRefresh ? 'anim':''" class="hint-picto"></div>
+            <div v-if="leftToFind.length > 1" v-on:click="getRandomLeftToFindPokemon()" :class="animRefresh ? 'anim':''" class="hint-picto"></div>
         </div>
         <div v-if="!availableHint" class="hint-not-ready">{{$store.state.localisation.dataLang['nextHintText']}}{{hintCoolDownLeft}}s</div>
     </div>
@@ -16,13 +16,14 @@ export default {
             leftToFind: [],
             hintedPokemon: '',
             animRefresh: false,
-            availableHint: true,
+            availableHint: false,
             hintTimer: undefined,
             hintCoolDown: 30,
             hintCoolDownLeft: 60,
             hintedSuccession: [],
             hintCoolDownPerPokemon: 1,
-            hintCoolDownStartPerPokemon: 2
+            hintCoolDownStartPerPokemon: 2,
+            hintAudio: null
         }
     },
 
@@ -37,6 +38,7 @@ export default {
             this.leftToFind.splice(this.leftToFind.indexOf(newVal), 1)
             if(this.hintedSuccession.includes(newVal)) {
                 this.startCoolDown();
+                this.availableHint = false;
                 this.hintedSuccession = []
                 this.getRandomLeftToFindPokemon(false)
             }
@@ -72,11 +74,11 @@ export default {
             }
         },
         playHintedPokemonCry(index) {
-            var audio = new Audio(this.getAudioUrl(index))
-            audio.play()
+            if(this.audio != null) this.audio.pause()
+            this.audio = new Audio(this.getAudioUrl(index))
+            this.audio.play()
         },
         startCoolDown(){
-            this.availableHint = false;
             this.hintTimer = setInterval(() => {
                 this.hintCoolDownLeft--
                 if(this.hintCoolDownLeft == 0) {

@@ -9,7 +9,7 @@
 
         <Error :message="$store.state.localisation.dataLang['nameError']" :hasError="playerNameError" v-on:errorFaded="playerNameError = false"/>
 
-        <input v-model="playerName" id="name" type="text" />
+        <input v-model="playerName" id="name" type="text" maxlength="20"/>
 
         <div class="btn-wrapper">
           <div v-on:click="clickValidate()" class="btn submit green-btn">{{$store.state.localisation.dataLang['validateNameText']}}</div>
