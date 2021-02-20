@@ -30,7 +30,7 @@ export default {
     props: {
         lastFound: String,
         gameState: String,
-        gameRefs: Object
+        input: Object
     },
 
     watch: {
@@ -78,7 +78,10 @@ export default {
             if(this.audio != null) this.audio.pause()
             this.audio = new Audio(this.getAudioUrl(index))
             this.audio.play()
-            this.gameRefs.pokemonInput.focus()
+            // this.$nextTick().then(() => {
+            //     console.log(this.input)
+            //     this.input.focus()
+            // })
         },
         startCoolDown(){
             this.hintTimer = setInterval(() => {
