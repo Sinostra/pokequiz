@@ -205,27 +205,24 @@ export default {
             this.displayDex = []
             var startSlice = 0
             var endSlice = splitDex
+
+            var lDexKeys = Object.keys(lDex).sort((first, second) => {
+                return first.split('-')[0] - second.split('-')[0]
+            })
+
             for(var i = 0; i < this.splitNumber; i++) {
                 //dernière itération de la boucle
                 if(i == this.splitNumber -1) {
-                    this.displayDex.push(Object.keys(lDex).slice(startSlice).map(key => ({[key]:lDex[key]})))
+                    this.displayDex.push(lDexKeys.slice(startSlice).map(key => ({[key]:lDex[key]})))
                 }
 
                 else {
-                    this.displayDex.push(Object.keys(lDex).slice(startSlice, endSlice).map(key => ({[key]:lDex[key]})))
+                    this.displayDex.push(lDexKeys.slice(startSlice, endSlice).map(key => ({[key]:lDex[key]})))
                     startSlice += splitDex
                     endSlice += splitDex
                 }
             }
 
-            //Méthode pour trier displayDex en prenant en compte les formes alternatives ajoutées
-            for(var j = 0; j < this.displayDex.length; j++) {
-                this.displayDex[j].sort(function(a, b) {
-                    a = parseInt(Object.keys(a))
-                    b = parseInt(Object.keys(b))
-                    return a -b
-                })
-            }
         },
 
         checkEnteredPokemon() {

@@ -79,7 +79,6 @@ export default {
                             //Array des types de la forme alternative sur laquelle on est du pokémon sur lequel on est
                             typesArray = Array.from(state.currentDex[property]['forms'][formName]['type'])
 
-
                             for(var k = 0; k < typesArray.length; k++) {
                                 //Si il y a un seul type, et pas un array de types
                                 if(!Array.isArray(typesArray[k])) {
@@ -102,7 +101,9 @@ export default {
                     }
                 }
 
-                //S'il y a plusieurs formes utilisées, met la forme regular en première  position
+                usedForm.sort()
+
+                //S'il y a plusieurs formes utilisées, met la forme regular en première position
                 if(usedForm.indexOf('regular') > 0) {
                     usedForm.splice(usedForm.indexOf('regular'), 1);
                     usedForm.unshift('regular')
@@ -112,7 +113,6 @@ export default {
                 if(!intersection) {
                     delete state.currentDex[property]
                 }
-
                 
             }
 

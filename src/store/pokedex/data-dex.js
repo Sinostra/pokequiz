@@ -6213,7 +6213,7 @@ export default {
         "gen": "5",
         "type": ["fire"],
         "forms": {
-            "zen": {
+            "1": {
                 "type": ["fire", "psychic"],
                 "name": {
                     "english": "Zen mode Darmanitan",
@@ -6221,7 +6221,7 @@ export default {
                     "german": "Trance-Modus Flampivian"
                 }
             },
-            "galar": {
+            "2": {
                 "type": ["ice"],
                 "name": {
                     "english": "Galarian Darmanitan",
@@ -6229,7 +6229,7 @@ export default {
                     "german": "Galar Flampivian"
                 }
             },
-            "galarzen": {
+            "3": {
                 "type": ["ice", "fire"],
                 "name": {
                     "english": "Galarian zen mode Darmanitan",
