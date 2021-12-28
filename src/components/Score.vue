@@ -76,7 +76,7 @@
             :class="score.id == lastEnteredId ? 'playedGame' : ''"
           >
             <div class="table-cell rank">{{ index + 1 }}</div>
-            <div class="table-cell name">{{ score.name }}</div>
+            <div class="table-cell name">{{ obscenityFilter(score.name) }}</div>
             <div class="table-cell score">
               <div>{{ score.score }}/{{ totalNumber }}</div>
               <div class="percentage">&nbsp;({{parseInt((score.score / totalNumber) * 100)}}%)</div>
@@ -124,6 +124,7 @@ export default {
       allScores: {},
       lastEnteredId: 0,
       emptyScores: false,
+      obscenities: ['fdp', 'bite', 'suce', 'tg', 'merde', 'fuck', 'conard'],
       serverUrl: '/server/',
       // serverUrl: 'http://localhost:8081/server/'
     };
@@ -237,6 +238,30 @@ export default {
       this.$store.dispatch("filterByGen", this.$store.state.settings.selectedGeneration)
       this.$store.dispatch("filterByType", this.$store.state.settings.selectedTypes)
       this.$store.dispatch("previousComp")
+    },
+
+    obscenityFilter(name) {
+
+      //On stocke le nom de base
+      var displayName = name
+
+      //On stocke le nom sans majuscule, sans accent et sans lettres identiques qui se suivent (Téeeèst => test)
+      var newName = name.toLowerCase().replace(/[é,è,ê,ë]/g, 'e').replace(/[î,ï,í,ì]/g, 'i').replace(/[â,ä,à]/g, 'a').replace(/[û,ü,ù]/g, 'u').replace(/[ô,ö]/g, 'o').replace(/[œ]/g, 'oe').replace(/[ç]/g, 'c').replace(/(.)\1+/g, '$1')
+
+
+      this.obscenities.forEach(element => {
+        
+        //S'il y a un élément du tableau obscenities dans le nom, on l'affiche censuré
+        if(newName.indexOf(element) > -1) {
+          newName = newName.replace(element, '**')
+          
+          displayName = newName
+        }
+
+      })
+
+      return displayName
+      
     }
   },
 
